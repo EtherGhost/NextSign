@@ -33,7 +33,8 @@ This is a hobby project, built and maintained in spare time - not an official or
 product.
 
 - **No support is offered, and this is a solo project, not a collaborative one.** Bug reports are
-  welcome, but there's no guaranteed response time and no promise any given one gets fixed.
+  welcome, but there's no guaranteed response time and no promise any given one gets fixed. The
+  source is here to be read and forked, not to gather contributors.
 - **Use it at your own risk**, especially anything involving actually signing a document. Verify
   independently (e.g. in the LibreSign web UI) that a signature was applied correctly before
   relying on it for anything that matters.
