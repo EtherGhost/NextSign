@@ -1,0 +1,17 @@
+{
+    "name": "nextsign.cloudsite",
+    "description": "Sign documents by tapping - a native Ubuntu Touch client for LibreSign on Nextcloud.",
+    "architecture": "$ENV{ARCH}",
+    "title": "NextSign",
+    "hooks": {
+        "nextsign": {
+            "accounts": "nextsign.accounts",
+            "apparmor": "nextsign.apparmor",
+            "content-hub": "nextsign-contenthub.json",
+            "desktop": "nextsign.desktop"
+        }
+    },
+    "version": "@NEXTSIGN_VERSION@",
+    "maintainer": "Etherghost <noreply@cloudsite.se>",
+    "framework": "$ENV{CLICK_FRAMEWORK}"
+}

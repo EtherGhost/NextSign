@@ -1,0 +1,433 @@
+# SOME DESCRIPTIVE TITLE.
+# Catalan translations for nextsign.cloudsite package.
+# This file is distributed under the same license as the nextsign.cloudsite package.
+# AI-assisted starter translation; please review before relying on wording.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nextsign.cloudsite\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-29 00:00+0000\n"
+"PO-Revision-Date: 2026-08-29 00:00+0200\n"
+"Last-Translator: AI-assisted starter translation\n"
+"Language-Team: Catalan\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "Default"
+msgstr "Per defecte"
+
+msgid "Follow system language"
+msgstr "Segueix l'idioma del sistema"
+
+msgid "Built-in source language"
+msgstr "Idioma font integrat"
+
+msgid "Status"
+msgstr "Estat"
+
+msgid "Close"
+msgstr "Tanca"
+
+msgid "Language"
+msgstr "Idioma"
+
+msgid "Account"
+msgstr "Compte"
+
+msgid "Settings"
+msgstr "Configuració"
+
+msgid "About"
+msgstr "Quant a"
+
+msgid "Version %1"
+msgstr "Versió %1"
+
+msgid "License"
+msgstr "Llicència"
+
+msgid "Contributors"
+msgstr "Col·laboradors"
+
+msgid "Disclaimer"
+msgstr "Avís legal"
+
+msgid "Select an account and authorize it for %1."
+msgstr "Seleccioneu un compte i autoritzeu-lo per a %1."
+
+msgid "Accounts"
+msgstr "Comptes"
+
+msgid "Allow account access"
+msgstr "Permet l'accés al compte"
+
+msgid "Open System Settings"
+msgstr "Obre la configuració del sistema"
+
+msgid "OK"
+msgstr "D'acord"
+
+msgid "Server address"
+msgstr "Adreça del servidor"
+
+msgid "https://cloud.example.com"
+msgstr "https://cloud.example.com"
+
+msgid "Available accounts"
+msgstr "Comptes disponibles"
+
+msgid "No Nextcloud account found"
+msgstr "No s'ha trobat cap compte de Nextcloud"
+
+msgid "Verify selected account"
+msgstr "Verifica el compte seleccionat"
+
+msgid "Verifying account..."
+msgstr "S'està verificant el compte..."
+
+msgid "How to allow this account"
+msgstr "Com permetre aquest compte"
+
+msgid "Selected %1. Verifying authorization..."
+msgstr "S'ha seleccionat %1. S'està verificant l'autorització..."
+
+msgid "Saved account selected. Verify again if needed."
+msgstr "Compte desat seleccionat. Verifiqueu-lo de nou si cal."
+
+msgid "Select an account first."
+msgstr "Seleccioneu primer un compte."
+
+msgid "Verifying Online Accounts authorization..."
+msgstr "S'està verificant l'autorització dels Comptes en línia..."
+
+msgid "No account selected"
+msgstr "No s'ha seleccionat cap compte"
+
+msgid "The selected Ubuntu Touch account did not expose a server address."
+msgstr "El compte Ubuntu Touch seleccionat no ha exposat cap adreça de servidor."
+
+msgid "Desktop test credentials are incomplete."
+msgstr "Les credencials de prova d'escriptori són incompletes."
+
+msgid "No server URL configured. Open Account and authorize the OS account."
+msgstr "No hi ha cap URL de servidor configurat. Obriu Compte i autoritzeu el compte del sistema."
+
+msgid "Waiting for Online Accounts..."
+msgstr "S'està esperant Comptes en línia..."
+
+msgid "%1 will follow the system language after restart."
+msgstr "%1 seguirà l'idioma del sistema després de reiniciar."
+
+msgid "%1 will use %2 after restart."
+msgstr "%1 utilitzarà %2 després de reiniciar."
+
+msgid "Add another account in System Settings"
+msgstr "Afegeix un altre compte a la Configuració del sistema"
+
+msgid "Authentication failed. Open Account and verify the account again."
+msgstr "L'autenticació ha fallat. Obre Compte i torna a verificar el compte."
+
+msgid "Authorization was canceled."
+msgstr "S'ha cancel·lat l'autorització."
+
+msgid "No account"
+msgstr "Cap compte"
+
+msgid "Authentication failed"
+msgstr "Ha fallat l'autenticació"
+
+msgid "Verifying"
+msgstr "Verificant"
+
+msgid "Select an account to load documents waiting for your signature."
+msgstr "Seleccioneu un compte per carregar els documents que esperen la vostra signatura."
+
+msgid "No documents to sign"
+msgstr "Cap document per signar"
+
+msgid "Documents waiting for your signature will appear here."
+msgstr "Els documents que esperen la vostra signatura apareixeran aquí."
+
+msgid "Nothing to configure yet."
+msgstr "Encara no hi ha res a configurar."
+
+msgid "Refresh"
+msgstr "Actualitza"
+
+msgid "Up to date"
+msgstr "Actualitzat"
+
+msgid "Sync failed"
+msgstr "Ha fallat la sincronització"
+
+msgid "Syncing"
+msgstr "S'està sincronitzant"
+
+msgid "Signed in. Loading documents..."
+msgstr "Sessió iniciada. S'estan carregant els documents..."
+
+msgid "%1 document(s) waiting for your signature."
+msgstr "%1 document(s) esperant la vostra signatura."
+
+msgid "No documents waiting for your signature."
+msgstr "No hi ha documents esperant la vostra signatura."
+
+msgid "Untitled document"
+msgstr "Document sense títol"
+
+msgid "Requested by %1"
+msgstr "Sol·licitat per %1"
+
+msgid "Account credentials are incomplete."
+msgstr "Les credencials del compte són incompletes."
+
+msgid "LibreSign does not appear to be installed on this Nextcloud server."
+msgstr "Sembla que LibreSign no està instal·lat en aquest servidor Nextcloud."
+
+msgid "LibreSign request failed with HTTP %1."
+msgstr "La sol·licitud a LibreSign ha fallat amb HTTP %1."
+
+msgid "LibreSign returned an unexpected response."
+msgstr "LibreSign ha retornat una resposta inesperada."
+
+msgid "LibreSign request failed because the network request could not be completed."
+msgstr "La sol·licitud a LibreSign ha fallat perquè no s'ha pogut completar la sol·licitud de xarxa."
+
+msgid "LibreSign request timed out."
+msgstr "La sol·licitud a LibreSign ha esgotat el temps d'espera."
+
+msgid "< LEVEL"
+msgstr "< NIVELL"
+
+msgid "April"
+msgstr "abril"
+
+msgid "August"
+msgstr "agost"
+
+msgid "Cancel"
+msgstr "Cancel·la"
+
+msgid "Clear"
+msgstr "Neteja"
+
+msgid "Confirm"
+msgstr "Confirma"
+
+msgid "December"
+msgstr "desembre"
+
+msgid "February"
+msgstr "febrer"
+
+msgid "Fri"
+msgstr "Dv"
+
+msgid "Hour"
+msgstr "Hora"
+
+msgid "January"
+msgstr "gener"
+
+msgid "July"
+msgstr "juliol"
+
+msgid "June"
+msgstr "juny"
+
+msgid "March"
+msgstr "març"
+
+msgid "May"
+msgstr "maig"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Mon"
+msgstr "Dl"
+
+msgid "November"
+msgstr "novembre"
+
+msgid "Now"
+msgstr "Ara"
+
+msgid "October"
+msgstr "octubre"
+
+msgid "Sat"
+msgstr "Ds"
+
+msgid "September"
+msgstr "setembre"
+
+msgid "Sun"
+msgstr "Dg"
+
+msgid "Thu"
+msgstr "Dj"
+
+msgid "Today"
+msgstr "Avui"
+
+msgid "Tue"
+msgstr "Dt"
+
+msgid "Wed"
+msgstr "Dc"
+
+msgid "NextSign"
+msgstr "NextSign"
+
+msgid "Could not open document"
+msgstr "No s'ha pogut obrir el document"
+
+msgid "Document"
+msgstr "Document"
+
+msgid "Document cache could not be prepared."
+msgstr "No s'ha pogut preparar la memòria cau de documents."
+
+msgid "Document cache is not available."
+msgstr "La memòria cau de documents no està disponible."
+
+msgid "Document download failed with HTTP %1."
+msgstr "La baixada del document ha fallat amb HTTP %1."
+
+msgid "Document preview requires the native network backend."
+msgstr "La previsualització de documents requereix el backend de xarxa natiu."
+
+msgid "Open with"
+msgstr "Obre amb"
+
+msgid "Opening..."
+msgstr "S'està obrint..."
+
+msgid "Sign in again before viewing this document."
+msgstr "Torneu a iniciar sessió abans de veure aquest document."
+
+msgid "The downloaded document could not be saved."
+msgstr "No s'ha pogut desar el document baixat."
+
+msgid "The downloaded document is empty."
+msgstr "El document baixat és buit."
+
+msgid "This document's location is unknown."
+msgstr "Es desconeix la ubicació d'aquest document."
+
+msgid "View"
+msgstr "Visualitza"
+
+msgid "Sign this document?"
+msgstr "Voleu signar aquest document?"
+
+msgid "This will sign \"%1\" using LibreSign's click-to-sign method. This cannot be undone."
+msgstr "Això signarà \"%1\" mitjançant el mètode de signatura amb un clic de LibreSign. Això no es pot desfer."
+
+msgid "Sign"
+msgstr "Signa"
+
+msgid "Signing..."
+msgstr "S'està signant..."
+
+msgid "Signed"
+msgstr "Signat"
+
+msgid "\"%1\" has been signed."
+msgstr "\"%1\" s'ha signat."
+
+msgid "Could not sign document"
+msgstr "No s'ha pogut signar el document"
+
+msgid "Sign in again before signing this document."
+msgstr "Torneu a iniciar sessió abans de signar aquest document."
+
+msgid "Signing failed with HTTP %1."
+msgstr "La signatura ha fallat amb HTTP %1."
+
+msgid "Signing failed because the network request could not be completed."
+msgstr "La signatura ha fallat perquè no s'ha pogut completar la sol·licitud de xarxa."
+
+msgid "Signing timed out."
+msgstr "La signatura ha esgotat el temps d'espera."
+
+msgid "Could not determine your signature request for this document."
+msgstr "No s'ha pogut determinar la vostra sol·licitud de signatura per a aquest document."
+
+msgid "To sign"
+msgstr "Per signar"
+
+msgid "%1 signed document(s)."
+msgstr "%1 document(s) signat(s)."
+
+msgid "No signed documents yet."
+msgstr "Encara no hi ha documents signats."
+
+msgid "No signed documents yet"
+msgstr "Encara no hi ha documents signats"
+
+msgid "Documents you have signed will appear here."
+msgstr "Els documents que hàgiu signat apareixeran aquí."
+
+msgid "Signed %1"
+msgstr "Signat %1"
+
+msgid "Validating..."
+msgstr "S'està validant..."
+
+msgid "Validate"
+msgstr "Valida"
+
+msgid "Signature validation"
+msgstr "Validació de la signatura"
+
+msgid "Unknown signer"
+msgstr "Signant desconegut"
+
+msgid "Could not validate document"
+msgstr "No s'ha pogut validar el document"
+
+msgid "Sign in again before validating this document."
+msgstr "Torneu a iniciar sessió abans de validar aquest document."
+
+msgid "Validation failed with HTTP %1."
+msgstr "La validació ha fallat amb HTTP %1."
+
+msgid "Validation failed because the network request could not be completed."
+msgstr "La validació ha fallat perquè no s'ha pogut completar la sol·licitud de xarxa."
+
+msgid "Validation timed out."
+msgstr "La validació ha esgotat el temps d'espera."
+
+msgid "Pull to refresh"
+msgstr "Estireu per actualitzar"
+
+msgid "Release to refresh"
+msgstr "Deixeu anar per actualitzar"
+
+msgid "Refreshing..."
+msgstr "S'està actualitzant..."
+
+
+msgid "AI-assisted translation"
+msgstr "Traducció assistida per IA"
+
+msgid "Some translations are AI-assisted and have not been fully reviewed."
+msgstr "Algunes traduccions són assistides per IA i no s'han revisat completament."
+
+msgid "Sort"
+msgstr "Ordena"
+
+msgid "Newest first"
+msgstr "Més recents primer"
+
+msgid "Oldest first"
+msgstr "Més antics primer"
+
+msgid "Name (A-Z)"
+msgstr "Nom (A-Z)"

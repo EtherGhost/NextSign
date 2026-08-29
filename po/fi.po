@@ -1,0 +1,433 @@
+# SOME DESCRIPTIVE TITLE.
+# Finnish translations for nextsign.cloudsite package.
+# This file is distributed under the same license as the nextsign.cloudsite package.
+# AI-assisted starter translation; please review before relying on wording.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nextsign.cloudsite\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-29 00:00+0000\n"
+"PO-Revision-Date: 2026-08-29 00:00+0200\n"
+"Last-Translator: AI-assisted starter translation\n"
+"Language-Team: Finnish\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "Default"
+msgstr "Oletus"
+
+msgid "Follow system language"
+msgstr "Seuraa järjestelmän kieltä"
+
+msgid "Built-in source language"
+msgstr "Sisäänrakennettu lähdekieli"
+
+msgid "Status"
+msgstr "Tila"
+
+msgid "Close"
+msgstr "Sulje"
+
+msgid "Language"
+msgstr "Kieli"
+
+msgid "Account"
+msgstr "Tili"
+
+msgid "Settings"
+msgstr "Asetukset"
+
+msgid "About"
+msgstr "Tietoja"
+
+msgid "Version %1"
+msgstr "Versio %1"
+
+msgid "License"
+msgstr "Lisenssi"
+
+msgid "Contributors"
+msgstr "Tekijät"
+
+msgid "Disclaimer"
+msgstr "Vastuuvapauslauseke"
+
+msgid "Select an account and authorize it for %1."
+msgstr "Valitse tili ja valtuuta se sovellukselle %1."
+
+msgid "Accounts"
+msgstr "Tilit"
+
+msgid "Allow account access"
+msgstr "Salli tilin käyttöoikeus"
+
+msgid "Open System Settings"
+msgstr "Avaa Järjestelmäasetukset"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Server address"
+msgstr "Palvelimen osoite"
+
+msgid "https://cloud.example.com"
+msgstr "https://cloud.example.com"
+
+msgid "Available accounts"
+msgstr "Saatavilla olevat tilit"
+
+msgid "No Nextcloud account found"
+msgstr "No Nextcloud account found"
+
+msgid "Verify selected account"
+msgstr "Verify selected account"
+
+msgid "Verifying account..."
+msgstr "Vahvistetaan tilia..."
+
+msgid "How to allow this account"
+msgstr "Näin sallit tämän tilin"
+
+msgid "Selected %1. Verifying authorization..."
+msgstr "Verifying Online Accounts authorization..."
+
+msgid "Saved account selected. Verify again if needed."
+msgstr "Saved account selected. Verify again if needed."
+
+msgid "Select an account first."
+msgstr "Select an account first."
+
+msgid "Verifying Online Accounts authorization..."
+msgstr "Verifying Online Accounts authorization..."
+
+msgid "No account selected"
+msgstr "No account selected"
+
+msgid "The selected Ubuntu Touch account did not expose a server address."
+msgstr "The selected Ubuntu Touch account did not expose a server address."
+
+msgid "Desktop test credentials are incomplete."
+msgstr "Desktop test credentials are incomplete."
+
+msgid "No server URL configured. Open Account and authorize the OS account."
+msgstr "No server URL configured. Open Account and authorize the OS account."
+
+msgid "Waiting for Online Accounts..."
+msgstr "Odotetaan Online Accounts -tilejä..."
+
+msgid "%1 will follow the system language after restart."
+msgstr "%1 seuraa järjestelmän kieltä uudelleenkäynnistyksen jälkeen."
+
+msgid "%1 will use %2 after restart."
+msgstr "%1 käyttää kieltä %2 uudelleenkäynnistyksen jälkeen."
+
+msgid "Add another account in System Settings"
+msgstr "Lisää toinen tili Järjestelmäasetuksissa"
+
+msgid "Authentication failed. Open Account and verify the account again."
+msgstr "Todennus epäonnistui. Avaa Tili ja vahvista tili uudelleen."
+
+msgid "Authorization was canceled."
+msgstr "Valtuutus peruutettiin."
+
+msgid "No account"
+msgstr "Ei tiliä"
+
+msgid "Authentication failed"
+msgstr "Tunnistautuminen epäonnistui"
+
+msgid "Verifying"
+msgstr "Vahvistetaan"
+
+msgid "Select an account to load documents waiting for your signature."
+msgstr "Valitse tili ladataksesi allekirjoitustasi odottavat asiakirjat."
+
+msgid "No documents to sign"
+msgstr "Ei allekirjoitettavia asiakirjoja"
+
+msgid "Documents waiting for your signature will appear here."
+msgstr "Allekirjoitustasi odottavat asiakirjat näkyvät täällä."
+
+msgid "Nothing to configure yet."
+msgstr "Ei vielä mitään määritettävää."
+
+msgid "Refresh"
+msgstr "Päivitä"
+
+msgid "Up to date"
+msgstr "Ajan tasalla"
+
+msgid "Sync failed"
+msgstr "Synkronointi epäonnistui"
+
+msgid "Syncing"
+msgstr "Synkronoidaan"
+
+msgid "Signed in. Loading documents..."
+msgstr "Kirjauduttu sisään. Ladataan asiakirjoja..."
+
+msgid "%1 document(s) waiting for your signature."
+msgstr "%1 asiakirja(a) odottaa allekirjoitustasi."
+
+msgid "No documents waiting for your signature."
+msgstr "Yksikään asiakirja ei odota allekirjoitustasi."
+
+msgid "Untitled document"
+msgstr "Nimetön asiakirja"
+
+msgid "Requested by %1"
+msgstr "Pyytäjä: %1"
+
+msgid "Account credentials are incomplete."
+msgstr "Account credentials are incomplete."
+
+msgid "LibreSign does not appear to be installed on this Nextcloud server."
+msgstr "LibreSign ei näytä olevan asennettuna tälle Nextcloud-palvelimelle."
+
+msgid "LibreSign request failed with HTTP %1."
+msgstr "LibreSign-pyyntö epäonnistui, HTTP %1."
+
+msgid "LibreSign returned an unexpected response."
+msgstr "LibreSign palautti odottamattoman vastauksen."
+
+msgid "LibreSign request failed because the network request could not be completed."
+msgstr "LibreSign-pyyntö epäonnistui, koska verkkopyyntöä ei voitu suorittaa loppuun."
+
+msgid "LibreSign request timed out."
+msgstr "LibreSign-pyyntö aikakatkaistiin."
+
+msgid "< LEVEL"
+msgstr "< TASO"
+
+msgid "April"
+msgstr "Huhtikuu"
+
+msgid "August"
+msgstr "Elokuu"
+
+msgid "Cancel"
+msgstr "Peruuta"
+
+msgid "Clear"
+msgstr "Tyhjennä"
+
+msgid "Confirm"
+msgstr "Vahvista"
+
+msgid "December"
+msgstr "Joulukuu"
+
+msgid "February"
+msgstr "Helmikuu"
+
+msgid "Fri"
+msgstr "Fri"
+
+msgid "Hour"
+msgstr "Tunti"
+
+msgid "January"
+msgstr "Tammikuu"
+
+msgid "July"
+msgstr "Heinäkuu"
+
+msgid "June"
+msgstr "Kesäkuu"
+
+msgid "March"
+msgstr "Maaliskuu"
+
+msgid "May"
+msgstr "Toukokuu"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Mon"
+msgstr "Mon"
+
+msgid "November"
+msgstr "Marraskuu"
+
+msgid "Now"
+msgstr "Nyt"
+
+msgid "October"
+msgstr "Lokakuu"
+
+msgid "Sat"
+msgstr "Sat"
+
+msgid "September"
+msgstr "Syyskuu"
+
+msgid "Sun"
+msgstr "Sun"
+
+msgid "Thu"
+msgstr "Thu"
+
+msgid "Today"
+msgstr "Tänään"
+
+msgid "Tue"
+msgstr "Tue"
+
+msgid "Wed"
+msgstr "Wed"
+
+msgid "NextSign"
+msgstr "NextSign"
+
+msgid "Could not open document"
+msgstr "Asiakirjaa ei voitu avata"
+
+msgid "Document"
+msgstr "Asiakirja"
+
+msgid "Document cache could not be prepared."
+msgstr "Asiakirjavälimuistia ei voitu valmistella."
+
+msgid "Document cache is not available."
+msgstr "Asiakirjavälimuisti ei ole käytettävissä."
+
+msgid "Document download failed with HTTP %1."
+msgstr "Asiakirjan lataus epäonnistui, HTTP %1."
+
+msgid "Document preview requires the native network backend."
+msgstr "Asiakirjan esikatselu vaatii natiivin verkkotaustajärjestelmän."
+
+msgid "Open with"
+msgstr "Avaa sovelluksella"
+
+msgid "Opening..."
+msgstr "Avataan..."
+
+msgid "Sign in again before viewing this document."
+msgstr "Kirjaudu sisään uudelleen ennen tämän asiakirjan katselua."
+
+msgid "The downloaded document could not be saved."
+msgstr "Ladattua asiakirjaa ei voitu tallentaa."
+
+msgid "The downloaded document is empty."
+msgstr "Ladattu asiakirja on tyhjä."
+
+msgid "This document's location is unknown."
+msgstr "Tämän asiakirjan sijainti on tuntematon."
+
+msgid "View"
+msgstr "Näytä"
+
+msgid "Sign this document?"
+msgstr "Allekirjoitetaanko tämä asiakirja?"
+
+msgid "This will sign \"%1\" using LibreSign's click-to-sign method. This cannot be undone."
+msgstr "Tämä allekirjoittaa asiakirjan \"%1\" LibreSignin klikkaa-allekirjoittaaksesi-menetelmällä. Tätä ei voi perua."
+
+msgid "Sign"
+msgstr "Allekirjoita"
+
+msgid "Signing..."
+msgstr "Allekirjoitetaan..."
+
+msgid "Signed"
+msgstr "Allekirjoitettu"
+
+msgid "\"%1\" has been signed."
+msgstr "\"%1\" on allekirjoitettu."
+
+msgid "Could not sign document"
+msgstr "Asiakirjaa ei voitu allekirjoittaa"
+
+msgid "Sign in again before signing this document."
+msgstr "Kirjaudu sisään uudelleen ennen tämän asiakirjan allekirjoittamista."
+
+msgid "Signing failed with HTTP %1."
+msgstr "Allekirjoitus epäonnistui, HTTP %1."
+
+msgid "Signing failed because the network request could not be completed."
+msgstr "Allekirjoitus epäonnistui, koska verkkopyyntöä ei voitu suorittaa loppuun."
+
+msgid "Signing timed out."
+msgstr "Allekirjoitus aikakatkaistiin."
+
+msgid "Could not determine your signature request for this document."
+msgstr "Allekirjoituspyyntöäsi tälle asiakirjalle ei voitu määrittää."
+
+msgid "To sign"
+msgstr "Allekirjoitettavat"
+
+msgid "%1 signed document(s)."
+msgstr "%1 allekirjoitettua asiakirjaa."
+
+msgid "No signed documents yet."
+msgstr "Ei vielä allekirjoitettuja asiakirjoja."
+
+msgid "No signed documents yet"
+msgstr "Ei vielä allekirjoitettuja asiakirjoja"
+
+msgid "Documents you have signed will appear here."
+msgstr "Allekirjoittamasi asiakirjat näkyvät täällä."
+
+msgid "Signed %1"
+msgstr "Allekirjoitettu %1"
+
+msgid "Validating..."
+msgstr "Vahvistetaan..."
+
+msgid "Validate"
+msgstr "Vahvista"
+
+msgid "Signature validation"
+msgstr "Allekirjoituksen vahvistus"
+
+msgid "Unknown signer"
+msgstr "Tuntematon allekirjoittaja"
+
+msgid "Could not validate document"
+msgstr "Asiakirjaa ei voitu vahvistaa"
+
+msgid "Sign in again before validating this document."
+msgstr "Kirjaudu sisään uudelleen ennen tämän asiakirjan vahvistamista."
+
+msgid "Validation failed with HTTP %1."
+msgstr "Vahvistus epäonnistui, HTTP %1."
+
+msgid "Validation failed because the network request could not be completed."
+msgstr "Vahvistus epäonnistui, koska verkkopyyntöä ei voitu suorittaa loppuun."
+
+msgid "Validation timed out."
+msgstr "Vahvistus aikakatkaistiin."
+
+msgid "Pull to refresh"
+msgstr "Päivitä vetämällä"
+
+msgid "Release to refresh"
+msgstr "Päivitä vapauttamalla"
+
+msgid "Refreshing..."
+msgstr "Päivitetään..."
+
+
+msgid "AI-assisted translation"
+msgstr "Tekoälyn avustama käännös"
+
+msgid "Some translations are AI-assisted and have not been fully reviewed."
+msgstr "Jotkin käännökset ovat tekoälyn avustamia eikä niitä ole tarkistettu kokonaan."
+
+msgid "Sort"
+msgstr "Lajittele"
+
+msgid "Newest first"
+msgstr "Uusin ensin"
+
+msgid "Oldest first"
+msgstr "Vanhin ensin"
+
+msgid "Name (A-Z)"
+msgstr "Nimi (A-Ö)"

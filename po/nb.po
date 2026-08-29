@@ -1,0 +1,433 @@
+# SOME DESCRIPTIVE TITLE.
+# Norwegian Bokmal translations for nextsign.cloudsite package.
+# This file is distributed under the same license as the nextsign.cloudsite package.
+# AI-assisted starter translation; please review before relying on wording.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nextsign.cloudsite\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-29 00:00+0000\n"
+"PO-Revision-Date: 2026-08-29 00:00+0200\n"
+"Last-Translator: AI-assisted starter translation\n"
+"Language-Team: Norwegian Bokmal\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Follow system language"
+msgstr "Følg systemspråk"
+
+msgid "Built-in source language"
+msgstr "Innebygd kildespråk"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Close"
+msgstr "Lukk"
+
+msgid "Language"
+msgstr "Språk"
+
+msgid "Account"
+msgstr "Konto"
+
+msgid "Settings"
+msgstr "Innstillinger"
+
+msgid "About"
+msgstr "Om"
+
+msgid "Version %1"
+msgstr "Versjon %1"
+
+msgid "License"
+msgstr "Lisens"
+
+msgid "Contributors"
+msgstr "Bidragsytere"
+
+msgid "Disclaimer"
+msgstr "Ansvarsfraskrivelse"
+
+msgid "Select an account and authorize it for %1."
+msgstr "Velg en konto og autoriser den for %1."
+
+msgid "Accounts"
+msgstr "Kontoer"
+
+msgid "Allow account access"
+msgstr "Tillat kontotilgang"
+
+msgid "Open System Settings"
+msgstr "Åpne Systeminnstillinger"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Server address"
+msgstr "Serveradresse"
+
+msgid "https://cloud.example.com"
+msgstr "https://cloud.example.com"
+
+msgid "Available accounts"
+msgstr "Tilgjengelige kontoer"
+
+msgid "No Nextcloud account found"
+msgstr "No Nextcloud account found"
+
+msgid "Verify selected account"
+msgstr "Verify selected account"
+
+msgid "Verifying account..."
+msgstr "Kontrollerer konto..."
+
+msgid "How to allow this account"
+msgstr "Slik tillater du denne kontoen"
+
+msgid "Selected %1. Verifying authorization..."
+msgstr "Verifying Online Accounts authorization..."
+
+msgid "Saved account selected. Verify again if needed."
+msgstr "Saved account selected. Verify again if needed."
+
+msgid "Select an account first."
+msgstr "Select an account first."
+
+msgid "Verifying Online Accounts authorization..."
+msgstr "Verifying Online Accounts authorization..."
+
+msgid "No account selected"
+msgstr "No account selected"
+
+msgid "The selected Ubuntu Touch account did not expose a server address."
+msgstr "The selected Ubuntu Touch account did not expose a server address."
+
+msgid "Desktop test credentials are incomplete."
+msgstr "Desktop test credentials are incomplete."
+
+msgid "No server URL configured. Open Account and authorize the OS account."
+msgstr "No server URL configured. Open Account and authorize the OS account."
+
+msgid "Waiting for Online Accounts..."
+msgstr "Venter på Online Accounts..."
+
+msgid "%1 will follow the system language after restart."
+msgstr "%1 følger systemspråket etter omstart."
+
+msgid "%1 will use %2 after restart."
+msgstr "%1 bruker %2 etter omstart."
+
+msgid "Add another account in System Settings"
+msgstr "Legg til en konto til i Systeminnstillinger"
+
+msgid "Authentication failed. Open Account and verify the account again."
+msgstr "Autentisering mislyktes. Åpne Konto og verifiser kontoen på nytt."
+
+msgid "Authorization was canceled."
+msgstr "Autorisasjonen ble avbrutt."
+
+msgid "No account"
+msgstr "Ingen konto"
+
+msgid "Authentication failed"
+msgstr "Autentisering mislyktes"
+
+msgid "Verifying"
+msgstr "Verifiserer"
+
+msgid "Select an account to load documents waiting for your signature."
+msgstr "Velg en konto for å laste inn dokumenter som venter på signaturen din."
+
+msgid "No documents to sign"
+msgstr "Ingen dokumenter å signere"
+
+msgid "Documents waiting for your signature will appear here."
+msgstr "Dokumenter som venter på signaturen din, vises her."
+
+msgid "Nothing to configure yet."
+msgstr "Ingenting å konfigurere ennå."
+
+msgid "Refresh"
+msgstr "Oppdater"
+
+msgid "Up to date"
+msgstr "Oppdatert"
+
+msgid "Sync failed"
+msgstr "Synkronisering mislyktes"
+
+msgid "Syncing"
+msgstr "Synkroniserer"
+
+msgid "Signed in. Loading documents..."
+msgstr "Logget inn. Laster inn dokumenter..."
+
+msgid "%1 document(s) waiting for your signature."
+msgstr "%1 dokument venter på signaturen din."
+
+msgid "No documents waiting for your signature."
+msgstr "Ingen dokumenter venter på signaturen din."
+
+msgid "Untitled document"
+msgstr "Dokument uten tittel"
+
+msgid "Requested by %1"
+msgstr "Forespurt av %1"
+
+msgid "Account credentials are incomplete."
+msgstr "Account credentials are incomplete."
+
+msgid "LibreSign does not appear to be installed on this Nextcloud server."
+msgstr "LibreSign ser ikke ut til å være installert på denne Nextcloud-serveren."
+
+msgid "LibreSign request failed with HTTP %1."
+msgstr "LibreSign-forespørselen mislyktes med HTTP %1."
+
+msgid "LibreSign returned an unexpected response."
+msgstr "LibreSign returnerte et uventet svar."
+
+msgid "LibreSign request failed because the network request could not be completed."
+msgstr "LibreSign-forespørselen mislyktes fordi nettverksforespørselen ikke kunne fullføres."
+
+msgid "LibreSign request timed out."
+msgstr "LibreSign-forespørselen fikk tidsavbrudd."
+
+msgid "< LEVEL"
+msgstr "< NIVÅ"
+
+msgid "April"
+msgstr "April"
+
+msgid "August"
+msgstr "August"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "Clear"
+msgstr "Fjern"
+
+msgid "Confirm"
+msgstr "Bekreft"
+
+msgid "December"
+msgstr "Desember"
+
+msgid "February"
+msgstr "Februar"
+
+msgid "Fri"
+msgstr "Fri"
+
+msgid "Hour"
+msgstr "Time"
+
+msgid "January"
+msgstr "Januar"
+
+msgid "July"
+msgstr "Juli"
+
+msgid "June"
+msgstr "Juni"
+
+msgid "March"
+msgstr "Mars"
+
+msgid "May"
+msgstr "Mai"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Mon"
+msgstr "Mon"
+
+msgid "November"
+msgstr "November"
+
+msgid "Now"
+msgstr "Nå"
+
+msgid "October"
+msgstr "Oktober"
+
+msgid "Sat"
+msgstr "Sat"
+
+msgid "September"
+msgstr "September"
+
+msgid "Sun"
+msgstr "Sun"
+
+msgid "Thu"
+msgstr "Thu"
+
+msgid "Today"
+msgstr "I dag"
+
+msgid "Tue"
+msgstr "Tue"
+
+msgid "Wed"
+msgstr "Wed"
+
+msgid "NextSign"
+msgstr "NextSign"
+
+msgid "Could not open document"
+msgstr "Kunne ikke åpne dokumentet"
+
+msgid "Document"
+msgstr "Dokument"
+
+msgid "Document cache could not be prepared."
+msgstr "Kunne ikke klargjøre dokumenthurtigbufferen."
+
+msgid "Document cache is not available."
+msgstr "Dokumenthurtigbufferen er ikke tilgjengelig."
+
+msgid "Document download failed with HTTP %1."
+msgstr "Nedlasting av dokument mislyktes med HTTP %1."
+
+msgid "Document preview requires the native network backend."
+msgstr "Dokumentforhåndsvisning krever den native nettverksbackend-en."
+
+msgid "Open with"
+msgstr "Åpne med"
+
+msgid "Opening..."
+msgstr "Åpner..."
+
+msgid "Sign in again before viewing this document."
+msgstr "Logg inn på nytt før du viser dette dokumentet."
+
+msgid "The downloaded document could not be saved."
+msgstr "Det nedlastede dokumentet kunne ikke lagres."
+
+msgid "The downloaded document is empty."
+msgstr "Det nedlastede dokumentet er tomt."
+
+msgid "This document's location is unknown."
+msgstr "Plasseringen til dette dokumentet er ukjent."
+
+msgid "View"
+msgstr "Vis"
+
+msgid "Sign this document?"
+msgstr "Signere dette dokumentet?"
+
+msgid "This will sign \"%1\" using LibreSign's click-to-sign method. This cannot be undone."
+msgstr "Dette vil signere \"%1\" med LibreSigns klikk-for-å-signere-metode. Dette kan ikke angres."
+
+msgid "Sign"
+msgstr "Signer"
+
+msgid "Signing..."
+msgstr "Signerer..."
+
+msgid "Signed"
+msgstr "Signert"
+
+msgid "\"%1\" has been signed."
+msgstr "\"%1\" er signert."
+
+msgid "Could not sign document"
+msgstr "Kunne ikke signere dokumentet"
+
+msgid "Sign in again before signing this document."
+msgstr "Logg inn på nytt før du signerer dette dokumentet."
+
+msgid "Signing failed with HTTP %1."
+msgstr "Signering mislyktes med HTTP %1."
+
+msgid "Signing failed because the network request could not be completed."
+msgstr "Signering mislyktes fordi nettverksforespørselen ikke kunne fullføres."
+
+msgid "Signing timed out."
+msgstr "Signering fikk tidsavbrudd."
+
+msgid "Could not determine your signature request for this document."
+msgstr "Kunne ikke fastslå signaturforespørselen din for dette dokumentet."
+
+msgid "To sign"
+msgstr "Å signere"
+
+msgid "%1 signed document(s)."
+msgstr "%1 signerte dokument."
+
+msgid "No signed documents yet."
+msgstr "Ingen signerte dokumenter ennå."
+
+msgid "No signed documents yet"
+msgstr "Ingen signerte dokumenter ennå"
+
+msgid "Documents you have signed will appear here."
+msgstr "Dokumenter du har signert, vises her."
+
+msgid "Signed %1"
+msgstr "Signert %1"
+
+msgid "Validating..."
+msgstr "Validerer..."
+
+msgid "Validate"
+msgstr "Valider"
+
+msgid "Signature validation"
+msgstr "Signaturvalidering"
+
+msgid "Unknown signer"
+msgstr "Ukjent signatar"
+
+msgid "Could not validate document"
+msgstr "Kunne ikke validere dokumentet"
+
+msgid "Sign in again before validating this document."
+msgstr "Logg inn på nytt før du validerer dette dokumentet."
+
+msgid "Validation failed with HTTP %1."
+msgstr "Validering mislyktes med HTTP %1."
+
+msgid "Validation failed because the network request could not be completed."
+msgstr "Validering mislyktes fordi nettverksforespørselen ikke kunne fullføres."
+
+msgid "Validation timed out."
+msgstr "Validering fikk tidsavbrudd."
+
+msgid "Pull to refresh"
+msgstr "Dra for å oppdatere"
+
+msgid "Release to refresh"
+msgstr "Slipp for å oppdatere"
+
+msgid "Refreshing..."
+msgstr "Oppdaterer..."
+
+
+msgid "AI-assisted translation"
+msgstr "KI-assistert oversettelse"
+
+msgid "Some translations are AI-assisted and have not been fully reviewed."
+msgstr "Noen oversettelser er KI-assisterte og er ikke fullstendig gjennomgått."
+
+msgid "Sort"
+msgstr "Sorter"
+
+msgid "Newest first"
+msgstr "Nyeste først"
+
+msgid "Oldest first"
+msgstr "Eldste først"
+
+msgid "Name (A-Z)"
+msgstr "Navn (A-Å)"

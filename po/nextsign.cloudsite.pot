@@ -1,0 +1,693 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nextsign.cloudsite package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: nextsign.cloudsite\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-29 22:41+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: DocumentDownloader.cpp:73 qml/backend/LibreSignApiClient.qml:22
+#: qml/backend/LibreSignApiClient.qml:70 qml/backend/LibreSignApiClient.qml:111
+msgid "Account credentials are incomplete."
+msgstr ""
+
+#: DocumentDownloader.cpp:91
+msgid "Document download failed with HTTP %1."
+msgstr ""
+
+#: DocumentDownloader.cpp:95
+msgid "The downloaded document is empty."
+msgstr ""
+
+#: DocumentDownloader.cpp:101
+msgid "Document cache is not available."
+msgstr ""
+
+#: DocumentDownloader.cpp:106
+msgid "Document cache could not be prepared."
+msgstr ""
+
+#: DocumentDownloader.cpp:126
+msgid "The downloaded document could not be saved."
+msgstr ""
+
+#: qml/backend/LibreSignApiClient.qml:39
+msgid "LibreSign does not appear to be installed on this Nextcloud server."
+msgstr ""
+
+#: qml/backend/LibreSignApiClient.qml:43
+msgid "LibreSign request failed with HTTP %1."
+msgstr ""
+
+#: qml/backend/LibreSignApiClient.qml:49 qml/backend/LibreSignApiClient.qml:136
+msgid "LibreSign returned an unexpected response."
+msgstr ""
+
+#: qml/backend/LibreSignApiClient.qml:57
+msgid ""
+"LibreSign request failed because the network request could not be completed."
+msgstr ""
+
+#: qml/backend/LibreSignApiClient.qml:61
+msgid "LibreSign request timed out."
+msgstr ""
+
+#: qml/backend/LibreSignApiClient.qml:88
+msgid "Signing failed with HTTP %1."
+msgstr ""
+
+#: qml/backend/LibreSignApiClient.qml:97
+msgid "Signing failed because the network request could not be completed."
+msgstr ""
+
+#: qml/backend/LibreSignApiClient.qml:101
+msgid "Signing timed out."
+msgstr ""
+
+#: qml/backend/LibreSignApiClient.qml:130
+msgid "Validation failed with HTTP %1."
+msgstr ""
+
+#: qml/backend/LibreSignApiClient.qml:142
+msgid "Validation failed because the network request could not be completed."
+msgstr ""
+
+#: qml/backend/LibreSignApiClient.qml:145
+msgid "Validation timed out."
+msgstr ""
+
+#: qml/backend/SignController.qml:8 qml/backend/SignController.qml:240
+msgid "Select an account to load documents waiting for your signature."
+msgstr ""
+
+#: qml/backend/SignController.qml:9 qml/backend/SignController.qml:241
+msgid "No account"
+msgstr ""
+
+#: qml/backend/SignController.qml:64
+msgid "Signed in. Loading documents..."
+msgstr ""
+
+#: qml/backend/SignController.qml:65
+msgid "Syncing"
+msgstr ""
+
+#: qml/backend/SignController.qml:73
+msgid "Authentication failed"
+msgstr ""
+
+#: qml/backend/SignController.qml:88
+msgid "%1 signed document(s)."
+msgstr ""
+
+#: qml/backend/SignController.qml:89
+msgid "No signed documents yet."
+msgstr ""
+
+#: qml/backend/SignController.qml:91
+msgid "%1 document(s) waiting for your signature."
+msgstr ""
+
+#: qml/backend/SignController.qml:92
+msgid "No documents waiting for your signature."
+msgstr ""
+
+#: qml/backend/SignController.qml:93
+msgid "Up to date"
+msgstr ""
+
+#: qml/backend/SignController.qml:102
+msgid "Sync failed"
+msgstr ""
+
+#: qml/backend/SignController.qml:163 qml/backend/SignController.qml:215
+msgid "This document's location is unknown."
+msgstr ""
+
+#: qml/backend/SignController.qml:167
+msgid "Sign in again before viewing this document."
+msgstr ""
+
+#: qml/backend/SignController.qml:171
+msgid "Document preview requires the native network backend."
+msgstr ""
+
+#: qml/backend/SignController.qml:193
+msgid "Could not determine your signature request for this document."
+msgstr ""
+
+#: qml/backend/SignController.qml:197
+msgid "Sign in again before signing this document."
+msgstr ""
+
+#: qml/backend/SignController.qml:219
+msgid "Sign in again before validating this document."
+msgstr ""
+
+#: qml/backend/SignController.qml:250
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:418
+msgid "Verifying account..."
+msgstr ""
+
+#: qml/backend/SignController.qml:251
+msgid "Verifying"
+msgstr ""
+
+#: qml/pages/AboutPage.qml:5
+msgid "NextSign"
+msgstr ""
+
+#: qml/pages/DocumentExportPage.qml:7
+msgid "Open with"
+msgstr ""
+
+#: qml/pages/DocumentExportPage.qml:71
+msgid "Document"
+msgstr ""
+
+#: qml/pages/HomePage.qml:62 qml/pages/HomePage.qml:202
+#: qml/pages/HomePage.qml:251
+msgid "Signed"
+msgstr ""
+
+#: qml/pages/HomePage.qml:62
+msgid "To sign"
+msgstr ""
+
+#: qml/pages/HomePage.qml:83
+msgid "Status"
+msgstr ""
+
+#: qml/pages/HomePage.qml:87
+msgid "Refresh"
+msgstr ""
+
+#: qml/pages/HomePage.qml:96 qml/pages/HomePage.qml:227
+#: qml/pages/HomePage.qml:256 qml/pages/HomePage.qml:271
+#: qml/pages/HomePage.qml:286 qml/pages/HomePage.qml:301
+msgid "Close"
+msgstr ""
+
+#: qml/pages/HomePage.qml:107
+msgid "Sort"
+msgstr ""
+
+#: qml/pages/HomePage.qml:111
+msgid "Newest first"
+msgstr ""
+
+#: qml/pages/HomePage.qml:117
+msgid "Oldest first"
+msgstr ""
+
+#: qml/pages/HomePage.qml:123
+msgid "Name (A-Z)"
+msgstr ""
+
+#: qml/pages/HomePage.qml:207
+msgid "Unknown signer"
+msgstr ""
+
+#: qml/pages/HomePage.qml:223
+msgid "Could not open document"
+msgstr ""
+
+#: qml/pages/HomePage.qml:238
+msgid "Sign this document?"
+msgstr ""
+
+#: qml/pages/HomePage.qml:239
+msgid ""
+"This will sign \"%1\" using LibreSign's click-to-sign method. This cannot be "
+"undone."
+msgstr ""
+
+#: qml/pages/HomePage.qml:240 qml/pages/HomePage.qml:253
+#: qml/pages/HomePage.qml:385
+msgid "Untitled document"
+msgstr ""
+
+#: qml/pages/HomePage.qml:241 qml/pages/HomePage.qml:408
+msgid "Sign"
+msgstr ""
+
+#: qml/pages/HomePage.qml:252
+msgid "\"%1\" has been signed."
+msgstr ""
+
+#: qml/pages/HomePage.qml:267
+msgid "Could not sign document"
+msgstr ""
+
+#: qml/pages/HomePage.qml:282
+msgid "Signature validation"
+msgstr ""
+
+#: qml/pages/HomePage.qml:297
+msgid "Could not validate document"
+msgstr ""
+
+#: qml/pages/HomePage.qml:312
+msgid "No documents to sign"
+msgstr ""
+
+#: qml/pages/HomePage.qml:312
+msgid "No signed documents yet"
+msgstr ""
+
+#: qml/pages/HomePage.qml:314
+msgid "Documents you have signed will appear here."
+msgstr ""
+
+#: qml/pages/HomePage.qml:315
+msgid "Documents waiting for your signature will appear here."
+msgstr ""
+
+#: qml/pages/HomePage.qml:354
+msgid "Refreshing..."
+msgstr ""
+
+#: qml/pages/HomePage.qml:355
+msgid "Pull to refresh"
+msgstr ""
+
+#: qml/pages/HomePage.qml:355
+msgid "Release to refresh"
+msgstr ""
+
+#: qml/pages/HomePage.qml:393
+msgid "Signed %1"
+msgstr ""
+
+#: qml/pages/HomePage.qml:394
+msgid "Requested by %1"
+msgstr ""
+
+#: qml/pages/HomePage.qml:401
+msgid "Opening..."
+msgstr ""
+
+#: qml/pages/HomePage.qml:401
+msgid "View"
+msgstr ""
+
+#: qml/pages/HomePage.qml:408
+msgid "Signing..."
+msgstr ""
+
+#: qml/pages/HomePage.qml:419
+msgid "Validate"
+msgstr ""
+
+#: qml/pages/HomePage.qml:419
+msgid "Validating..."
+msgstr ""
+
+#: qml/pages/HomePage.qml:439
+#: vendor/NextCommon/qml/NextCommon/LanguagePage.qml:14
+msgid "Language"
+msgstr ""
+
+#: qml/pages/HomePage.qml:440
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:160
+msgid "Account"
+msgstr ""
+
+#: qml/pages/HomePage.qml:441 qml/pages/SettingsPage.qml:9
+#: vendor/NextCommon/qml/NextCommon/SettingsShell.qml:8
+msgid "Settings"
+msgstr ""
+
+#: qml/pages/HomePage.qml:442 vendor/NextCommon/qml/NextCommon/AboutPage.qml:18
+msgid "About"
+msgstr ""
+
+#: qml/pages/LanguageSelectionPage.qml:10
+msgid "Some translations are AI-assisted and have not been fully reviewed."
+msgstr ""
+
+#: qml/pages/LanguageSelectionPage.qml:12
+msgid "Default"
+msgstr ""
+
+#: qml/pages/LanguageSelectionPage.qml:12
+msgid "Follow system language"
+msgstr ""
+
+#: qml/pages/LanguageSelectionPage.qml:13
+msgid "Built-in source language"
+msgstr ""
+
+#: qml/pages/LanguageSelectionPage.qml:15
+#: qml/pages/LanguageSelectionPage.qml:16
+#: qml/pages/LanguageSelectionPage.qml:17
+#: qml/pages/LanguageSelectionPage.qml:18
+#: qml/pages/LanguageSelectionPage.qml:19
+#: qml/pages/LanguageSelectionPage.qml:20
+#: qml/pages/LanguageSelectionPage.qml:21
+#: qml/pages/LanguageSelectionPage.qml:22
+#: qml/pages/LanguageSelectionPage.qml:23
+#: qml/pages/LanguageSelectionPage.qml:24
+#: qml/pages/LanguageSelectionPage.qml:25
+#: qml/pages/LanguageSelectionPage.qml:26
+msgid "AI-assisted translation"
+msgstr ""
+
+#: qml/pages/SettingsPage.qml:14
+msgid "Nothing to configure yet."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AboutPage.qml:59
+msgid "Version %1"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AboutPage.qml:80
+msgid "License"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AboutPage.qml:105
+msgid "Contributors"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AboutPage.qml:119
+msgid "Disclaimer"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:30
+msgid "Select an account and authorize it for %1."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:37
+msgid "Accounts"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:115
+msgid "Allow account access"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:121
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:316
+msgid "Open System Settings"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:131
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:12
+#: vendor/UTControls/qml/UTControls/TimePicker.qml:13
+msgid "OK"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:227
+msgid "Server address"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:235
+msgid "https://cloud.example.com"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:244
+msgid ""
+"This app uses Ubuntu Touch Online Accounts. Edit this only if the system "
+"account did not expose the correct server address."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:252
+msgid "Available accounts"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:264
+msgid "Add another account in System Settings"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:297
+msgid "No Nextcloud account found"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:304
+msgid ""
+"Add a Nextcloud or ownCloud account in Ubuntu Touch System Settings > "
+"Accounts, and allow %1 to use it. Then return here and select it."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:418
+msgid "Verify selected account"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:440
+msgid "How to allow this account"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:503
+msgid "Selected %1. Verifying authorization..."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:521
+msgid "Saved account selected. Verify again if needed."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:565
+msgid "Select an account first."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:570
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:672
+msgid "Verifying Online Accounts authorization..."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:586
+msgid ""
+"Authorization succeeded, but the Ubuntu Touch account did not expose a "
+"server address for %1."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:588
+msgid ""
+"Authorization succeeded for %1. Credentials are available to the app, but "
+"were not displayed or stored."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:611
+msgid ""
+"Ubuntu Touch Online Accounts did not allow %1 to use this account yet. Check "
+"that %1 is enabled for this account in System Settings > Accounts, then "
+"return here."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:614
+#: vendor/NextCommon/qml/NextCommon/AccountSessionAdapter.qml:163
+msgid "Authorization was canceled."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:617
+msgid ""
+"Authorization failed. If the system did not show an Online Accounts prompt, "
+"open System Settings > Accounts and allow %1 for this account, then try "
+"again."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:633
+msgid ""
+"Open Ubuntu Touch System Settings manually, go to Accounts, add a Nextcloud "
+"or ownCloud account, then return to %1 and select it."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:640
+msgid ""
+"Open Ubuntu Touch System Settings manually, go to Accounts, select %1, allow "
+"%2 for that account, then return here. %2 will verify it automatically."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:644
+msgid ""
+"Open Ubuntu Touch System Settings manually, go to Accounts, select the "
+"Nextcloud account, allow %1 for that account, then return here. %1 will "
+"verify it automatically."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:697
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:725
+msgid "No account selected"
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountPage.qml:708
+msgid "The selected Ubuntu Touch account did not expose a server address."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountSessionAdapter.qml:63
+msgid "Desktop test credentials are incomplete."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountSessionAdapter.qml:82
+msgid ""
+"No account selected. Open Account first and authorize a Nextcloud account."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountSessionAdapter.qml:88
+msgid "No server URL configured. Open Account and authorize the OS account."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountSessionAdapter.qml:104
+msgid "Waiting for Online Accounts..."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountSessionAdapter.qml:110
+msgid ""
+"Selected Online Accounts service was not found. Open Account and verify the "
+"account again."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountSessionAdapter.qml:161
+msgid ""
+"This app is no longer allowed to use this account. Open System Settings > "
+"Accounts, allow it again, then try again."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountSessionAdapter.qml:165
+msgid "Authentication failed. Open Account and verify the account again."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/AccountSessionAdapter.qml:174
+msgid ""
+"Authentication succeeded, but the required Online Accounts credentials were "
+"not available."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/LanguagePage.qml:11
+msgid ""
+"Some translations are AI-assisted and not fully reviewed. You can help "
+"improve translations in the project repository."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/LanguagePage.qml:34
+msgid ""
+"Choose the language %1 should use. Restart the app after changing language."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/LanguagePage.qml:131
+msgid "%1 will follow the system language after restart."
+msgstr ""
+
+#: vendor/NextCommon/qml/NextCommon/LanguagePage.qml:132
+msgid "%1 will use %2 after restart."
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:13
+msgid "Today"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:14
+#: vendor/UTControls/qml/UTControls/TimePicker.qml:15
+msgid "Clear"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:15
+#: vendor/UTControls/qml/UTControls/ConfirmDialog.qml:11
+#: vendor/UTControls/qml/UTControls/TimePicker.qml:16
+msgid "Cancel"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:64
+msgid "April"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:64
+msgid "August"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:64
+msgid "December"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:64
+msgid "February"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:64
+msgid "January"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:64
+msgid "July"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:64
+msgid "June"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:64
+msgid "March"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:64
+msgid "May"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:64
+msgid "November"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:64
+msgid "October"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:64
+msgid "September"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:196
+msgid "Fri"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:196
+msgid "Mon"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:196
+msgid "Sat"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:196
+msgid "Sun"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:196
+msgid "Thu"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:196
+msgid "Tue"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:196
+msgid "Wed"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/ConfirmDialog.qml:10
+msgid "Confirm"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/TimePicker.qml:14
+msgid "Now"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/TimePicker.qml:139
+msgid "Hour"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/TimePicker.qml:183
+msgid "Min"
+msgstr ""
+
+#: vendor/UTControls/qml/UTControls/TreeReorderableListView.qml:1183
+msgid "< LEVEL"
+msgstr ""

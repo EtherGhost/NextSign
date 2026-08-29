@@ -1,0 +1,9 @@
+{
+    "policy_groups": [
+        "accounts",
+        "content_exchange",
+        "content_exchange_source",
+        "networking"
+    ],
+    "policy_version": "$ENV{APPARMOR_POLICY}"
+}

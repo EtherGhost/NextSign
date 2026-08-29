@@ -1,0 +1,41 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Main.qml</file>
+        <file>pages/HomePage.qml</file>
+        <file>pages/DocumentExportPage.qml</file>
+        <file>pages/AccountSelectionPage.qml</file>
+        <file>pages/SettingsPage.qml</file>
+        <file>pages/LanguageSelectionPage.qml</file>
+        <file>pages/AboutPage.qml</file>
+        <file>backend/AppController.qml</file>
+        <file>backend/SignController.qml</file>
+        <file>backend/LibreSignApiClient.qml</file>
+        <file>backend/LibreSignApiCore.js</file>
+        <file alias="NextCommon/VERSION">../vendor/NextCommon/qml/NextCommon/VERSION</file>
+        <file alias="NextCommon/AboutPage.qml">../vendor/NextCommon/qml/NextCommon/AboutPage.qml</file>
+        <file alias="NextCommon/AccountPage.qml">../vendor/NextCommon/qml/NextCommon/AccountPage.qml</file>
+        <file alias="NextCommon/AccountSessionAdapter.qml">../vendor/NextCommon/qml/NextCommon/AccountSessionAdapter.qml</file>
+        <file alias="NextCommon/AvatarButton.qml">../vendor/NextCommon/qml/NextCommon/AvatarButton.qml</file>
+        <file alias="NextCommon/DrawerNavItem.qml">../vendor/NextCommon/qml/NextCommon/DrawerNavItem.qml</file>
+        <file alias="NextCommon/DrawerShell.qml">../vendor/NextCommon/qml/NextCommon/DrawerShell.qml</file>
+        <file alias="NextCommon/LanguagePage.qml">../vendor/NextCommon/qml/NextCommon/LanguagePage.qml</file>
+        <file alias="NextCommon/MainTopBar.qml">../vendor/NextCommon/qml/NextCommon/MainTopBar.qml</file>
+        <file alias="NextCommon/SettingsCard.qml">../vendor/NextCommon/qml/NextCommon/SettingsCard.qml</file>
+        <file alias="NextCommon/SettingsShell.qml">../vendor/NextCommon/qml/NextCommon/SettingsShell.qml</file>
+        <file alias="NextCommon/UrlHelpers.js">../vendor/NextCommon/js/UrlHelpers.js</file>
+        <file alias="NextCommon/TextHelpers.js">../vendor/NextCommon/js/TextHelpers.js</file>
+        <file alias="UTControls/qmldir">../vendor/UTControls/qml/UTControls/qmldir</file>
+        <file alias="UTControls/VERSION">../vendor/UTControls/qml/UTControls/VERSION</file>
+        <file alias="UTControls/AppButton.qml">../vendor/UTControls/qml/UTControls/AppButton.qml</file>
+        <file alias="UTControls/ConfirmDialog.qml">../vendor/UTControls/qml/UTControls/ConfirmDialog.qml</file>
+        <file alias="UTControls/EmptyState.qml">../vendor/UTControls/qml/UTControls/EmptyState.qml</file>
+        <file alias="UTControls/ReorderableListView.qml">../vendor/UTControls/qml/UTControls/ReorderableListView.qml</file>
+        <file alias="UTControls/SectionHeader.qml">../vendor/UTControls/qml/UTControls/SectionHeader.qml</file>
+        <file alias="UTControls/StatusRow.qml">../vendor/UTControls/qml/UTControls/StatusRow.qml</file>
+        <file alias="UTControls/TreeReorderableListView.qml">../vendor/UTControls/qml/UTControls/TreeReorderableListView.qml</file>
+        <file alias="UTControls/CalendarDatePicker.qml">../vendor/UTControls/qml/UTControls/CalendarDatePicker.qml</file>
+        <file alias="UTControls/TimePicker.qml">../vendor/UTControls/qml/UTControls/TimePicker.qml</file>
+        <file alias="UTControls/FlatActionButton.qml">../vendor/UTControls/qml/UTControls/FlatActionButton.qml</file>
+        <file alias="UTControls/FlatStepButton.qml">../vendor/UTControls/qml/UTControls/FlatStepButton.qml</file>
+    </qresource>
+</RCC>

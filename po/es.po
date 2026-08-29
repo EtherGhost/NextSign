@@ -1,0 +1,433 @@
+# SOME DESCRIPTIVE TITLE.
+# Spanish translations for nextsign.cloudsite package.
+# This file is distributed under the same license as the nextsign.cloudsite package.
+# AI-assisted starter translation; please review before relying on wording.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nextsign.cloudsite\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-29 00:00+0000\n"
+"PO-Revision-Date: 2026-08-29 00:00+0200\n"
+"Last-Translator: AI-assisted starter translation\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "Default"
+msgstr "Predeterminado"
+
+msgid "Follow system language"
+msgstr "Seguir idioma del sistema"
+
+msgid "Built-in source language"
+msgstr "Idioma fuente integrado"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Close"
+msgstr "Cerrar"
+
+msgid "Language"
+msgstr "Idioma"
+
+msgid "Account"
+msgstr "Cuenta"
+
+msgid "Settings"
+msgstr "Ajustes"
+
+msgid "About"
+msgstr "Acerca de"
+
+msgid "Version %1"
+msgstr "Versión %1"
+
+msgid "License"
+msgstr "Licencia"
+
+msgid "Contributors"
+msgstr "Colaboradores"
+
+msgid "Disclaimer"
+msgstr "Aviso legal"
+
+msgid "Select an account and authorize it for %1."
+msgstr "Seleccione una cuenta y autorícela para %1."
+
+msgid "Accounts"
+msgstr "Cuentas"
+
+msgid "Allow account access"
+msgstr "Permitir acceso a la cuenta"
+
+msgid "Open System Settings"
+msgstr "Abrir Ajustes del sistema"
+
+msgid "OK"
+msgstr "Aceptar"
+
+msgid "Server address"
+msgstr "Dirección del servidor"
+
+msgid "https://cloud.example.com"
+msgstr "https://cloud.example.com"
+
+msgid "Available accounts"
+msgstr "Cuentas disponibles"
+
+msgid "No Nextcloud account found"
+msgstr "No Nextcloud account found"
+
+msgid "Verify selected account"
+msgstr "Verify selected account"
+
+msgid "Verifying account..."
+msgstr "Verificando cuenta..."
+
+msgid "How to allow this account"
+msgstr "Cómo permitir esta cuenta"
+
+msgid "Selected %1. Verifying authorization..."
+msgstr "Verifying Online Accounts authorization..."
+
+msgid "Saved account selected. Verify again if needed."
+msgstr "Saved account selected. Verify again if needed."
+
+msgid "Select an account first."
+msgstr "Select an account first."
+
+msgid "Verifying Online Accounts authorization..."
+msgstr "Verifying Online Accounts authorization..."
+
+msgid "No account selected"
+msgstr "No account selected"
+
+msgid "The selected Ubuntu Touch account did not expose a server address."
+msgstr "The selected Ubuntu Touch account did not expose a server address."
+
+msgid "Desktop test credentials are incomplete."
+msgstr "Desktop test credentials are incomplete."
+
+msgid "No server URL configured. Open Account and authorize the OS account."
+msgstr "No server URL configured. Open Account and authorize the OS account."
+
+msgid "Waiting for Online Accounts..."
+msgstr "Esperando cuentas en línea..."
+
+msgid "%1 will follow the system language after restart."
+msgstr "%1 seguirá el idioma del sistema tras reiniciar."
+
+msgid "%1 will use %2 after restart."
+msgstr "%1 usará %2 tras reiniciar."
+
+msgid "Add another account in System Settings"
+msgstr "Añade otra cuenta en Ajustes del sistema"
+
+msgid "Authentication failed. Open Account and verify the account again."
+msgstr "Error de autenticación. Abra Cuenta y verifique la cuenta de nuevo."
+
+msgid "Authorization was canceled."
+msgstr "Se canceló la autorización."
+
+msgid "No account"
+msgstr "Sin cuenta"
+
+msgid "Authentication failed"
+msgstr "Autenticación fallida"
+
+msgid "Verifying"
+msgstr "Verificando"
+
+msgid "Select an account to load documents waiting for your signature."
+msgstr "Seleccione una cuenta para cargar los documentos que esperan su firma."
+
+msgid "No documents to sign"
+msgstr "No hay documentos para firmar"
+
+msgid "Documents waiting for your signature will appear here."
+msgstr "Los documentos que esperan su firma aparecerán aquí."
+
+msgid "Nothing to configure yet."
+msgstr "Todavía no hay nada que configurar."
+
+msgid "Refresh"
+msgstr "Actualizar"
+
+msgid "Up to date"
+msgstr "Actualizado"
+
+msgid "Sync failed"
+msgstr "Error de sincronización"
+
+msgid "Syncing"
+msgstr "Sincronizando"
+
+msgid "Signed in. Loading documents..."
+msgstr "Sesión iniciada. Cargando documentos..."
+
+msgid "%1 document(s) waiting for your signature."
+msgstr "%1 documento(s) esperando su firma."
+
+msgid "No documents waiting for your signature."
+msgstr "No hay documentos esperando su firma."
+
+msgid "Untitled document"
+msgstr "Documento sin título"
+
+msgid "Requested by %1"
+msgstr "Solicitado por %1"
+
+msgid "Account credentials are incomplete."
+msgstr "Account credentials are incomplete."
+
+msgid "LibreSign does not appear to be installed on this Nextcloud server."
+msgstr "LibreSign no parece estar instalado en este servidor Nextcloud."
+
+msgid "LibreSign request failed with HTTP %1."
+msgstr "La solicitud a LibreSign falló con HTTP %1."
+
+msgid "LibreSign returned an unexpected response."
+msgstr "LibreSign devolvió una respuesta inesperada."
+
+msgid "LibreSign request failed because the network request could not be completed."
+msgstr "La solicitud a LibreSign falló porque no se pudo completar la solicitud de red."
+
+msgid "LibreSign request timed out."
+msgstr "La solicitud a LibreSign agotó el tiempo de espera."
+
+msgid "< LEVEL"
+msgstr "< NIVEL"
+
+msgid "April"
+msgstr "Abril"
+
+msgid "August"
+msgstr "Agosto"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Clear"
+msgstr "Borrar"
+
+msgid "Confirm"
+msgstr "Confirmar"
+
+msgid "December"
+msgstr "Diciembre"
+
+msgid "February"
+msgstr "Febrero"
+
+msgid "Fri"
+msgstr "Fri"
+
+msgid "Hour"
+msgstr "Hora"
+
+msgid "January"
+msgstr "Enero"
+
+msgid "July"
+msgstr "Julio"
+
+msgid "June"
+msgstr "Junio"
+
+msgid "March"
+msgstr "Marzo"
+
+msgid "May"
+msgstr "Mayo"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Mon"
+msgstr "Mon"
+
+msgid "November"
+msgstr "Noviembre"
+
+msgid "Now"
+msgstr "Ahora"
+
+msgid "October"
+msgstr "Octubre"
+
+msgid "Sat"
+msgstr "Sat"
+
+msgid "September"
+msgstr "Septiembre"
+
+msgid "Sun"
+msgstr "Sun"
+
+msgid "Thu"
+msgstr "Thu"
+
+msgid "Today"
+msgstr "Hoy"
+
+msgid "Tue"
+msgstr "Tue"
+
+msgid "Wed"
+msgstr "Wed"
+
+msgid "NextSign"
+msgstr "NextSign"
+
+msgid "Could not open document"
+msgstr "No se pudo abrir el documento"
+
+msgid "Document"
+msgstr "Documento"
+
+msgid "Document cache could not be prepared."
+msgstr "No se pudo preparar la caché de documentos."
+
+msgid "Document cache is not available."
+msgstr "La caché de documentos no está disponible."
+
+msgid "Document download failed with HTTP %1."
+msgstr "La descarga del documento falló con HTTP %1."
+
+msgid "Document preview requires the native network backend."
+msgstr "La vista previa del documento requiere el backend de red nativo."
+
+msgid "Open with"
+msgstr "Abrir con"
+
+msgid "Opening..."
+msgstr "Abriendo..."
+
+msgid "Sign in again before viewing this document."
+msgstr "Vuelva a iniciar sesión antes de ver este documento."
+
+msgid "The downloaded document could not be saved."
+msgstr "No se pudo guardar el documento descargado."
+
+msgid "The downloaded document is empty."
+msgstr "El documento descargado está vacío."
+
+msgid "This document's location is unknown."
+msgstr "Se desconoce la ubicación de este documento."
+
+msgid "View"
+msgstr "Ver"
+
+msgid "Sign this document?"
+msgstr "¿Firmar este documento?"
+
+msgid "This will sign \"%1\" using LibreSign's click-to-sign method. This cannot be undone."
+msgstr "Esto firmará \"%1\" usando el método de firma con un clic de LibreSign. Esto no se puede deshacer."
+
+msgid "Sign"
+msgstr "Firmar"
+
+msgid "Signing..."
+msgstr "Firmando..."
+
+msgid "Signed"
+msgstr "Firmado"
+
+msgid "\"%1\" has been signed."
+msgstr "\"%1\" ha sido firmado."
+
+msgid "Could not sign document"
+msgstr "No se pudo firmar el documento"
+
+msgid "Sign in again before signing this document."
+msgstr "Vuelva a iniciar sesión antes de firmar este documento."
+
+msgid "Signing failed with HTTP %1."
+msgstr "La firma falló con HTTP %1."
+
+msgid "Signing failed because the network request could not be completed."
+msgstr "La firma falló porque no se pudo completar la solicitud de red."
+
+msgid "Signing timed out."
+msgstr "La firma agotó el tiempo de espera."
+
+msgid "Could not determine your signature request for this document."
+msgstr "No se pudo determinar su solicitud de firma para este documento."
+
+msgid "To sign"
+msgstr "Para firmar"
+
+msgid "%1 signed document(s)."
+msgstr "%1 documento(s) firmado(s)."
+
+msgid "No signed documents yet."
+msgstr "Todavía no hay documentos firmados."
+
+msgid "No signed documents yet"
+msgstr "Todavía no hay documentos firmados"
+
+msgid "Documents you have signed will appear here."
+msgstr "Los documentos que haya firmado aparecerán aquí."
+
+msgid "Signed %1"
+msgstr "Firmado %1"
+
+msgid "Validating..."
+msgstr "Validando..."
+
+msgid "Validate"
+msgstr "Validar"
+
+msgid "Signature validation"
+msgstr "Validación de firma"
+
+msgid "Unknown signer"
+msgstr "Firmante desconocido"
+
+msgid "Could not validate document"
+msgstr "No se pudo validar el documento"
+
+msgid "Sign in again before validating this document."
+msgstr "Vuelva a iniciar sesión antes de validar este documento."
+
+msgid "Validation failed with HTTP %1."
+msgstr "La validación falló con HTTP %1."
+
+msgid "Validation failed because the network request could not be completed."
+msgstr "La validación falló porque no se pudo completar la solicitud de red."
+
+msgid "Validation timed out."
+msgstr "La validación agotó el tiempo de espera."
+
+msgid "Pull to refresh"
+msgstr "Tira para actualizar"
+
+msgid "Release to refresh"
+msgstr "Suelta para actualizar"
+
+msgid "Refreshing..."
+msgstr "Actualizando..."
+
+
+msgid "AI-assisted translation"
+msgstr "Traducción asistida por IA"
+
+msgid "Some translations are AI-assisted and have not been fully reviewed."
+msgstr "Algunas traducciones están asistidas por IA y no se han revisado completamente."
+
+msgid "Sort"
+msgstr "Ordenar"
+
+msgid "Newest first"
+msgstr "Más reciente primero"
+
+msgid "Oldest first"
+msgstr "Más antiguo primero"
+
+msgid "Name (A-Z)"
+msgstr "Nombre (A-Z)"

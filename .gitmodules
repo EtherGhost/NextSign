@@ -1,0 +1,6 @@
+[submodule "vendor/NextCommon"]
+	path = vendor/NextCommon
+	url = https://github.com/EtherGhost/NextCommon.git
+[submodule "vendor/UTControls"]
+	path = vendor/UTControls
+	url = https://github.com/EtherGhost/UTControls.git

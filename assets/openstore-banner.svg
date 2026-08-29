@@ -1,0 +1,41 @@
+<svg width="1600" height="720" viewBox="0 0 1600 720" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="720" fill="#f7f9fc"/>
+  <rect x="0" y="0" width="1600" height="720" fill="#1f6feb" opacity="0.08"/>
+
+  <g transform="translate(140 128)">
+    <rect width="176" height="176" rx="28" fill="#1f6feb"/>
+    <rect x="39" y="24" width="98" height="128" rx="10" fill="#ffffff"/>
+    <rect x="55" y="52" width="66" height="8" rx="4" fill="#1f6feb" opacity="0.35"/>
+    <rect x="55" y="74" width="50" height="8" rx="4" fill="#1f6feb" opacity="0.35"/>
+    <path d="M55 112 C 63 100, 72 122, 82 108 S 100 100, 116 114" stroke="#1f6feb" stroke-width="6" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <text x="140" y="396" fill="#172033" font-family="Ubuntu, Arial, sans-serif" font-size="86" font-weight="700">NextSign</text>
+  <text x="144" y="466" fill="#42526e" font-family="Ubuntu, Arial, sans-serif" font-size="34">Sign documents with a tap, using LibreSign on Nextcloud</text>
+  <text x="144" y="528" fill="#42526e" font-family="Ubuntu, Arial, sans-serif" font-size="28">Click-to-sign, no password or code required</text>
+
+  <g transform="translate(1000 120)">
+    <rect x="0" y="0" width="430" height="510" rx="34" fill="#172033" opacity="0.12"/>
+    <rect x="18" y="18" width="394" height="474" rx="28" fill="#ffffff"/>
+    <rect x="54" y="62" width="36" height="36" rx="18" fill="#1f6feb"/>
+    <rect x="112" y="68" width="220" height="24" rx="12" fill="#dce7f7"/>
+    <rect x="340" y="62" width="36" height="36" rx="18" fill="#dce7f7"/>
+
+    <text x="54" y="148" fill="#42526e" font-family="Ubuntu, Arial, sans-serif" font-size="20" font-weight="700">To sign</text>
+
+    <rect x="54" y="168" width="322" height="96" rx="14" fill="#f7f9fc" stroke="#dce7f7" stroke-width="2"/>
+    <rect x="74" y="192" width="180" height="16" rx="8" fill="#172033" opacity="0.75"/>
+    <rect x="74" y="220" width="140" height="12" rx="6" fill="#42526e" opacity="0.38"/>
+    <rect x="74" y="240" width="108" height="34" rx="17" fill="#1f6feb"/>
+    <text x="98" y="263" fill="#ffffff" font-family="Ubuntu, Arial, sans-serif" font-size="18" font-weight="700">Sign</text>
+
+    <rect x="54" y="282" width="322" height="96" rx="14" fill="#f7f9fc" stroke="#dce7f7" stroke-width="2"/>
+    <rect x="74" y="306" width="160" height="16" rx="8" fill="#172033" opacity="0.4"/>
+    <rect x="74" y="334" width="130" height="12" rx="6" fill="#42526e" opacity="0.25"/>
+    <circle cx="352" cy="330" r="16" fill="#5a8f3c"/>
+    <path d="M344 330 L350 337 L361 322" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <circle cx="342" cy="424" r="31" fill="#1f6feb"/>
+    <path d="M330 424 L338 433 L356 411" stroke="#ffffff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

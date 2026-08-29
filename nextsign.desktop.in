@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=NextSign
+Exec=nextsign %U
+Icon=assets/logo.svg
+Terminal=false
+Type=Application
+X-Lomiri-Touch=true

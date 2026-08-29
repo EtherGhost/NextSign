@@ -1,0 +1,14 @@
+{
+    "services": [
+        {
+            "name": "NextSign",
+            "description": "Use this Nextcloud account for NextSign.",
+            "provider": "nextcloud"
+        },
+        {
+            "name": "NextSign",
+            "description": "Use this ownCloud account for NextSign.",
+            "provider": "owncloud"
+        }
+    ]
+}

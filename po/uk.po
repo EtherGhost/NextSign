@@ -1,0 +1,433 @@
+# SOME DESCRIPTIVE TITLE.
+# Ukrainian translations for nextsign.cloudsite package.
+# This file is distributed under the same license as the nextsign.cloudsite package.
+# AI-assisted starter translation; please review before relying on wording.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nextsign.cloudsite\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-29 00:00+0000\n"
+"PO-Revision-Date: 2026-08-29 00:00+0200\n"
+"Last-Translator: AI-assisted starter translation\n"
+"Language-Team: Ukrainian\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "Default"
+msgstr "Типово"
+
+msgid "Follow system language"
+msgstr "Використовувати мову системи"
+
+msgid "Built-in source language"
+msgstr "Built-in source language"
+
+msgid "Status"
+msgstr "Стан"
+
+msgid "Close"
+msgstr "Закрити"
+
+msgid "Language"
+msgstr "Мова"
+
+msgid "Account"
+msgstr "Обліковий запис"
+
+msgid "Settings"
+msgstr "Налаштування"
+
+msgid "About"
+msgstr "Про застосунок"
+
+msgid "Version %1"
+msgstr "Версія %1"
+
+msgid "License"
+msgstr "Ліцензія"
+
+msgid "Contributors"
+msgstr "Учасники"
+
+msgid "Disclaimer"
+msgstr "Застереження"
+
+msgid "Select an account and authorize it for %1."
+msgstr "Виберіть обліковий запис і авторизуйте його для %1."
+
+msgid "Accounts"
+msgstr "Облікові записи"
+
+msgid "Allow account access"
+msgstr "Дозволити доступ до облікового запису"
+
+msgid "Open System Settings"
+msgstr "Відкрити Системні налаштування"
+
+msgid "OK"
+msgstr "ОК"
+
+msgid "Server address"
+msgstr "Адреса сервера"
+
+msgid "https://cloud.example.com"
+msgstr "https://cloud.example.com"
+
+msgid "Available accounts"
+msgstr "Доступні облікові записи"
+
+msgid "No Nextcloud account found"
+msgstr "No Nextcloud account found"
+
+msgid "Verify selected account"
+msgstr "Verify selected account"
+
+msgid "Verifying account..."
+msgstr "Перевірка облікового запису..."
+
+msgid "How to allow this account"
+msgstr "Як дозволити цей обліковий запис"
+
+msgid "Selected %1. Verifying authorization..."
+msgstr "Selected %1. Verifying authorization..."
+
+msgid "Saved account selected. Verify again if needed."
+msgstr "Saved account selected. Verify again if needed."
+
+msgid "Select an account first."
+msgstr "Select an account first."
+
+msgid "Verifying Online Accounts authorization..."
+msgstr "Verifying Online Accounts authorization..."
+
+msgid "No account selected"
+msgstr "Обліковий запис не вибрано"
+
+msgid "The selected Ubuntu Touch account did not expose a server address."
+msgstr "The selected Ubuntu Touch account did not expose a server address."
+
+msgid "Desktop test credentials are incomplete."
+msgstr "Desktop test credentials are incomplete."
+
+msgid "No server URL configured. Open Account and authorize the OS account."
+msgstr "No server URL configured. Open Account and authorize the OS account."
+
+msgid "Waiting for Online Accounts..."
+msgstr "Waiting for Online Accounts..."
+
+msgid "%1 will follow the system language after restart."
+msgstr "%1 використовуватиме мову системи після перезапуску."
+
+msgid "%1 will use %2 after restart."
+msgstr "%1 використовуватиме %2 після перезапуску."
+
+msgid "Add another account in System Settings"
+msgstr "Додайте ще один обліковий запис у Системних налаштуваннях"
+
+msgid "Authentication failed. Open Account and verify the account again."
+msgstr "Помилка автентифікації. Відкрийте «Обліковий запис» і підтвердьте його знову."
+
+msgid "Authorization was canceled."
+msgstr "Авторизацію скасовано."
+
+msgid "No account"
+msgstr "Немає облікового запису"
+
+msgid "Authentication failed"
+msgstr "Помилка автентифікації"
+
+msgid "Verifying"
+msgstr "Перевірка"
+
+msgid "Select an account to load documents waiting for your signature."
+msgstr "Виберіть обліковий запис, щоб завантажити документи, що очікують на ваш підпис."
+
+msgid "No documents to sign"
+msgstr "Немає документів для підпису"
+
+msgid "Documents waiting for your signature will appear here."
+msgstr "Тут з'являться документи, що очікують на ваш підпис."
+
+msgid "Nothing to configure yet."
+msgstr "Поки що нічого налаштовувати."
+
+msgid "Refresh"
+msgstr "Оновити"
+
+msgid "Up to date"
+msgstr "Актуально"
+
+msgid "Sync failed"
+msgstr "Помилка синхронізації"
+
+msgid "Syncing"
+msgstr "Синхронізація"
+
+msgid "Signed in. Loading documents..."
+msgstr "Вхід виконано. Завантаження документів..."
+
+msgid "%1 document(s) waiting for your signature."
+msgstr "%1 документ(ів) очікує на ваш підпис."
+
+msgid "No documents waiting for your signature."
+msgstr "Немає документів, що очікують на ваш підпис."
+
+msgid "Untitled document"
+msgstr "Документ без назви"
+
+msgid "Requested by %1"
+msgstr "Запитав(-ла): %1"
+
+msgid "Account credentials are incomplete."
+msgstr "Account credentials are incomplete."
+
+msgid "LibreSign does not appear to be installed on this Nextcloud server."
+msgstr "Схоже, LibreSign не встановлено на цьому сервері Nextcloud."
+
+msgid "LibreSign request failed with HTTP %1."
+msgstr "Запит до LibreSign не виконано, HTTP %1."
+
+msgid "LibreSign returned an unexpected response."
+msgstr "LibreSign повернув неочікувану відповідь."
+
+msgid "LibreSign request failed because the network request could not be completed."
+msgstr "Запит до LibreSign не виконано, оскільки не вдалося завершити мережевий запит."
+
+msgid "LibreSign request timed out."
+msgstr "Минув час очікування запиту до LibreSign."
+
+msgid "< LEVEL"
+msgstr "< РІВЕНЬ"
+
+msgid "April"
+msgstr "Квітень"
+
+msgid "August"
+msgstr "Серпень"
+
+msgid "Cancel"
+msgstr "Скасувати"
+
+msgid "Clear"
+msgstr "Очистити"
+
+msgid "Confirm"
+msgstr "Підтвердити"
+
+msgid "December"
+msgstr "Грудень"
+
+msgid "February"
+msgstr "Лютий"
+
+msgid "Fri"
+msgstr "Fri"
+
+msgid "Hour"
+msgstr "Година"
+
+msgid "January"
+msgstr "Січень"
+
+msgid "July"
+msgstr "Липень"
+
+msgid "June"
+msgstr "Червень"
+
+msgid "March"
+msgstr "Березень"
+
+msgid "May"
+msgstr "Травень"
+
+msgid "Min"
+msgstr "Хв"
+
+msgid "Mon"
+msgstr "Mon"
+
+msgid "November"
+msgstr "Листопад"
+
+msgid "Now"
+msgstr "Зараз"
+
+msgid "October"
+msgstr "Жовтень"
+
+msgid "Sat"
+msgstr "Sat"
+
+msgid "September"
+msgstr "Вересень"
+
+msgid "Sun"
+msgstr "Sun"
+
+msgid "Thu"
+msgstr "Thu"
+
+msgid "Today"
+msgstr "Сьогодні"
+
+msgid "Tue"
+msgstr "Tue"
+
+msgid "Wed"
+msgstr "Wed"
+
+msgid "NextSign"
+msgstr "NextSign"
+
+msgid "Could not open document"
+msgstr "Не вдалося відкрити документ"
+
+msgid "Document"
+msgstr "Документ"
+
+msgid "Document cache could not be prepared."
+msgstr "Не вдалося підготувати кеш документів."
+
+msgid "Document cache is not available."
+msgstr "Кеш документів недоступний."
+
+msgid "Document download failed with HTTP %1."
+msgstr "Не вдалося завантажити документ, HTTP %1."
+
+msgid "Document preview requires the native network backend."
+msgstr "Для попереднього перегляду документа потрібен вбудований мережевий модуль."
+
+msgid "Open with"
+msgstr "Відкрити за допомогою"
+
+msgid "Opening..."
+msgstr "Відкриття..."
+
+msgid "Sign in again before viewing this document."
+msgstr "Увійдіть знову, перш ніж переглядати цей документ."
+
+msgid "The downloaded document could not be saved."
+msgstr "Не вдалося зберегти завантажений документ."
+
+msgid "The downloaded document is empty."
+msgstr "Завантажений документ порожній."
+
+msgid "This document's location is unknown."
+msgstr "Розташування цього документа невідоме."
+
+msgid "View"
+msgstr "Перегляд"
+
+msgid "Sign this document?"
+msgstr "Підписати цей документ?"
+
+msgid "This will sign \"%1\" using LibreSign's click-to-sign method. This cannot be undone."
+msgstr "Це підпише «%1» за допомогою методу підпису одним натисканням LibreSign. Цю дію не можна скасувати."
+
+msgid "Sign"
+msgstr "Підписати"
+
+msgid "Signing..."
+msgstr "Підписання..."
+
+msgid "Signed"
+msgstr "Підписано"
+
+msgid "\"%1\" has been signed."
+msgstr "«%1» підписано."
+
+msgid "Could not sign document"
+msgstr "Не вдалося підписати документ"
+
+msgid "Sign in again before signing this document."
+msgstr "Увійдіть знову, перш ніж підписувати цей документ."
+
+msgid "Signing failed with HTTP %1."
+msgstr "Підписання не виконано, HTTP %1."
+
+msgid "Signing failed because the network request could not be completed."
+msgstr "Підписання не виконано, оскільки не вдалося завершити мережевий запит."
+
+msgid "Signing timed out."
+msgstr "Минув час очікування підписання."
+
+msgid "Could not determine your signature request for this document."
+msgstr "Не вдалося визначити ваш запит на підпис для цього документа."
+
+msgid "To sign"
+msgstr "На підпис"
+
+msgid "%1 signed document(s)."
+msgstr "%1 підписаних документів."
+
+msgid "No signed documents yet."
+msgstr "Поки що немає підписаних документів."
+
+msgid "No signed documents yet"
+msgstr "Поки що немає підписаних документів"
+
+msgid "Documents you have signed will appear here."
+msgstr "Тут з'являться підписані вами документи."
+
+msgid "Signed %1"
+msgstr "Підписано %1"
+
+msgid "Validating..."
+msgstr "Перевірка..."
+
+msgid "Validate"
+msgstr "Перевірити"
+
+msgid "Signature validation"
+msgstr "Перевірка підпису"
+
+msgid "Unknown signer"
+msgstr "Невідомий підписант"
+
+msgid "Could not validate document"
+msgstr "Не вдалося перевірити документ"
+
+msgid "Sign in again before validating this document."
+msgstr "Увійдіть знову, перш ніж перевіряти цей документ."
+
+msgid "Validation failed with HTTP %1."
+msgstr "Перевірку не виконано, HTTP %1."
+
+msgid "Validation failed because the network request could not be completed."
+msgstr "Перевірку не виконано, оскільки не вдалося завершити мережевий запит."
+
+msgid "Validation timed out."
+msgstr "Минув час очікування перевірки."
+
+msgid "Pull to refresh"
+msgstr "Pull to refresh"
+
+msgid "Release to refresh"
+msgstr "Release to refresh"
+
+msgid "Refreshing..."
+msgstr "Оновлення..."
+
+
+msgid "AI-assisted translation"
+msgstr "Переклад за допомогою ШІ"
+
+msgid "Some translations are AI-assisted and have not been fully reviewed."
+msgstr "Деякі переклади виконано за допомогою ШІ і їх не було повністю перевірено."
+
+msgid "Sort"
+msgstr "Сортувати"
+
+msgid "Newest first"
+msgstr "Спочатку нові"
+
+msgid "Oldest first"
+msgstr "Спочатку старі"
+
+msgid "Name (A-Z)"
+msgstr "Ім'я (А-Я)"
