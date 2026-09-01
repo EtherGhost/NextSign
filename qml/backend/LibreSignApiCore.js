@@ -17,10 +17,14 @@ function normalizeServerUrl(value) {
     return "https://" + url
 }
 
-// status: 1 = able to sign ("Ready to sign"), 3 = signed. See LibreSign's
-// file/list status[] parameter - other values (0=draft, 2=partial, 4=deleted)
-// are not used by this app.
-function parseFileList(responseText, status) {
+// Returns every document across the statuses loadFiles() asked for (1=ready to sign,
+// 2=partially signed, 3=fully signed), each tagged with its own file-level status and
+// full signer list - a single unified list mirroring LibreSign's own web UI, rather
+// than a tab-filtered subset. A multi-signer document's file-level status advances to
+// 2 the moment ANY signer finishes, not just the current one, so "can I sign this
+// right now" is decided per-signer ("canSignNow": mySigner exists and hasn't signed
+// yet), not by trusting the document's overall status.
+function parseFileList(responseText) {
     try {
         var payload = JSON.parse(responseText)
         var data = payload && payload.ocs && payload.ocs.data ? payload.ocs.data : null
@@ -31,20 +35,37 @@ function parseFileList(responseText, status) {
         var result = []
         for (var i = 0; i < data.data.length; ++i) {
             var item = data.data[i]
-            // canSign only exists on the lightweight (non-detailed) response shape - the
-            // server-side status[]= filter already means the right thing here, so that's
-            // the authoritative check, not a client-side canSign field that details=true
-            // responses don't even include.
-            if (!item || item.status !== status) {
+            if (!item) {
                 continue
             }
-            var firstFile = Array.isArray(item.files) && item.files.length > 0 ? item.files[0] : null
             var mySigner = null
+            var signers = []
             if (Array.isArray(item.signers)) {
                 for (var s = 0; s < item.signers.length; ++s) {
-                    if (item.signers[s] && item.signers[s].me === true) {
-                        mySigner = item.signers[s]
-                        break
+                    var signer = item.signers[s]
+                    if (!signer) {
+                        continue
+                    }
+                    if (signer.me === true) {
+                        mySigner = signer
+                    }
+                    signers.push({
+                        "displayName": signer.displayName || "",
+                        "signed": signer.signed || "",
+                        "me": signer.me === true
+                    })
+                }
+            }
+            var firstFile = Array.isArray(item.files) && item.files.length > 0 ? item.files[0] : null
+            var visibleElements = []
+            if (mySigner && Array.isArray(mySigner.visibleElements)) {
+                for (var v = 0; v < mySigner.visibleElements.length; ++v) {
+                    var visibleElement = mySigner.visibleElements[v]
+                    if (visibleElement && typeof visibleElement.elementId === "number") {
+                        visibleElements.push({
+                            "elementId": visibleElement.elementId,
+                            "type": visibleElement.type || ""
+                        })
                     }
                 }
             }
@@ -59,7 +80,18 @@ function parseFileList(responseText, status) {
                 "requestedBy": item.requested_by && item.requested_by.displayName ? item.requested_by.displayName : "",
                 "createdAt": item.created_at || "",
                 "signedAt": mySigner && mySigner.signed ? mySigner.signed : "",
-                "filePath": firstFile && firstFile.file ? firstFile.file : ""
+                "filePath": firstFile && firstFile.file ? firstFile.file : "",
+                // Raw file-level status (0=draft, 1=ready to sign, 2=partially signed,
+                // 3=fully signed, 4=deleted) - only 1/2/3 are ever requested/shown.
+                "fileStatus": typeof item.status === "number" ? item.status : -1,
+                "canSignNow": !!mySigner && !mySigner.signed,
+                "signers": signers,
+                // Placeholder position(s) already defined on the document for this signer
+                // (set up when the document was sent for signing). Without forwarding these
+                // as "documentElementId" (plus a matching "profileNodeId" - see
+                // parseSignatureElements) in the sign request, LibreSign records the
+                // signature with no visible mark - see sign/uuid/{uuid} in LibreSignApiClient.qml.
+                "visibleElements": visibleElements
             })
         }
         return result
@@ -96,6 +128,36 @@ function parseValidation(responseText) {
             "statusText": data.statusText || "",
             "signers": signers
         }
+    } catch (e) {
+        return null
+    }
+}
+
+// GET signature/elements returns the signer's own registered signature/initials
+// images (set up via LibreSign's web UI, or elsewhere) - each one's Nextcloud file
+// node id is the "profileNodeId" the sign request needs alongside a documentElementId
+// to actually render that image, rather than just recording the signature.
+function parseSignatureElements(responseText) {
+    try {
+        var payload = JSON.parse(responseText)
+        var data = payload && payload.ocs && payload.ocs.data ? payload.ocs.data : null
+        if (!data || !Array.isArray(data.elements)) {
+            return null
+        }
+
+        var result = []
+        for (var i = 0; i < data.elements.length; ++i) {
+            var element = data.elements[i]
+            if (!element || !element.file || typeof element.file.nodeId !== "number") {
+                continue
+            }
+            result.push({
+                "type": element.type || "",
+                "nodeId": element.file.nodeId,
+                "starred": element.starred === true
+            })
+        }
+        return result
     } catch (e) {
         return null
     }
