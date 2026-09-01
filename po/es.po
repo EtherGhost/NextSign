@@ -464,3 +464,57 @@ msgstr "Firmar documento"
 
 msgid "Validation info"
 msgstr "Información de validación"
+
+msgid "Change signature image"
+msgstr "Cambiar imagen de firma"
+
+msgid "Could not read the selected image."
+msgstr "No se pudo leer la imagen seleccionada."
+
+msgid "Could not use the selected image. Try a smaller picture."
+msgstr "No se pudo usar la imagen seleccionada. Prueba con una imagen más pequeña."
+
+msgid "Image cache could not be prepared."
+msgstr "No se pudo preparar la caché de imágenes."
+
+msgid "Image cache is not available."
+msgstr "La caché de imágenes no está disponible."
+
+msgid "Image download failed with HTTP %1."
+msgstr "La descarga de la imagen falló con HTTP %1."
+
+msgid "No picture was selected."
+msgstr "No se seleccionó ninguna imagen."
+
+msgid "Pick an image"
+msgstr "Elegir una imagen"
+
+msgid "Pick an image of your signature. Documents with a visible signature field will use it when you sign."
+msgstr "Elige una imagen de tu firma. Los documentos con un campo de firma visible la usarán al firmar."
+
+msgid "Pick signature image"
+msgstr "Elegir imagen de firma"
+
+msgid "Picking a signature image requires the native network backend."
+msgstr "Elegir una imagen de firma requiere el backend de red nativo."
+
+msgid "Saving..."
+msgstr "Guardando..."
+
+msgid "Sign in again before setting up your signature."
+msgstr "Inicia sesión de nuevo antes de configurar tu firma."
+
+msgid "Signature"
+msgstr "Firma"
+
+msgid "The downloaded image could not be saved."
+msgstr "La imagen descargada no se pudo guardar."
+
+msgid "The downloaded image is empty."
+msgstr "La imagen descargada está vacía."
+
+msgid "The picture provider did not start a transfer."
+msgstr "El proveedor de imágenes no inició una transferencia."
+
+msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
+msgstr "Tienes una imagen de firma configurada. Los documentos con un campo de firma visible la usarán al firmar."

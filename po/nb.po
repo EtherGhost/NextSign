@@ -464,3 +464,57 @@ msgstr "Signer dokument"
 
 msgid "Validation info"
 msgstr "Valideringsinformasjon"
+
+msgid "Change signature image"
+msgstr "Endre signaturbilde"
+
+msgid "Could not read the selected image."
+msgstr "Kunne ikke lese det valgte bildet."
+
+msgid "Could not use the selected image. Try a smaller picture."
+msgstr "Kunne ikke bruke det valgte bildet. Prøv et mindre bilde."
+
+msgid "Image cache could not be prepared."
+msgstr "Bildebufferen kunne ikke forberedes."
+
+msgid "Image cache is not available."
+msgstr "Bildebufferen er ikke tilgjengelig."
+
+msgid "Image download failed with HTTP %1."
+msgstr "Bildenedlastingen mislyktes med HTTP %1."
+
+msgid "No picture was selected."
+msgstr "Ingen bilde ble valgt."
+
+msgid "Pick an image"
+msgstr "Velg et bilde"
+
+msgid "Pick an image of your signature. Documents with a visible signature field will use it when you sign."
+msgstr "Velg et bilde av signaturen din. Dokumenter med et synlig signaturfelt vil bruke det når du signerer."
+
+msgid "Pick signature image"
+msgstr "Velg signaturbilde"
+
+msgid "Picking a signature image requires the native network backend."
+msgstr "Å velge et signaturbilde krever den native nettverksbackend-en."
+
+msgid "Saving..."
+msgstr "Lagrer..."
+
+msgid "Sign in again before setting up your signature."
+msgstr "Logg inn igjen før du setter opp signaturen din."
+
+msgid "Signature"
+msgstr "Signatur"
+
+msgid "The downloaded image could not be saved."
+msgstr "Det nedlastede bildet kunne ikke lagres."
+
+msgid "The downloaded image is empty."
+msgstr "Det nedlastede bildet er tomt."
+
+msgid "The picture provider did not start a transfer."
+msgstr "Bildeleverandøren startet ingen overføring."
+
+msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
+msgstr "Du har et signaturbilde satt opp. Dokumenter med et synlig signaturfelt vil bruke det når du signerer."

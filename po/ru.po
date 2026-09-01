@@ -464,3 +464,57 @@ msgstr "Подписать документ"
 
 msgid "Validation info"
 msgstr "Информация о проверке"
+
+msgid "Change signature image"
+msgstr "Изменить изображение подписи"
+
+msgid "Could not read the selected image."
+msgstr "Не удалось прочитать выбранное изображение."
+
+msgid "Could not use the selected image. Try a smaller picture."
+msgstr "Не удалось использовать выбранное изображение. Попробуйте изображение меньшего размера."
+
+msgid "Image cache could not be prepared."
+msgstr "Не удалось подготовить кэш изображений."
+
+msgid "Image cache is not available."
+msgstr "Кэш изображений недоступен."
+
+msgid "Image download failed with HTTP %1."
+msgstr "Загрузка изображения не удалась, код HTTP %1."
+
+msgid "No picture was selected."
+msgstr "Изображение не выбрано."
+
+msgid "Pick an image"
+msgstr "Выбрать изображение"
+
+msgid "Pick an image of your signature. Documents with a visible signature field will use it when you sign."
+msgstr "Выберите изображение своей подписи. Документы с видимым полем подписи будут использовать его при подписании."
+
+msgid "Pick signature image"
+msgstr "Выбрать изображение подписи"
+
+msgid "Picking a signature image requires the native network backend."
+msgstr "Для выбора изображения подписи требуется встроенный сетевой модуль."
+
+msgid "Saving..."
+msgstr "Сохранение..."
+
+msgid "Sign in again before setting up your signature."
+msgstr "Войдите снова, прежде чем настраивать подпись."
+
+msgid "Signature"
+msgstr "Подпись"
+
+msgid "The downloaded image could not be saved."
+msgstr "Не удалось сохранить загруженное изображение."
+
+msgid "The downloaded image is empty."
+msgstr "Загруженное изображение пустое."
+
+msgid "The picture provider did not start a transfer."
+msgstr "Поставщик изображений не начал передачу."
+
+msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
+msgstr "У вас настроено изображение подписи. Документы с видимым полем подписи будут использовать его при подписании."

@@ -37,11 +37,13 @@ class ProjectMetadataTests(unittest.TestCase):
             ["accounts", "content_exchange", "content_exchange_source", "networking"],
         )
 
-    def test_content_hub_declares_documents_only(self):
+    def test_content_hub_declares_only_documents_and_pictures(self):
         content_hub = json.loads(read_text("nextsign-contenthub.json"))
 
-        for key in ("destination", "share", "source"):
-            self.assertEqual(content_hub.get(key), ["documents"], key)
+        self.assertEqual(content_hub.get("destination"), ["documents"])
+        self.assertEqual(content_hub.get("share"), ["documents"])
+        # "pictures" lets the user pick a signature image from the Gallery/Files app.
+        self.assertEqual(content_hub.get("source"), ["documents", "pictures"])
 
     def test_accounts_file_declares_nextcloud_and_owncloud_services(self):
         accounts = json.loads(read_text("nextsign.accounts"))

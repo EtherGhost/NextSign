@@ -464,3 +464,57 @@ msgstr "Underskriv dokument"
 
 msgid "Validation info"
 msgstr "Valideringsoplysninger"
+
+msgid "Change signature image"
+msgstr "Skift signaturbillede"
+
+msgid "Could not read the selected image."
+msgstr "Kunne ikke læse det valgte billede."
+
+msgid "Could not use the selected image. Try a smaller picture."
+msgstr "Kunne ikke bruge det valgte billede. Prøv et mindre billede."
+
+msgid "Image cache could not be prepared."
+msgstr "Billedcachen kunne ikke forberedes."
+
+msgid "Image cache is not available."
+msgstr "Billedcachen er ikke tilgængelig."
+
+msgid "Image download failed with HTTP %1."
+msgstr "Billeddownload mislykkedes med HTTP %1."
+
+msgid "No picture was selected."
+msgstr "Intet billede blev valgt."
+
+msgid "Pick an image"
+msgstr "Vælg et billede"
+
+msgid "Pick an image of your signature. Documents with a visible signature field will use it when you sign."
+msgstr "Vælg et billede af din underskrift. Dokumenter med et synligt underskriftsfelt vil bruge det, når du underskriver."
+
+msgid "Pick signature image"
+msgstr "Vælg underskriftsbillede"
+
+msgid "Picking a signature image requires the native network backend."
+msgstr "At vælge et underskriftsbillede kræver den native netværksbackend."
+
+msgid "Saving..."
+msgstr "Gemmer..."
+
+msgid "Sign in again before setting up your signature."
+msgstr "Log ind igen, før du opsætter din underskrift."
+
+msgid "Signature"
+msgstr "Underskrift"
+
+msgid "The downloaded image could not be saved."
+msgstr "Det downloadede billede kunne ikke gemmes."
+
+msgid "The downloaded image is empty."
+msgstr "Det downloadede billede er tomt."
+
+msgid "The picture provider did not start a transfer."
+msgstr "Billedudbyderen startede ikke en overførsel."
+
+msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
+msgstr "Du har et underskriftsbillede sat op. Dokumenter med et synligt underskriftsfelt vil bruge det, når du underskriver."

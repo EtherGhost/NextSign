@@ -30,6 +30,8 @@ add_executable(${PROJECT_NAME}
     DocumentDownloader.h
     LibreSignNetwork.cpp
     LibreSignNetwork.h
+    SignatureImageEncoder.cpp
+    SignatureImageEncoder.h
     ${QT_RESOURCES}
 )
 set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
@@ -74,6 +76,8 @@ file(GLOB_RECURSE PROJECT_SRC_FILES
     DocumentDownloader.h
     LibreSignNetwork.cpp
     LibreSignNetwork.h
+    SignatureImageEncoder.cpp
+    SignatureImageEncoder.h
 )
 
 add_custom_target(${PROJECT_NAME}_FILES ALL SOURCES ${PROJECT_SRC_FILES})

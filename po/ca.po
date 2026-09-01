@@ -464,3 +464,57 @@ msgstr "Signa el document"
 
 msgid "Validation info"
 msgstr "Informació de validació"
+
+msgid "Change signature image"
+msgstr "Canvia la imatge de la signatura"
+
+msgid "Could not read the selected image."
+msgstr "No s'ha pogut llegir la imatge seleccionada."
+
+msgid "Could not use the selected image. Try a smaller picture."
+msgstr "No s'ha pogut utilitzar la imatge seleccionada. Prova una imatge més petita."
+
+msgid "Image cache could not be prepared."
+msgstr "No s'ha pogut preparar la memòria cau d'imatges."
+
+msgid "Image cache is not available."
+msgstr "La memòria cau d'imatges no està disponible."
+
+msgid "Image download failed with HTTP %1."
+msgstr "La baixada de la imatge ha fallat amb HTTP %1."
+
+msgid "No picture was selected."
+msgstr "No s'ha seleccionat cap imatge."
+
+msgid "Pick an image"
+msgstr "Tria una imatge"
+
+msgid "Pick an image of your signature. Documents with a visible signature field will use it when you sign."
+msgstr "Tria una imatge de la teva signatura. Els documents amb un camp de signatura visible l'utilitzaran en signar."
+
+msgid "Pick signature image"
+msgstr "Tria la imatge de la signatura"
+
+msgid "Picking a signature image requires the native network backend."
+msgstr "Triar una imatge de signatura requereix el backend de xarxa natiu."
+
+msgid "Saving..."
+msgstr "Desant..."
+
+msgid "Sign in again before setting up your signature."
+msgstr "Torna a iniciar sessió abans de configurar la teva signatura."
+
+msgid "Signature"
+msgstr "Signatura"
+
+msgid "The downloaded image could not be saved."
+msgstr "La imatge baixada no s'ha pogut desar."
+
+msgid "The downloaded image is empty."
+msgstr "La imatge baixada és buida."
+
+msgid "The picture provider did not start a transfer."
+msgstr "El proveïdor d'imatges no ha iniciat cap transferència."
+
+msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
+msgstr "Tens una imatge de signatura configurada. Els documents amb un camp de signatura visible l'utilitzaran en signar."

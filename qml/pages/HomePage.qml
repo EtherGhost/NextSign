@@ -14,7 +14,40 @@ Page {
 
     function openPage(url) {
         drawerOpen = false
-        pageStack.push(Qt.resolvedUrl(url), {"appController": appController})
+        var initialProps = {"appController": appController}
+        if (url === "SignatureSetupPage.qml") {
+            initialProps.dataController = dataController
+        }
+        pageStack.push(Qt.resolvedUrl(url), initialProps)
+    }
+
+    // Only checks the "signature" image type, not "initial" - clickToSign documents
+    // set up so far only ever place a signature field, and this app doesn't offer
+    // setting up an initials image (yet).
+    function needsSignatureSetup(doc) {
+        if ("signature" in dataController.signatureElementsByType) {
+            return false
+        }
+        var elements = doc.visibleElements || []
+        for (var i = 0; i < elements.length; ++i) {
+            if (elements[i].type === "signature") {
+                return true
+            }
+        }
+        return false
+    }
+
+    function attemptSign(doc) {
+        if (!doc) {
+            return
+        }
+        if (page.needsSignatureSetup(doc)) {
+            page.openPage("SignatureSetupPage.qml")
+            return
+        }
+        page.signRequestedUuid = doc.uuid
+        page.lastSignRequestedName = doc.name
+        PopupUtils.open(signConfirmDialog)
     }
 
     function statusIconKind() {
@@ -270,9 +303,7 @@ Page {
                 enabled: dataController.signingUuid.length === 0 && !dataController.downloadingPreview
                 onClicked: {
                     PopupUtils.close(dialog)
-                    page.signRequestedUuid = page.detailDocument.uuid
-                    page.lastSignRequestedName = page.detailDocument.name
-                    PopupUtils.open(signConfirmDialog)
+                    page.attemptSign(page.detailDocument)
                 }
             }
 
@@ -502,11 +533,7 @@ Page {
                             text: dataController.signingUuid === modelData.uuid ? i18n.tr("Signing...") : i18n.tr("Sign")
                             variant: "primary"
                             enabled: dataController.signingUuid.length === 0 && !dataController.downloadingPreview
-                            onClicked: {
-                                page.signRequestedUuid = modelData.uuid
-                                page.lastSignRequestedName = modelData.name
-                                PopupUtils.open(signConfirmDialog)
-                            }
+                            onClicked: page.attemptSign(modelData)
                         }
                     }
                 }
@@ -525,6 +552,7 @@ Page {
         bottomItems: [
             {"label": i18n.tr("Language"), "page": "LanguageSelectionPage.qml"},
             {"label": i18n.tr("Account"), "page": "AccountSelectionPage.qml"},
+            {"label": i18n.tr("Signature"), "page": "SignatureSetupPage.qml"},
             {"label": i18n.tr("Settings"), "page": "SettingsPage.qml"},
             {"label": i18n.tr("About"), "page": "AboutPage.qml"}
         ]

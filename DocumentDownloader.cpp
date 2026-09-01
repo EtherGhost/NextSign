@@ -69,8 +69,30 @@ void DocumentDownloader::downloadToCache(int generation,
                                           const QString &secret,
                                           const QString &preferredFileName)
 {
+    downloadFileToCache(generation, url, userName, secret, preferredFileName, false);
+}
+
+void DocumentDownloader::downloadImageToCache(int generation,
+                                               const QString &url,
+                                               const QString &userName,
+                                               const QString &secret)
+{
+    downloadFileToCache(generation, url, userName, secret, QStringLiteral("signature"), true);
+}
+
+void DocumentDownloader::downloadFileToCache(int generation,
+                                              const QString &url,
+                                              const QString &userName,
+                                              const QString &secret,
+                                              const QString &preferredFileName,
+                                              bool isImage)
+{
     if (url.trimmed().isEmpty() || userName.isEmpty() || secret.isEmpty()) {
-        emit downloadFailed(tr("Account credentials are incomplete."), generation);
+        if (isImage) {
+            emit imageDownloadFailed(tr("Account credentials are incomplete."), generation);
+        } else {
+            emit downloadFailed(tr("Account credentials are incomplete."), generation);
+        }
         return;
     }
 
@@ -79,7 +101,7 @@ void DocumentDownloader::downloadToCache(int generation,
     QNetworkReply *reply = requestManager->get(request);
     armTimeout(reply);
 
-    connect(reply, &QNetworkReply::finished, this, [this, reply, requestManager, generation, preferredFileName]() {
+    connect(reply, &QNetworkReply::finished, this, [this, reply, requestManager, generation, preferredFileName, isImage]() {
         const int status = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
         const QByteArray responseBody = reply->readAll();
         const QByteArray contentType = reply->header(QNetworkRequest::ContentTypeHeader).toByteArray();
@@ -87,23 +109,49 @@ void DocumentDownloader::downloadToCache(int generation,
         reply->deleteLater();
         requestManager->deleteLater();
 
+        const QString defaultExtension = isImage ? QStringLiteral(".png") : QStringLiteral(".pdf");
+        const QString defaultMimeType = isImage ? QStringLiteral("image/png") : QStringLiteral("application/pdf");
+        const QString cacheSubdir = isImage ? QStringLiteral("ImageDownloads") : QStringLiteral("DocumentDownloads");
+
         if (status < 200 || status >= 300) {
-            emit downloadFailed(tr("Document download failed with HTTP %1.").arg(status), generation);
+            const QString message = isImage
+                ? tr("Image download failed with HTTP %1.").arg(status)
+                : tr("Document download failed with HTTP %1.").arg(status);
+            if (isImage) {
+                emit imageDownloadFailed(message, generation);
+            } else {
+                emit downloadFailed(message, generation);
+            }
             return;
         }
         if (responseBody.isEmpty()) {
-            emit downloadFailed(tr("The downloaded document is empty."), generation);
+            const QString message = isImage ? tr("The downloaded image is empty.") : tr("The downloaded document is empty.");
+            if (isImage) {
+                emit imageDownloadFailed(message, generation);
+            } else {
+                emit downloadFailed(message, generation);
+            }
             return;
         }
 
         const QString basePath = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
         if (basePath.isEmpty()) {
-            emit downloadFailed(tr("Document cache is not available."), generation);
+            const QString message = isImage ? tr("Image cache is not available.") : tr("Document cache is not available.");
+            if (isImage) {
+                emit imageDownloadFailed(message, generation);
+            } else {
+                emit downloadFailed(message, generation);
+            }
             return;
         }
         QDir dir(basePath);
-        if (!dir.mkpath(QStringLiteral("DocumentDownloads")) || !dir.cd(QStringLiteral("DocumentDownloads"))) {
-            emit downloadFailed(tr("Document cache could not be prepared."), generation);
+        if (!dir.mkpath(cacheSubdir) || !dir.cd(cacheSubdir)) {
+            const QString message = isImage ? tr("Image cache could not be prepared.") : tr("Document cache could not be prepared.");
+            if (isImage) {
+                emit imageDownloadFailed(message, generation);
+            } else {
+                emit downloadFailed(message, generation);
+            }
             return;
         }
 
@@ -112,8 +160,8 @@ void DocumentDownloader::downloadToCache(int generation,
             fileName = preferredFileName;
         }
         fileName = safeCacheFileName(fileName);
-        if (!fileName.endsWith(QStringLiteral(".pdf"), Qt::CaseInsensitive)) {
-            fileName += QStringLiteral(".pdf");
+        if (!fileName.endsWith(defaultExtension, Qt::CaseInsensitive)) {
+            fileName += defaultExtension;
         }
 
         const QByteArray digest = QCryptographicHash::hash(
@@ -123,16 +171,26 @@ void DocumentDownloader::downloadToCache(int generation,
 
         QFile file(filePath);
         if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
-            emit downloadFailed(tr("The downloaded document could not be saved."), generation);
+            const QString message = isImage ? tr("The downloaded image could not be saved.") : tr("The downloaded document could not be saved.");
+            if (isImage) {
+                emit imageDownloadFailed(message, generation);
+            } else {
+                emit downloadFailed(message, generation);
+            }
             return;
         }
         file.write(responseBody);
         file.close();
 
+        if (isImage) {
+            emit imageDownloaded(QUrl::fromLocalFile(filePath).toString(), generation);
+            return;
+        }
+
         const QString mimeType = QString::fromLatin1(contentType.split(';').first().trimmed());
         emit downloaded(QUrl::fromLocalFile(filePath).toString(),
                          fileName,
-                         mimeType.isEmpty() ? QStringLiteral("application/pdf") : mimeType,
+                         mimeType.isEmpty() ? defaultMimeType : mimeType,
                          generation);
     });
 }

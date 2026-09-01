@@ -464,3 +464,57 @@ msgstr "Dokument signieren"
 
 msgid "Validation info"
 msgstr "Validierungsinformationen"
+
+msgid "Change signature image"
+msgstr "Signaturbild ändern"
+
+msgid "Could not read the selected image."
+msgstr "Das ausgewählte Bild konnte nicht gelesen werden."
+
+msgid "Could not use the selected image. Try a smaller picture."
+msgstr "Das ausgewählte Bild konnte nicht verwendet werden. Versuche ein kleineres Bild."
+
+msgid "Image cache could not be prepared."
+msgstr "Der Bild-Cache konnte nicht vorbereitet werden."
+
+msgid "Image cache is not available."
+msgstr "Der Bild-Cache ist nicht verfügbar."
+
+msgid "Image download failed with HTTP %1."
+msgstr "Der Bild-Download ist mit HTTP %1 fehlgeschlagen."
+
+msgid "No picture was selected."
+msgstr "Es wurde kein Bild ausgewählt."
+
+msgid "Pick an image"
+msgstr "Bild auswählen"
+
+msgid "Pick an image of your signature. Documents with a visible signature field will use it when you sign."
+msgstr "Wähle ein Bild deiner Unterschrift. Dokumente mit einem sichtbaren Signaturfeld verwenden es beim Signieren."
+
+msgid "Pick signature image"
+msgstr "Signaturbild auswählen"
+
+msgid "Picking a signature image requires the native network backend."
+msgstr "Das Auswählen eines Signaturbilds erfordert das native Netzwerk-Backend."
+
+msgid "Saving..."
+msgstr "Speichern..."
+
+msgid "Sign in again before setting up your signature."
+msgstr "Melde dich erneut an, bevor du deine Signatur einrichtest."
+
+msgid "Signature"
+msgstr "Signatur"
+
+msgid "The downloaded image could not be saved."
+msgstr "Das heruntergeladene Bild konnte nicht gespeichert werden."
+
+msgid "The downloaded image is empty."
+msgstr "Das heruntergeladene Bild ist leer."
+
+msgid "The picture provider did not start a transfer."
+msgstr "Der Bildanbieter hat keine Übertragung gestartet."
+
+msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
+msgstr "Du hast ein Signaturbild eingerichtet. Dokumente mit einem sichtbaren Signaturfeld verwenden es beim Signieren."

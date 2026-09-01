@@ -13,6 +13,8 @@ Item {
     signal validateFailed(string uuid, string message, int generation)
     signal signatureElementsLoaded(var elements, int generation)
     signal signatureElementsFailed(string message, int generation)
+    signal signatureElementCreated(var elements, int generation)
+    signal signatureElementCreateFailed(string message, int generation)
 
     // Requests go through the native libreSignNetwork backend (an isolated
     // QNetworkAccessManager per request, with the account's username baked
@@ -103,6 +105,56 @@ Item {
         libreSignNetwork.sendRequest(generation, "signatureElements", "GET", url, userName, secret, "", "")
     }
 
+    // base64DataUri: a "data:image/png;base64,..." string - see SignatureImageEncoder.
+    function createSignatureElement(serverUrl, userName, secret, elementType, base64DataUri) {
+        var generation = requestGeneration
+        var base = LibreSignApiCore.normalizeServerUrl(serverUrl)
+        if (base.length === 0 || userName.length === 0 || secret.length === 0) {
+            signatureElementCreateFailed(i18n.tr("Account credentials are incomplete."), generation)
+            return
+        }
+        if (typeof libreSignNetwork === "undefined") {
+            signatureElementCreateFailed(i18n.tr("LibreSign requires the native network backend."), generation)
+            return
+        }
+        if (base64DataUri.length === 0) {
+            signatureElementCreateFailed(i18n.tr("Could not read the selected image."), generation)
+            return
+        }
+
+        var body = JSON.stringify({
+            "elements": [
+                { "type": elementType, "file": { "base64": base64DataUri } }
+            ]
+        })
+        var url = base + "/ocs/v2.php/apps/libresign/api/v1/signature/elements?format=json"
+        libreSignNetwork.sendRequest(generation, "createSignatureElement:" + elementType, "POST", url, userName, secret, body, "application/json")
+    }
+
+    // Replaces an already-registered element's image in place (PATCH), rather than
+    // creating another one of the same type - see updateSignatureElementNodeId in
+    // SignController.qml for why this exists.
+    function updateSignatureElement(serverUrl, userName, secret, nodeId, base64DataUri) {
+        var generation = requestGeneration
+        var base = LibreSignApiCore.normalizeServerUrl(serverUrl)
+        if (base.length === 0 || userName.length === 0 || secret.length === 0) {
+            signatureElementCreateFailed(i18n.tr("Account credentials are incomplete."), generation)
+            return
+        }
+        if (typeof libreSignNetwork === "undefined") {
+            signatureElementCreateFailed(i18n.tr("LibreSign requires the native network backend."), generation)
+            return
+        }
+        if (base64DataUri.length === 0) {
+            signatureElementCreateFailed(i18n.tr("Could not read the selected image."), generation)
+            return
+        }
+
+        var body = JSON.stringify({ "file": { "base64": base64DataUri } })
+        var url = base + "/ocs/v2.php/apps/libresign/api/v1/signature/elements/" + encodeURIComponent(nodeId) + "?format=json"
+        libreSignNetwork.sendRequest(generation, "createSignatureElement:update", "PATCH", url, userName, secret, body, "application/json")
+    }
+
     function validateFile(serverUrl, userName, secret, uuid) {
         var generation = requestGeneration
         var base = LibreSignApiCore.normalizeServerUrl(serverUrl)
@@ -172,6 +224,18 @@ Item {
                 return
             }
             signatureElementsLoaded(elements, generation)
+        } else if (requestId.indexOf("createSignatureElement:") === 0) {
+            if (status < 200 || status >= 300) {
+                signatureElementCreateFailed(LibreSignApiCore.extractErrorMessage(responseText) || i18n.tr("LibreSign request failed with HTTP %1.").arg(status), generation)
+                return
+            }
+            var createdElements = LibreSignApiCore.parseSignatureElements(responseText)
+            if (createdElements === null) {
+                signatureElementCreateFailed(i18n.tr("LibreSign returned an unexpected response."), generation)
+                return
+            }
+            console.log("NextSign LibreSignApi createSignatureElement parsed count=" + createdElements.length)
+            signatureElementCreated(createdElements, generation)
         }
     }
 
@@ -185,6 +249,8 @@ Item {
             validateFailed(requestId.substring("validate:".length), message, generation)
         } else if (requestId === "signatureElements") {
             signatureElementsFailed(message, generation)
+        } else if (requestId.indexOf("createSignatureElement:") === 0) {
+            signatureElementCreateFailed(message, generation)
         }
     }
 }

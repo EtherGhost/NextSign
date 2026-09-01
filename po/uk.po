@@ -464,3 +464,57 @@ msgstr "Підписати документ"
 
 msgid "Validation info"
 msgstr "Інформація про перевірку"
+
+msgid "Change signature image"
+msgstr "Змінити зображення підпису"
+
+msgid "Could not read the selected image."
+msgstr "Не вдалося прочитати вибране зображення."
+
+msgid "Could not use the selected image. Try a smaller picture."
+msgstr "Не вдалося використати вибране зображення. Спробуйте менше зображення."
+
+msgid "Image cache could not be prepared."
+msgstr "Не вдалося підготувати кеш зображень."
+
+msgid "Image cache is not available."
+msgstr "Кеш зображень недоступний."
+
+msgid "Image download failed with HTTP %1."
+msgstr "Завантаження зображення не вдалося, код HTTP %1."
+
+msgid "No picture was selected."
+msgstr "Зображення не вибрано."
+
+msgid "Pick an image"
+msgstr "Вибрати зображення"
+
+msgid "Pick an image of your signature. Documents with a visible signature field will use it when you sign."
+msgstr "Виберіть зображення свого підпису. Документи з видимим полем підпису використовуватимуть його під час підписання."
+
+msgid "Pick signature image"
+msgstr "Вибрати зображення підпису"
+
+msgid "Picking a signature image requires the native network backend."
+msgstr "Для вибору зображення підпису потрібен вбудований мережевий модуль."
+
+msgid "Saving..."
+msgstr "Збереження..."
+
+msgid "Sign in again before setting up your signature."
+msgstr "Увійдіть знову, перш ніж налаштовувати підпис."
+
+msgid "Signature"
+msgstr "Підпис"
+
+msgid "The downloaded image could not be saved."
+msgstr "Не вдалося зберегти завантажене зображення."
+
+msgid "The downloaded image is empty."
+msgstr "Завантажене зображення порожнє."
+
+msgid "The picture provider did not start a transfer."
+msgstr "Постачальник зображень не розпочав передавання."
+
+msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
+msgstr "У вас налаштовано зображення підпису. Документи з видимим полем підпису використовуватимуть його під час підписання."

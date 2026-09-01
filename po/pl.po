@@ -464,3 +464,57 @@ msgstr "Podpisz dokument"
 
 msgid "Validation info"
 msgstr "Informacje o weryfikacji"
+
+msgid "Change signature image"
+msgstr "Zmień obraz podpisu"
+
+msgid "Could not read the selected image."
+msgstr "Nie można było odczytać wybranego obrazu."
+
+msgid "Could not use the selected image. Try a smaller picture."
+msgstr "Nie można było użyć wybranego obrazu. Spróbuj mniejszego obrazu."
+
+msgid "Image cache could not be prepared."
+msgstr "Nie można było przygotować pamięci podręcznej obrazów."
+
+msgid "Image cache is not available."
+msgstr "Pamięć podręczna obrazów jest niedostępna."
+
+msgid "Image download failed with HTTP %1."
+msgstr "Pobieranie obrazu nie powiodło się z HTTP %1."
+
+msgid "No picture was selected."
+msgstr "Nie wybrano obrazu."
+
+msgid "Pick an image"
+msgstr "Wybierz obraz"
+
+msgid "Pick an image of your signature. Documents with a visible signature field will use it when you sign."
+msgstr "Wybierz obraz swojego podpisu. Dokumenty z widocznym polem podpisu będą go używać podczas podpisywania."
+
+msgid "Pick signature image"
+msgstr "Wybierz obraz podpisu"
+
+msgid "Picking a signature image requires the native network backend."
+msgstr "Wybranie obrazu podpisu wymaga natywnego zaplecza sieciowego."
+
+msgid "Saving..."
+msgstr "Zapisywanie..."
+
+msgid "Sign in again before setting up your signature."
+msgstr "Zaloguj się ponownie przed skonfigurowaniem podpisu."
+
+msgid "Signature"
+msgstr "Podpis"
+
+msgid "The downloaded image could not be saved."
+msgstr "Nie można było zapisać pobranego obrazu."
+
+msgid "The downloaded image is empty."
+msgstr "Pobrany obraz jest pusty."
+
+msgid "The picture provider did not start a transfer."
+msgstr "Dostawca obrazów nie rozpoczął przesyłania."
+
+msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
+msgstr "Masz skonfigurowany obraz podpisu. Dokumenty z widocznym polem podpisu będą go używać podczas podpisywania."

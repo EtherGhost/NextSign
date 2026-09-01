@@ -1,5 +1,6 @@
 #include "DocumentDownloader.h"
 #include "LibreSignNetwork.h"
+#include "SignatureImageEncoder.h"
 
 #include <QGuiApplication>
 #include <QQmlContext>
@@ -164,8 +165,10 @@ int main(int argc, char *argv[])
     QQuickView view;
     DocumentDownloader documentDownloader;
     LibreSignNetwork libreSignNetwork;
+    SignatureImageEncoder signatureImageEncoder;
     view.rootContext()->setContextProperty(QStringLiteral("documentDownloader"), &documentDownloader);
     view.rootContext()->setContextProperty(QStringLiteral("libreSignNetwork"), &libreSignNetwork);
+    view.rootContext()->setContextProperty(QStringLiteral("signatureImageEncoder"), &signatureImageEncoder);
     view.rootContext()->setContextProperty(QStringLiteral("nextsignAppVersion"), QStringLiteral(NEXTSIGN_VERSION));
     view.rootContext()->setContextProperty(QStringLiteral("desktopLarge"), desktopLarge);
     view.rootContext()->setContextProperty(QStringLiteral("desktopDarkMode"), desktopDarkMode);

@@ -464,3 +464,57 @@ msgstr "Allekirjoita asiakirja"
 
 msgid "Validation info"
 msgstr "Vahvistustiedot"
+
+msgid "Change signature image"
+msgstr "Vaihda allekirjoituskuva"
+
+msgid "Could not read the selected image."
+msgstr "Valittua kuvaa ei voitu lukea."
+
+msgid "Could not use the selected image. Try a smaller picture."
+msgstr "Valittua kuvaa ei voitu käyttää. Kokeile pienempää kuvaa."
+
+msgid "Image cache could not be prepared."
+msgstr "Kuvavälimuistia ei voitu valmistella."
+
+msgid "Image cache is not available."
+msgstr "Kuvavälimuisti ei ole käytettävissä."
+
+msgid "Image download failed with HTTP %1."
+msgstr "Kuvan lataus epäonnistui HTTP-koodilla %1."
+
+msgid "No picture was selected."
+msgstr "Kuvaa ei valittu."
+
+msgid "Pick an image"
+msgstr "Valitse kuva"
+
+msgid "Pick an image of your signature. Documents with a visible signature field will use it when you sign."
+msgstr "Valitse kuva allekirjoituksestasi. Asiakirjat, joissa on näkyvä allekirjoituskenttä, käyttävät sitä allekirjoittaessasi."
+
+msgid "Pick signature image"
+msgstr "Valitse allekirjoituskuva"
+
+msgid "Picking a signature image requires the native network backend."
+msgstr "Allekirjoituskuvan valitseminen vaatii natiivin verkkotaustajärjestelmän."
+
+msgid "Saving..."
+msgstr "Tallennetaan..."
+
+msgid "Sign in again before setting up your signature."
+msgstr "Kirjaudu sisään uudelleen ennen allekirjoituksen määrittämistä."
+
+msgid "Signature"
+msgstr "Allekirjoitus"
+
+msgid "The downloaded image could not be saved."
+msgstr "Ladattua kuvaa ei voitu tallentaa."
+
+msgid "The downloaded image is empty."
+msgstr "Ladattu kuva on tyhjä."
+
+msgid "The picture provider did not start a transfer."
+msgstr "Kuvantarjoaja ei aloittanut siirtoa."
+
+msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
+msgstr "Sinulla on allekirjoituskuva määritettynä. Asiakirjat, joissa on näkyvä allekirjoituskenttä, käyttävät sitä allekirjoittaessasi."

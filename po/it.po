@@ -464,3 +464,57 @@ msgstr "Firma documento"
 
 msgid "Validation info"
 msgstr "Informazioni di convalida"
+
+msgid "Change signature image"
+msgstr "Cambia immagine della firma"
+
+msgid "Could not read the selected image."
+msgstr "Impossibile leggere l'immagine selezionata."
+
+msgid "Could not use the selected image. Try a smaller picture."
+msgstr "Impossibile usare l'immagine selezionata. Prova un'immagine più piccola."
+
+msgid "Image cache could not be prepared."
+msgstr "Impossibile preparare la cache delle immagini."
+
+msgid "Image cache is not available."
+msgstr "La cache delle immagini non è disponibile."
+
+msgid "Image download failed with HTTP %1."
+msgstr "Il download dell'immagine non è riuscito con HTTP %1."
+
+msgid "No picture was selected."
+msgstr "Nessuna immagine selezionata."
+
+msgid "Pick an image"
+msgstr "Scegli un'immagine"
+
+msgid "Pick an image of your signature. Documents with a visible signature field will use it when you sign."
+msgstr "Scegli un'immagine della tua firma. I documenti con un campo firma visibile la useranno quando firmi."
+
+msgid "Pick signature image"
+msgstr "Scegli l'immagine della firma"
+
+msgid "Picking a signature image requires the native network backend."
+msgstr "Scegliere un'immagine della firma richiede il backend di rete nativo."
+
+msgid "Saving..."
+msgstr "Salvataggio..."
+
+msgid "Sign in again before setting up your signature."
+msgstr "Accedi di nuovo prima di configurare la tua firma."
+
+msgid "Signature"
+msgstr "Firma"
+
+msgid "The downloaded image could not be saved."
+msgstr "Impossibile salvare l'immagine scaricata."
+
+msgid "The downloaded image is empty."
+msgstr "L'immagine scaricata è vuota."
+
+msgid "The picture provider did not start a transfer."
+msgstr "Il fornitore di immagini non ha avviato un trasferimento."
+
+msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
+msgstr "Hai configurato un'immagine della firma. I documenti con un campo firma visibile la useranno quando firmi."

@@ -464,3 +464,57 @@ msgstr "Signer le document"
 
 msgid "Validation info"
 msgstr "Informations de validation"
+
+msgid "Change signature image"
+msgstr "Changer l'image de signature"
+
+msgid "Could not read the selected image."
+msgstr "Impossible de lire l'image sélectionnée."
+
+msgid "Could not use the selected image. Try a smaller picture."
+msgstr "Impossible d'utiliser l'image sélectionnée. Essayez une image plus petite."
+
+msgid "Image cache could not be prepared."
+msgstr "Le cache d'images n'a pas pu être préparé."
+
+msgid "Image cache is not available."
+msgstr "Le cache d'images n'est pas disponible."
+
+msgid "Image download failed with HTTP %1."
+msgstr "Le téléchargement de l'image a échoué avec HTTP %1."
+
+msgid "No picture was selected."
+msgstr "Aucune image n'a été sélectionnée."
+
+msgid "Pick an image"
+msgstr "Choisir une image"
+
+msgid "Pick an image of your signature. Documents with a visible signature field will use it when you sign."
+msgstr "Choisissez une image de votre signature. Les documents avec un champ de signature visible l'utiliseront lors de la signature."
+
+msgid "Pick signature image"
+msgstr "Choisir une image de signature"
+
+msgid "Picking a signature image requires the native network backend."
+msgstr "Choisir une image de signature nécessite le backend réseau natif."
+
+msgid "Saving..."
+msgstr "Enregistrement..."
+
+msgid "Sign in again before setting up your signature."
+msgstr "Reconnectez-vous avant de configurer votre signature."
+
+msgid "Signature"
+msgstr "Signature"
+
+msgid "The downloaded image could not be saved."
+msgstr "L'image téléchargée n'a pas pu être enregistrée."
+
+msgid "The downloaded image is empty."
+msgstr "L'image téléchargée est vide."
+
+msgid "The picture provider did not start a transfer."
+msgstr "Le fournisseur d'images n'a pas démarré de transfert."
+
+msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
+msgstr "Vous avez configuré une image de signature. Les documents avec un champ de signature visible l'utiliseront lors de la signature."

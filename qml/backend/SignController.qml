@@ -19,10 +19,16 @@ Item {
     property bool downloadingPreview: false
     property string signingUuid: ""
     property string validatingUuid: ""
+    property bool savingSignatureElement: false
     // { "signature": nodeId, "initial": nodeId, ... } - the account's own registered
     // signature/initials images, needed alongside a document's placeholder position to
     // render a visible mark when signing. Empty until loadSignatureElements() returns.
     property var signatureElementsByType: ({})
+    // Local file:// URL of the fetched signature preview image, if any - see
+    // loadSignaturePreview(). Empty until explicitly requested (the signature setup
+    // page does this) rather than eagerly on every account load.
+    property string signatureImagePreviewUrl: ""
+    property bool loadingSignaturePreview: false
 
     signal previewReady(url fileUrl, string suggestedName)
     signal previewFailed(string message)
@@ -30,6 +36,20 @@ Item {
     signal signFailed(string message)
     signal validationReady(var summary)
     signal validationFailed(string message)
+    signal signatureSetupSucceeded()
+    signal signatureSetupFailed(string message)
+
+    // Prefer the starred (default) element of a type over an earlier one.
+    function buildSignatureElementsByType(elements) {
+        var byType = {}
+        for (var i = 0; i < elements.length; ++i) {
+            var element = elements[i]
+            if (!(element.type in byType) || element.starred) {
+                byType[element.type] = element.nodeId
+            }
+        }
+        return byType
+    }
 
     Settings {
         id: accountSettings
@@ -67,6 +87,7 @@ Item {
             controller.syncStateText = i18n.tr("Syncing")
             controller.syncStateColor = "#2c7fb8"
             controller.signatureElementsByType = ({})
+            controller.signatureImagePreviewUrl = ""
             api.requestGeneration = generation
             // Tags subsequent "NextSign LibreSignApi ..." log lines with which account
             // they belong to, so a device log can tell two accounts' requests apart.
@@ -138,21 +159,28 @@ Item {
             if (!controller.isCurrentGeneration(generation)) {
                 return
             }
-            var byType = {}
-            for (var i = 0; i < elements.length; ++i) {
-                var element = elements[i]
-                // Prefer the starred (default) element of a type over an earlier one.
-                if (!(element.type in byType) || element.starred) {
-                    byType[element.type] = element.nodeId
-                }
-            }
-            controller.signatureElementsByType = byType
+            controller.signatureElementsByType = controller.buildSignatureElementsByType(elements)
         }
         onSignatureElementsFailed: function(message, generation) {
             if (!controller.isCurrentGeneration(generation)) {
                 return
             }
             console.log("NextSign SignController could not load signature elements: " + message)
+        }
+        onSignatureElementCreated: function(elements, generation) {
+            if (!controller.isCurrentGeneration(generation)) {
+                return
+            }
+            controller.savingSignatureElement = false
+            controller.signatureElementsByType = controller.buildSignatureElementsByType(elements)
+            controller.signatureSetupSucceeded()
+        }
+        onSignatureElementCreateFailed: function(message, generation) {
+            if (!controller.isCurrentGeneration(generation)) {
+                return
+            }
+            controller.savingSignatureElement = false
+            controller.signatureSetupFailed(message)
         }
     }
 
@@ -172,6 +200,37 @@ Item {
             controller.downloadingPreview = false
             controller.previewFailed(message)
         }
+        onImageDownloaded: function(fileUrl, generation) {
+            if (!controller.isCurrentGeneration(generation)) {
+                return
+            }
+            controller.loadingSignaturePreview = false
+            controller.signatureImagePreviewUrl = fileUrl
+        }
+        onImageDownloadFailed: function(message, generation) {
+            if (!controller.isCurrentGeneration(generation)) {
+                return
+            }
+            controller.loadingSignaturePreview = false
+            console.log("NextSign SignController could not load signature preview: " + message)
+        }
+    }
+
+    function loadSignaturePreview() {
+        if (!("signature" in controller.signatureElementsByType)) {
+            return
+        }
+        if (controller.currentServerUrl.length === 0 || controller.currentUserName.length === 0 || controller.currentSecret.length === 0) {
+            return
+        }
+        if (typeof documentDownloader === "undefined") {
+            return
+        }
+
+        controller.loadingSignaturePreview = true
+        var nodeId = controller.signatureElementsByType["signature"]
+        var url = controller.currentServerUrl + "/ocs/v2.php/apps/libresign/api/v1/signature/elements/preview/" + nodeId
+        documentDownloader.downloadImageToCache(controller.accountRequestGeneration, url, controller.currentUserName, controller.currentSecret)
     }
 
     function previewDocument(uuid) {
@@ -247,6 +306,25 @@ Item {
         api.requestGeneration = controller.accountRequestGeneration
         // validate/uuid/{uuid} takes the file's own uuid, not signUuid.
         api.validateFile(controller.currentServerUrl, controller.currentUserName, controller.currentSecret, uuid)
+    }
+
+    function createSignatureElement(elementType, base64DataUri) {
+        if (controller.currentServerUrl.length === 0 || controller.currentUserName.length === 0 || controller.currentSecret.length === 0) {
+            controller.signatureSetupFailed(i18n.tr("Sign in again before setting up your signature."))
+            return
+        }
+
+        controller.savingSignatureElement = true
+        api.requestGeneration = controller.accountRequestGeneration
+        // Replace the existing image of this type in place rather than creating
+        // another one - otherwise every pick just piles up a new duplicate element
+        // server-side, none of them marked as the account's actual signature.
+        if (elementType in controller.signatureElementsByType) {
+            api.updateSignatureElement(controller.currentServerUrl, controller.currentUserName, controller.currentSecret,
+                controller.signatureElementsByType[elementType], base64DataUri)
+        } else {
+            api.createSignatureElement(controller.currentServerUrl, controller.currentUserName, controller.currentSecret, elementType, base64DataUri)
+        }
     }
 
     function refresh() {

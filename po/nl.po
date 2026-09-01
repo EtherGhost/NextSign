@@ -464,3 +464,57 @@ msgstr "Document ondertekenen"
 
 msgid "Validation info"
 msgstr "Validatie-informatie"
+
+msgid "Change signature image"
+msgstr "Handtekeningafbeelding wijzigen"
+
+msgid "Could not read the selected image."
+msgstr "Kon de geselecteerde afbeelding niet lezen."
+
+msgid "Could not use the selected image. Try a smaller picture."
+msgstr "Kon de geselecteerde afbeelding niet gebruiken. Probeer een kleinere afbeelding."
+
+msgid "Image cache could not be prepared."
+msgstr "De afbeeldingscache kon niet worden voorbereid."
+
+msgid "Image cache is not available."
+msgstr "De afbeeldingscache is niet beschikbaar."
+
+msgid "Image download failed with HTTP %1."
+msgstr "Het downloaden van de afbeelding is mislukt met HTTP %1."
+
+msgid "No picture was selected."
+msgstr "Er is geen afbeelding geselecteerd."
+
+msgid "Pick an image"
+msgstr "Kies een afbeelding"
+
+msgid "Pick an image of your signature. Documents with a visible signature field will use it when you sign."
+msgstr "Kies een afbeelding van je handtekening. Documenten met een zichtbaar handtekeningveld gebruiken deze wanneer je ondertekent."
+
+msgid "Pick signature image"
+msgstr "Kies handtekeningafbeelding"
+
+msgid "Picking a signature image requires the native network backend."
+msgstr "Het kiezen van een handtekeningafbeelding vereist de native netwerk-backend."
+
+msgid "Saving..."
+msgstr "Opslaan..."
+
+msgid "Sign in again before setting up your signature."
+msgstr "Log opnieuw in voordat je je handtekening instelt."
+
+msgid "Signature"
+msgstr "Handtekening"
+
+msgid "The downloaded image could not be saved."
+msgstr "De gedownloade afbeelding kon niet worden opgeslagen."
+
+msgid "The downloaded image is empty."
+msgstr "De gedownloade afbeelding is leeg."
+
+msgid "The picture provider did not start a transfer."
+msgstr "De afbeeldingsprovider is geen overdracht gestart."
+
+msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
+msgstr "Je hebt een handtekeningafbeelding ingesteld. Documenten met een zichtbaar handtekeningveld gebruiken deze wanneer je ondertekent."
