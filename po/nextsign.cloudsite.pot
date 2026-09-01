@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nextsign.cloudsite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-01 19:48+0000\n"
+"POT-Creation-Date: 2026-09-01 20:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: qml/backend/LibreSignApiClient.qml:44 qml/backend/LibreSignApiClient.qml:62
 #: qml/backend/LibreSignApiClient.qml:96 qml/backend/LibreSignApiClient.qml:113
 #: qml/backend/LibreSignApiClient.qml:141
-#: qml/backend/LibreSignApiClient.qml:162
+#: qml/backend/LibreSignApiClient.qml:166
 msgid "Account credentials are incomplete."
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 #: qml/backend/LibreSignApiClient.qml:100
 #: qml/backend/LibreSignApiClient.qml:117
 #: qml/backend/LibreSignApiClient.qml:145
-#: qml/backend/LibreSignApiClient.qml:166
+#: qml/backend/LibreSignApiClient.qml:170
 msgid "LibreSign requires the native network backend."
 msgstr ""
 
@@ -83,28 +83,28 @@ msgstr ""
 msgid "Could not read the selected image."
 msgstr ""
 
-#: qml/backend/LibreSignApiClient.qml:180
+#: qml/backend/LibreSignApiClient.qml:184
 msgid "LibreSign does not appear to be installed on this Nextcloud server."
 msgstr ""
 
-#: qml/backend/LibreSignApiClient.qml:184
-#: qml/backend/LibreSignApiClient.qml:218
-#: qml/backend/LibreSignApiClient.qml:229
+#: qml/backend/LibreSignApiClient.qml:188
+#: qml/backend/LibreSignApiClient.qml:222
+#: qml/backend/LibreSignApiClient.qml:233
 msgid "LibreSign request failed with HTTP %1."
 msgstr ""
 
-#: qml/backend/LibreSignApiClient.qml:190
-#: qml/backend/LibreSignApiClient.qml:212
-#: qml/backend/LibreSignApiClient.qml:223
-#: qml/backend/LibreSignApiClient.qml:234
+#: qml/backend/LibreSignApiClient.qml:194
+#: qml/backend/LibreSignApiClient.qml:216
+#: qml/backend/LibreSignApiClient.qml:227
+#: qml/backend/LibreSignApiClient.qml:238
 msgid "LibreSign returned an unexpected response."
 msgstr ""
 
-#: qml/backend/LibreSignApiClient.qml:198
+#: qml/backend/LibreSignApiClient.qml:202
 msgid "Signing failed with HTTP %1."
 msgstr ""
 
-#: qml/backend/LibreSignApiClient.qml:206
+#: qml/backend/LibreSignApiClient.qml:210
 msgid "Validation failed with HTTP %1."
 msgstr ""
 
@@ -391,7 +391,38 @@ msgstr ""
 msgid "Nothing to configure yet."
 msgstr ""
 
-#: qml/pages/SignatureImportPage.qml:7
+#: qml/pages/SignatureDrawPage.qml:8
+msgid "Draw your signature"
+msgstr ""
+
+#: qml/pages/SignatureDrawPage.qml:105
+msgid "The drawing area changed size, so it was cleared - please sign again."
+msgstr ""
+
+#: qml/pages/SignatureDrawPage.qml:106
+msgid ""
+"Sign with your finger or a stylus, then tap Save. Rotating your device gives "
+"more room to draw."
+msgstr ""
+
+#: qml/pages/SignatureDrawPage.qml:118
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:15
+#: vendor/UTControls/qml/UTControls/ConfirmDialog.qml:11
+#: vendor/UTControls/qml/UTControls/TimePicker.qml:16
+msgid "Cancel"
+msgstr ""
+
+#: qml/pages/SignatureDrawPage.qml:124
+#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:14
+#: vendor/UTControls/qml/UTControls/TimePicker.qml:15
+msgid "Clear"
+msgstr ""
+
+#: qml/pages/SignatureDrawPage.qml:131
+msgid "Save"
+msgstr ""
+
+#: qml/pages/SignatureImportPage.qml:7 qml/pages/SignatureSetupPage.qml:93
 msgid "Pick an image"
 msgstr ""
 
@@ -415,23 +446,19 @@ msgid ""
 "will use it when you sign."
 msgstr ""
 
-#: qml/pages/SignatureSetupPage.qml:71
+#: qml/pages/SignatureSetupPage.qml:85
+msgid "Draw signature"
+msgstr ""
+
+#: qml/pages/SignatureSetupPage.qml:85 qml/pages/SignatureSetupPage.qml:93
 msgid "Saving..."
 msgstr ""
 
-#: qml/pages/SignatureSetupPage.qml:72
-msgid "Change signature image"
-msgstr ""
-
-#: qml/pages/SignatureSetupPage.qml:72
-msgid "Pick signature image"
-msgstr ""
-
-#: qml/pages/SignatureSetupPage.qml:97
+#: qml/pages/SignatureSetupPage.qml:118
 msgid "Picking a signature image requires the native network backend."
 msgstr ""
 
-#: qml/pages/SignatureSetupPage.qml:103
+#: qml/pages/SignatureSetupPage.qml:124
 msgid "Could not use the selected image. Try a smaller picture."
 msgstr ""
 
@@ -650,17 +677,6 @@ msgstr ""
 
 #: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:13
 msgid "Today"
-msgstr ""
-
-#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:14
-#: vendor/UTControls/qml/UTControls/TimePicker.qml:15
-msgid "Clear"
-msgstr ""
-
-#: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:15
-#: vendor/UTControls/qml/UTControls/ConfirmDialog.qml:11
-#: vendor/UTControls/qml/UTControls/TimePicker.qml:16
-msgid "Cancel"
 msgstr ""
 
 #: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:64

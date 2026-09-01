@@ -40,15 +40,30 @@ NextCommon.SettingsShell {
                 : i18n.tr("Pick an image of your signature. Documents with a visible signature field will use it when you sign.")
         }
 
-        Image {
-            id: preview
+        // A signature image is transparent-background ink (see SignatureDrawPage.qml) -
+        // without an opaque backdrop it's nearly invisible against this app's dark
+        // theme. A fixed Layout.preferredWidth/Height (not plain width/height, which
+        // Qt Quick Layouts can silently override on relayout - this broke visibly
+        // across an orientation change) keeps the box stable; PreserveAspectFit scales
+        // the image inside it without any manual size math.
+        Rectangle {
+            id: previewBackdrop
             Layout.alignment: Qt.AlignHCenter
-            property string effectiveSource: page.previewDataUri.length > 0 ? page.previewDataUri : dataController.signatureImagePreviewUrl
-            visible: effectiveSource.length > 0
-            source: effectiveSource
-            fillMode: Image.PreserveAspectFit
-            width: Math.min(implicitWidth, units.gu(30))
-            height: implicitWidth > 0 ? width * implicitHeight / implicitWidth : 0
+            Layout.preferredWidth: units.gu(30)
+            Layout.preferredHeight: units.gu(18)
+            visible: preview.status === Image.Ready
+            color: "white"
+            radius: units.gu(0.5)
+            border.width: 1
+            border.color: theme.palette.normal.base
+
+            Image {
+                id: preview
+                anchors { fill: parent; margins: units.gu(1) }
+                property string effectiveSource: page.previewDataUri.length > 0 ? page.previewDataUri : dataController.signatureImagePreviewUrl
+                source: effectiveSource
+                fillMode: Image.PreserveAspectFit
+            }
         }
 
         ActivityIndicator {
@@ -67,10 +82,16 @@ NextCommon.SettingsShell {
 
         AppButton {
             Layout.fillWidth: true
-            text: dataController.savingSignatureElement
-                ? i18n.tr("Saving...")
-                : (page.hasSignature ? i18n.tr("Change signature image") : i18n.tr("Pick signature image"))
+            text: dataController.savingSignatureElement ? i18n.tr("Saving...") : i18n.tr("Draw signature")
             variant: "primary"
+            enabled: !dataController.savingSignatureElement
+            onClicked: page.openDrawPage()
+        }
+
+        AppButton {
+            Layout.fillWidth: true
+            text: dataController.savingSignatureElement ? i18n.tr("Saving...") : i18n.tr("Pick an image")
+            variant: "normal"
             enabled: !dataController.savingSignatureElement
             onClicked: page.openPicker()
         }
@@ -106,5 +127,18 @@ NextCommon.SettingsShell {
 
         page.previewDataUri = dataUri
         dataController.createSignatureElement("signature", dataUri)
+    }
+
+    function openDrawPage() {
+        page.errorMessage = ""
+        var drawPage = pageStack.push(Qt.resolvedUrl("SignatureDrawPage.qml"))
+        drawPage.drawingSaved.connect(function(dataUri) {
+            pageStack.pop()
+            page.previewDataUri = dataUri
+            dataController.createSignatureElement("signature", dataUri)
+        })
+        drawPage.drawingCanceled.connect(function() {
+            pageStack.pop()
+        })
     }
 }

@@ -518,3 +518,21 @@ msgstr "Le fournisseur d'images n'a pas démarré de transfert."
 
 msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
 msgstr "Vous avez configuré une image de signature. Les documents avec un champ de signature visible l'utiliseront lors de la signature."
+
+msgid "Draw signature"
+msgstr "Dessiner la signature"
+
+msgid "Draw your signature"
+msgstr "Dessinez votre signature"
+
+msgid "Save"
+msgstr "Enregistrer"
+
+msgid "Sign with your finger or a stylus, then tap Save."
+msgstr "Signez avec votre doigt ou un stylet, puis appuyez sur Enregistrer."
+
+msgid "Sign with your finger or a stylus, then tap Save. Rotating your device gives more room to draw."
+msgstr "Signez avec votre doigt ou un stylet, puis appuyez sur Enregistrer. Faire pivoter l'appareil laisse plus de place pour dessiner."
+
+msgid "The drawing area changed size, so it was cleared - please sign again."
+msgstr "La zone de dessin a changé de taille et a donc été effacée - veuillez signer à nouveau."

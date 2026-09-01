@@ -321,7 +321,7 @@ Item {
         // server-side, none of them marked as the account's actual signature.
         if (elementType in controller.signatureElementsByType) {
             api.updateSignatureElement(controller.currentServerUrl, controller.currentUserName, controller.currentSecret,
-                controller.signatureElementsByType[elementType], base64DataUri)
+                controller.signatureElementsByType[elementType], elementType, base64DataUri)
         } else {
             api.createSignatureElement(controller.currentServerUrl, controller.currentUserName, controller.currentSecret, elementType, base64DataUri)
         }

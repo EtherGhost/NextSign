@@ -518,3 +518,21 @@ msgstr "Bildeleverandøren startet ingen overføring."
 
 msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
 msgstr "Du har et signaturbilde satt opp. Dokumenter med et synlig signaturfelt vil bruke det når du signerer."
+
+msgid "Draw signature"
+msgstr "Tegn signatur"
+
+msgid "Draw your signature"
+msgstr "Tegn signaturen din"
+
+msgid "Save"
+msgstr "Lagre"
+
+msgid "Sign with your finger or a stylus, then tap Save."
+msgstr "Signer med fingeren eller en penn, trykk deretter på Lagre."
+
+msgid "Sign with your finger or a stylus, then tap Save. Rotating your device gives more room to draw."
+msgstr "Signer med fingeren eller en penn, trykk deretter på Lagre. Å rotere enheten gir mer plass til å tegne."
+
+msgid "The drawing area changed size, so it was cleared - please sign again."
+msgstr "Tegneområdet endret størrelse, så det ble tømt - signer på nytt."

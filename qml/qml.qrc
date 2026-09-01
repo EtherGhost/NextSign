@@ -5,6 +5,7 @@
         <file>pages/DocumentExportPage.qml</file>
         <file>pages/SignatureSetupPage.qml</file>
         <file>pages/SignatureImportPage.qml</file>
+        <file>pages/SignatureDrawPage.qml</file>
         <file>pages/AccountSelectionPage.qml</file>
         <file>pages/SettingsPage.qml</file>
         <file>pages/LanguageSelectionPage.qml</file>

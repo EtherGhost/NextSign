@@ -518,3 +518,21 @@ msgstr "Dostawca obrazów nie rozpoczął przesyłania."
 
 msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
 msgstr "Masz skonfigurowany obraz podpisu. Dokumenty z widocznym polem podpisu będą go używać podczas podpisywania."
+
+msgid "Draw signature"
+msgstr "Narysuj podpis"
+
+msgid "Draw your signature"
+msgstr "Narysuj swój podpis"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Sign with your finger or a stylus, then tap Save."
+msgstr "Podpisz palcem lub rysikiem, a następnie dotknij Zapisz."
+
+msgid "Sign with your finger or a stylus, then tap Save. Rotating your device gives more room to draw."
+msgstr "Podpisz palcem lub rysikiem, a następnie dotknij Zapisz. Obrócenie urządzenia daje więcej miejsca do rysowania."
+
+msgid "The drawing area changed size, so it was cleared - please sign again."
+msgstr "Obszar rysowania zmienił rozmiar, więc został wyczyszczony - podpisz ponownie."

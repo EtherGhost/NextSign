@@ -134,7 +134,7 @@ Item {
     // Replaces an already-registered element's image in place (PATCH), rather than
     // creating another one of the same type - see updateSignatureElementNodeId in
     // SignController.qml for why this exists.
-    function updateSignatureElement(serverUrl, userName, secret, nodeId, base64DataUri) {
+    function updateSignatureElement(serverUrl, userName, secret, nodeId, elementType, base64DataUri) {
         var generation = requestGeneration
         var base = LibreSignApiCore.normalizeServerUrl(serverUrl)
         if (base.length === 0 || userName.length === 0 || secret.length === 0) {
@@ -150,7 +150,11 @@ Item {
             return
         }
 
-        var body = JSON.stringify({ "file": { "base64": base64DataUri } })
+        // The server validates the element's "type" before it resolves elementId
+        // from the nodeId in the URL, so type must be sent here even though the
+        // update endpoint's own parameter documents it as optional - omitting it
+        // fails with "Element needs a type" regardless.
+        var body = JSON.stringify({ "type": elementType, "file": { "base64": base64DataUri } })
         var url = base + "/ocs/v2.php/apps/libresign/api/v1/signature/elements/" + encodeURIComponent(nodeId) + "?format=json"
         libreSignNetwork.sendRequest(generation, "createSignatureElement:update", "PATCH", url, userName, secret, body, "application/json")
     }

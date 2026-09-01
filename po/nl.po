@@ -518,3 +518,21 @@ msgstr "De afbeeldingsprovider is geen overdracht gestart."
 
 msgid "You have a signature image set up. Documents with a visible signature field will use it when you sign."
 msgstr "Je hebt een handtekeningafbeelding ingesteld. Documenten met een zichtbaar handtekeningveld gebruiken deze wanneer je ondertekent."
+
+msgid "Draw signature"
+msgstr "Handtekening tekenen"
+
+msgid "Draw your signature"
+msgstr "Teken je handtekening"
+
+msgid "Save"
+msgstr "Opslaan"
+
+msgid "Sign with your finger or a stylus, then tap Save."
+msgstr "Onderteken met je vinger of een stylus en tik dan op Opslaan."
+
+msgid "Sign with your finger or a stylus, then tap Save. Rotating your device gives more room to draw."
+msgstr "Onderteken met je vinger of een stylus en tik dan op Opslaan. Als je het apparaat draait, heb je meer ruimte om te tekenen."
+
+msgid "The drawing area changed size, so it was cleared - please sign again."
+msgstr "Het tekengebied is van grootte veranderd en is daarom gewist - onderteken opnieuw."
