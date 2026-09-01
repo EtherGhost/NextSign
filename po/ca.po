@@ -197,6 +197,9 @@ msgstr "LibreSign ha retornat una resposta inesperada."
 msgid "LibreSign request failed because the network request could not be completed."
 msgstr "La sol·licitud a LibreSign ha fallat perquè no s'ha pogut completar la sol·licitud de xarxa."
 
+msgid "LibreSign requires the native network backend."
+msgstr "El LibreSign requereix el backend de xarxa natiu."
+
 msgid "LibreSign request timed out."
 msgstr "La sol·licitud a LibreSign ha esgotat el temps d'espera."
 
@@ -431,3 +434,33 @@ msgstr "Més antics primer"
 
 msgid "Name (A-Z)"
 msgstr "Nom (A-Z)"
+
+msgid "%1 document(s)."
+msgstr "%1 document(s)."
+
+msgid "Documents you're requested to sign, or have already signed, will appear here."
+msgstr "Els documents que se't demana signar, o que ja has signat, apareixeran aquí."
+
+msgid "No documents yet"
+msgstr "Encara no hi ha documents"
+
+msgid "No documents yet."
+msgstr "Encara no hi ha documents."
+
+msgid "Open file"
+msgstr "Obre el fitxer"
+
+msgid "Partially signed"
+msgstr "Signat parcialment"
+
+msgid "Ready to sign"
+msgstr "Llest per signar"
+
+msgid "Select an account to load your documents."
+msgstr "Selecciona un compte per carregar els teus documents."
+
+msgid "Sign document"
+msgstr "Signa el document"
+
+msgid "Validation info"
+msgstr "Informació de validació"

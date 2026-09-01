@@ -197,6 +197,9 @@ msgstr "LibreSign zwrócił nieoczekiwaną odpowiedź."
 msgid "LibreSign request failed because the network request could not be completed."
 msgstr "Żądanie LibreSign nie powiodło się, ponieważ nie można było zakończyć żądania sieciowego."
 
+msgid "LibreSign requires the native network backend."
+msgstr "LibreSign wymaga natywnego zaplecza sieciowego."
+
 msgid "LibreSign request timed out."
 msgstr "Upłynął limit czasu żądania LibreSign."
 
@@ -431,3 +434,33 @@ msgstr "Najpierw najstarsze"
 
 msgid "Name (A-Z)"
 msgstr "Nazwa (A-Z)"
+
+msgid "%1 document(s)."
+msgstr "%1 dokument(y)."
+
+msgid "Documents you're requested to sign, or have already signed, will appear here."
+msgstr "Dokumenty, które masz podpisać, lub które już podpisałeś, pojawią się tutaj."
+
+msgid "No documents yet"
+msgstr "Brak dokumentów"
+
+msgid "No documents yet."
+msgstr "Brak dokumentów."
+
+msgid "Open file"
+msgstr "Otwórz plik"
+
+msgid "Partially signed"
+msgstr "Częściowo podpisany"
+
+msgid "Ready to sign"
+msgstr "Gotowy do podpisania"
+
+msgid "Select an account to load your documents."
+msgstr "Wybierz konto, aby wczytać swoje dokumenty."
+
+msgid "Sign document"
+msgstr "Podpisz dokument"
+
+msgid "Validation info"
+msgstr "Informacje o weryfikacji"

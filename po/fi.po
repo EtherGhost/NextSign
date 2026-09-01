@@ -197,6 +197,9 @@ msgstr "LibreSign palautti odottamattoman vastauksen."
 msgid "LibreSign request failed because the network request could not be completed."
 msgstr "LibreSign-pyyntö epäonnistui, koska verkkopyyntöä ei voitu suorittaa loppuun."
 
+msgid "LibreSign requires the native network backend."
+msgstr "LibreSign vaatii natiivin verkkotaustajärjestelmän."
+
 msgid "LibreSign request timed out."
 msgstr "LibreSign-pyyntö aikakatkaistiin."
 
@@ -431,3 +434,33 @@ msgstr "Vanhin ensin"
 
 msgid "Name (A-Z)"
 msgstr "Nimi (A-Ö)"
+
+msgid "%1 document(s)."
+msgstr "%1 asiakirja(a)."
+
+msgid "Documents you're requested to sign, or have already signed, will appear here."
+msgstr "Asiakirjat, jotka sinun on allekirjoitettava tai jotka olet jo allekirjoittanut, näkyvät täällä."
+
+msgid "No documents yet"
+msgstr "Ei vielä asiakirjoja"
+
+msgid "No documents yet."
+msgstr "Ei vielä asiakirjoja."
+
+msgid "Open file"
+msgstr "Avaa tiedosto"
+
+msgid "Partially signed"
+msgstr "Osittain allekirjoitettu"
+
+msgid "Ready to sign"
+msgstr "Valmis allekirjoitettavaksi"
+
+msgid "Select an account to load your documents."
+msgstr "Valitse tili ladataksesi asiakirjasi."
+
+msgid "Sign document"
+msgstr "Allekirjoita asiakirja"
+
+msgid "Validation info"
+msgstr "Vahvistustiedot"

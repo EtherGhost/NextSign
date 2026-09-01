@@ -51,18 +51,6 @@ Page {
             }
         }
 
-        extension: Sections {
-            anchors {
-                left: parent.left
-                right: parent.right
-                leftMargin: units.gu(2)
-                rightMargin: units.gu(2)
-                bottom: parent.bottom
-            }
-            model: [i18n.tr("To sign"), i18n.tr("Signed")]
-            selectedIndex: dataController.viewStatus === 3 ? 1 : 0
-            onSelectedIndexChanged: dataController.switchView(selectedIndex === 1 ? 3 : 1)
-        }
     }
 
     readonly property string accountInitial: accountSettings.displayName.length > 0
@@ -139,17 +127,34 @@ Page {
 
     function updateSortedDocuments() {
         var list = dataController.documents.slice()
-        var dateField = dataController.viewStatus === 3 ? "signedAt" : "createdAt"
         if (page.sortMode === "name-asc") {
             list.sort(function(a, b) { return String(a.name).localeCompare(String(b.name)) })
         } else {
             list.sort(function(a, b) {
-                var da = Date.parse(a[dateField]) || 0
-                var db = Date.parse(b[dateField]) || 0
+                var da = Date.parse(a["createdAt"]) || 0
+                var db = Date.parse(b["createdAt"]) || 0
                 return page.sortMode === "date-asc" ? da - db : db - da
             })
         }
         sortedDocuments = list
+    }
+
+    // Mirrors LibreSign's own web UI status labels/colors for a file's overall progress.
+    function statusLabel(fileStatus) {
+        if (fileStatus === 1) {
+            return i18n.tr("Ready to sign")
+        }
+        if (fileStatus === 2) {
+            return i18n.tr("Partially signed")
+        }
+        if (fileStatus === 3) {
+            return i18n.tr("Signed")
+        }
+        return ""
+    }
+
+    function statusColor(fileStatus) {
+        return fileStatus === 3 ? "#5a8f3c" : "#b37a2a"
     }
 
     Connections {
@@ -194,6 +199,7 @@ Page {
     property string signedDocumentName: ""
     property string validationSummaryText: ""
     property string validationErrorMessage: ""
+    property var detailDocument: null
 
     function formatValidationSummary(summary) {
         var lines = []
@@ -222,6 +228,75 @@ Page {
             id: dialog
             title: i18n.tr("Could not open document")
             text: page.previewErrorMessage
+
+            Button {
+                text: i18n.tr("Close")
+                onClicked: PopupUtils.close(dialog)
+            }
+        }
+    }
+
+    Component {
+        id: detailDialog
+
+        Dialog {
+            id: dialog
+            title: page.detailDocument ? (page.detailDocument.name || i18n.tr("Untitled document")) : ""
+            text: page.detailDocument ? page.statusLabel(page.detailDocument.fileStatus) : ""
+
+            Repeater {
+                model: page.detailDocument ? page.detailDocument.signers : []
+                delegate: RowLayout {
+                    Layout.fillWidth: true
+                    spacing: units.gu(1)
+                    Label {
+                        Layout.fillWidth: true
+                        text: modelData.displayName || i18n.tr("Unknown signer")
+                        elide: Text.ElideRight
+                    }
+                    Label {
+                        text: modelData.signed.length > 0 ? i18n.tr("Signed") : i18n.tr("Ready to sign")
+                        color: modelData.signed.length > 0 ? "#5a8f3c" : "#b37a2a"
+                        textSize: Label.Small
+                    }
+                }
+            }
+
+            AppButton {
+                Layout.fillWidth: true
+                visible: page.detailDocument ? page.detailDocument.canSignNow : false
+                text: dataController.signingUuid === (page.detailDocument ? page.detailDocument.uuid : "") ? i18n.tr("Signing...") : i18n.tr("Sign document")
+                variant: "primary"
+                enabled: dataController.signingUuid.length === 0 && !dataController.downloadingPreview
+                onClicked: {
+                    PopupUtils.close(dialog)
+                    page.signRequestedUuid = page.detailDocument.uuid
+                    page.lastSignRequestedName = page.detailDocument.name
+                    PopupUtils.open(signConfirmDialog)
+                }
+            }
+
+            AppButton {
+                Layout.fillWidth: true
+                text: dataController.validatingUuid === (page.detailDocument ? page.detailDocument.uuid : "") ? i18n.tr("Validating...") : i18n.tr("Validation info")
+                variant: "normal"
+                enabled: dataController.validatingUuid.length === 0 && !dataController.downloadingPreview
+                onClicked: {
+                    PopupUtils.close(dialog)
+                    dataController.validateDocument(page.detailDocument.uuid)
+                }
+            }
+
+            AppButton {
+                Layout.fillWidth: true
+                text: dataController.downloadingPreview ? i18n.tr("Opening...") : i18n.tr("Open file")
+                variant: "normal"
+                enabled: !dataController.downloadingPreview && dataController.signingUuid.length === 0 && dataController.validatingUuid.length === 0
+                onClicked: {
+                    PopupUtils.close(dialog)
+                    dataController.previewDocument(page.detailDocument.uuid)
+                }
+            }
 
             Button {
                 text: i18n.tr("Close")
@@ -309,10 +384,8 @@ Page {
         width: parent.width - units.gu(4)
         visible: !dataController.loading && dataController.documents.length === 0
         symbol: "✍"
-        title: dataController.viewStatus === 3 ? i18n.tr("No signed documents yet") : i18n.tr("No documents to sign")
-        message: dataController.viewStatus === 3
-            ? i18n.tr("Documents you have signed will appear here.")
-            : i18n.tr("Documents waiting for your signature will appear here.")
+        title: i18n.tr("No documents yet")
+        message: i18n.tr("Documents you're requested to sign, or have already signed, will appear here.")
     }
 
     Flickable {
@@ -367,6 +440,10 @@ Page {
                 model: page.sortedDocuments
                 delegate: ListItem {
                     height: units.gu(7)
+                    onClicked: {
+                        page.detailDocument = modelData
+                        PopupUtils.open(detailDialog)
+                    }
                     Rectangle {
                         anchors { fill: parent; margins: units.gu(0.35) }
                         radius: units.gu(0.7)
@@ -380,18 +457,35 @@ Page {
                         ColumnLayout {
                             Layout.fillWidth: true
                             spacing: units.gu(0.2)
-                            Label {
+                            RowLayout {
                                 Layout.fillWidth: true
-                                text: modelData.name || i18n.tr("Untitled document")
-                                font.bold: true
-                                elide: Text.ElideRight
+                                spacing: units.gu(1)
+                                Label {
+                                    Layout.fillWidth: true
+                                    text: modelData.name || i18n.tr("Untitled document")
+                                    font.bold: true
+                                    elide: Text.ElideRight
+                                }
+                                Rectangle {
+                                    radius: height / 2
+                                    color: "transparent"
+                                    border.width: 1
+                                    border.color: page.statusColor(modelData.fileStatus)
+                                    implicitWidth: statusBadgeLabel.implicitWidth + units.gu(1.2)
+                                    implicitHeight: statusBadgeLabel.implicitHeight + units.gu(0.4)
+                                    Label {
+                                        id: statusBadgeLabel
+                                        anchors.centerIn: parent
+                                        text: page.statusLabel(modelData.fileStatus)
+                                        textSize: Label.XSmall
+                                        color: page.statusColor(modelData.fileStatus)
+                                    }
+                                }
                             }
                             Label {
                                 Layout.fillWidth: true
-                                visible: dataController.viewStatus === 3 ? modelData.signedAt.length > 0 : modelData.requestedBy.length > 0
-                                text: dataController.viewStatus === 3
-                                    ? i18n.tr("Signed %1").arg(Qt.formatDate(new Date(modelData.signedAt), "yyyy-MM-dd"))
-                                    : i18n.tr("Requested by %1").arg(modelData.requestedBy)
+                                visible: modelData.requestedBy.length > 0
+                                text: i18n.tr("Requested by %1").arg(modelData.requestedBy)
                                 textSize: Label.Small
                                 opacity: 0.72
                                 elide: Text.ElideRight
@@ -404,7 +498,7 @@ Page {
                             onClicked: dataController.previewDocument(modelData.uuid)
                         }
                         AppButton {
-                            visible: dataController.viewStatus === 1
+                            visible: modelData.canSignNow
                             text: dataController.signingUuid === modelData.uuid ? i18n.tr("Signing...") : i18n.tr("Sign")
                             variant: "primary"
                             enabled: dataController.signingUuid.length === 0 && !dataController.downloadingPreview
@@ -413,13 +507,6 @@ Page {
                                 page.lastSignRequestedName = modelData.name
                                 PopupUtils.open(signConfirmDialog)
                             }
-                        }
-                        AppButton {
-                            visible: dataController.viewStatus === 3
-                            text: dataController.validatingUuid === modelData.uuid ? i18n.tr("Validating...") : i18n.tr("Validate")
-                            variant: "primary"
-                            enabled: dataController.validatingUuid.length === 0 && !dataController.downloadingPreview
-                            onClicked: dataController.validateDocument(modelData.uuid)
                         }
                     }
                 }

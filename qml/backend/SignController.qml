@@ -5,7 +5,7 @@ import "qrc:/NextCommon" as NextCommon
 Item {
     id: controller
     property bool loading: false
-    property string statusText: i18n.tr("Select an account to load documents waiting for your signature.")
+    property string statusText: i18n.tr("Select an account to load your documents.")
     property string syncStateText: i18n.tr("No account")
     property string syncStateColor: "#b37a2a"
     property string accountAvatarUrl: accountSettings.avatarUrl || ""
@@ -18,9 +18,11 @@ Item {
     property string currentSecret: ""
     property bool downloadingPreview: false
     property string signingUuid: ""
-    // 1 = documents able to sign, 3 = signed documents.
-    property int viewStatus: 1
     property string validatingUuid: ""
+    // { "signature": nodeId, "initial": nodeId, ... } - the account's own registered
+    // signature/initials images, needed alongside a document's placeholder position to
+    // render a visible mark when signing. Empty until loadSignatureElements() returns.
+    property var signatureElementsByType: ({})
 
     signal previewReady(url fileUrl, string suggestedName)
     signal previewFailed(string message)
@@ -64,8 +66,13 @@ Item {
             controller.statusText = i18n.tr("Signed in. Loading documents...")
             controller.syncStateText = i18n.tr("Syncing")
             controller.syncStateColor = "#2c7fb8"
+            controller.signatureElementsByType = ({})
             api.requestGeneration = generation
-            api.loadFiles(serverUrl, userName, secret, controller.viewStatus)
+            // Tags subsequent "NextSign LibreSignApi ..." log lines with which account
+            // they belong to, so a device log can tell two accounts' requests apart.
+            console.log("NextSign SignController authenticated userName=" + userName + " accountId=" + accountId + " generation=" + generation)
+            api.loadFiles(serverUrl, userName, secret)
+            api.loadSignatureElements(serverUrl, userName, secret)
         }
         onFailed: function(message) {
             controller.loading = false
@@ -83,13 +90,9 @@ Item {
             }
             controller.loading = false
             controller.documents = files
-            controller.statusText = controller.viewStatus === 3
-                ? (files.length > 0
-                    ? i18n.tr("%1 signed document(s).").arg(files.length)
-                    : i18n.tr("No signed documents yet."))
-                : (files.length > 0
-                    ? i18n.tr("%1 document(s) waiting for your signature.").arg(files.length)
-                    : i18n.tr("No documents waiting for your signature."))
+            controller.statusText = files.length > 0
+                ? i18n.tr("%1 document(s).").arg(files.length)
+                : i18n.tr("No documents yet.")
             controller.syncStateText = i18n.tr("Up to date")
             controller.syncStateColor = "#5a8f3c"
         }
@@ -130,6 +133,26 @@ Item {
             }
             controller.validatingUuid = ""
             controller.validationFailed(message)
+        }
+        onSignatureElementsLoaded: function(elements, generation) {
+            if (!controller.isCurrentGeneration(generation)) {
+                return
+            }
+            var byType = {}
+            for (var i = 0; i < elements.length; ++i) {
+                var element = elements[i]
+                // Prefer the starred (default) element of a type over an earlier one.
+                if (!(element.type in byType) || element.starred) {
+                    byType[element.type] = element.nodeId
+                }
+            }
+            controller.signatureElementsByType = byType
+        }
+        onSignatureElementsFailed: function(message, generation) {
+            if (!controller.isCurrentGeneration(generation)) {
+                return
+            }
+            console.log("NextSign SignController could not load signature elements: " + message)
         }
     }
 
@@ -200,7 +223,7 @@ Item {
 
         controller.signingUuid = uuid
         api.requestGeneration = controller.accountRequestGeneration
-        api.signDocument(controller.currentServerUrl, controller.currentUserName, controller.currentSecret, target.signUuid)
+        api.signDocument(controller.currentServerUrl, controller.currentUserName, controller.currentSecret, target.signUuid, target.visibleElements, controller.signatureElementsByType)
     }
 
     function validateDocument(uuid) {
@@ -226,18 +249,9 @@ Item {
         api.validateFile(controller.currentServerUrl, controller.currentUserName, controller.currentSecret, uuid)
     }
 
-    function switchView(status) {
-        if (controller.viewStatus === status) {
-            return
-        }
-        controller.viewStatus = status
-        controller.documents = []
-        controller.refresh()
-    }
-
     function refresh() {
         if (!hasCompleteAccountSettings()) {
-            controller.statusText = i18n.tr("Select an account to load documents waiting for your signature.")
+            controller.statusText = i18n.tr("Select an account to load your documents.")
             controller.syncStateText = i18n.tr("No account")
             controller.syncStateColor = "#b37a2a"
             controller.documents = []

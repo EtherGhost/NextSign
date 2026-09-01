@@ -197,6 +197,9 @@ msgstr "LibreSign returnerede et uventet svar."
 msgid "LibreSign request failed because the network request could not be completed."
 msgstr "LibreSign-anmodningen mislykkedes, fordi netværksanmodningen ikke kunne gennemføres."
 
+msgid "LibreSign requires the native network backend."
+msgstr "LibreSign kræver den native netværksbackend."
+
 msgid "LibreSign request timed out."
 msgstr "LibreSign-anmodningen fik timeout."
 
@@ -431,3 +434,33 @@ msgstr "Ældste først"
 
 msgid "Name (A-Z)"
 msgstr "Navn (A-Å)"
+
+msgid "%1 document(s)."
+msgstr "%1 dokument(er)."
+
+msgid "Documents you're requested to sign, or have already signed, will appear here."
+msgstr "Dokumenter du er blevet bedt om at underskrive, eller allerede har underskrevet, vises her."
+
+msgid "No documents yet"
+msgstr "Ingen dokumenter endnu"
+
+msgid "No documents yet."
+msgstr "Ingen dokumenter endnu."
+
+msgid "Open file"
+msgstr "Åbn fil"
+
+msgid "Partially signed"
+msgstr "Delvist underskrevet"
+
+msgid "Ready to sign"
+msgstr "Klar til underskrift"
+
+msgid "Select an account to load your documents."
+msgstr "Vælg en konto for at indlæse dine dokumenter."
+
+msgid "Sign document"
+msgstr "Underskriv dokument"
+
+msgid "Validation info"
+msgstr "Valideringsoplysninger"

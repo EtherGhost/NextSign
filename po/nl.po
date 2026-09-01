@@ -197,6 +197,9 @@ msgstr "LibreSign heeft een onverwacht antwoord teruggegeven."
 msgid "LibreSign request failed because the network request could not be completed."
 msgstr "LibreSign-verzoek is mislukt omdat het netwerkverzoek niet kon worden voltooid."
 
+msgid "LibreSign requires the native network backend."
+msgstr "LibreSign vereist de native netwerk-backend."
+
 msgid "LibreSign request timed out."
 msgstr "LibreSign-verzoek is verlopen."
 
@@ -431,3 +434,33 @@ msgstr "Oudste eerst"
 
 msgid "Name (A-Z)"
 msgstr "Naam (A-Z)"
+
+msgid "%1 document(s)."
+msgstr "%1 document(en)."
+
+msgid "Documents you're requested to sign, or have already signed, will appear here."
+msgstr "Documenten die je moet ondertekenen, of al hebt ondertekend, verschijnen hier."
+
+msgid "No documents yet"
+msgstr "Nog geen documenten"
+
+msgid "No documents yet."
+msgstr "Nog geen documenten."
+
+msgid "Open file"
+msgstr "Bestand openen"
+
+msgid "Partially signed"
+msgstr "Gedeeltelijk ondertekend"
+
+msgid "Ready to sign"
+msgstr "Klaar om te ondertekenen"
+
+msgid "Select an account to load your documents."
+msgstr "Selecteer een account om je documenten te laden."
+
+msgid "Sign document"
+msgstr "Document ondertekenen"
+
+msgid "Validation info"
+msgstr "Validatie-informatie"

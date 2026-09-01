@@ -197,6 +197,9 @@ msgstr "LibreSign повернув неочікувану відповідь."
 msgid "LibreSign request failed because the network request could not be completed."
 msgstr "Запит до LibreSign не виконано, оскільки не вдалося завершити мережевий запит."
 
+msgid "LibreSign requires the native network backend."
+msgstr "Для LibreSign потрібен вбудований мережевий модуль."
+
 msgid "LibreSign request timed out."
 msgstr "Минув час очікування запиту до LibreSign."
 
@@ -431,3 +434,33 @@ msgstr "Спочатку старі"
 
 msgid "Name (A-Z)"
 msgstr "Ім'я (А-Я)"
+
+msgid "%1 document(s)."
+msgstr "%1 документ(ів)."
+
+msgid "Documents you're requested to sign, or have already signed, will appear here."
+msgstr "Тут з'являться документи, які вам потрібно підписати, або які ви вже підписали."
+
+msgid "No documents yet"
+msgstr "Поки немає документів"
+
+msgid "No documents yet."
+msgstr "Поки немає документів."
+
+msgid "Open file"
+msgstr "Відкрити файл"
+
+msgid "Partially signed"
+msgstr "Частково підписано"
+
+msgid "Ready to sign"
+msgstr "Готовий до підпису"
+
+msgid "Select an account to load your documents."
+msgstr "Виберіть обліковий запис, щоб завантажити ваші документи."
+
+msgid "Sign document"
+msgstr "Підписати документ"
+
+msgid "Validation info"
+msgstr "Інформація про перевірку"

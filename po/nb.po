@@ -197,6 +197,9 @@ msgstr "LibreSign returnerte et uventet svar."
 msgid "LibreSign request failed because the network request could not be completed."
 msgstr "LibreSign-forespørselen mislyktes fordi nettverksforespørselen ikke kunne fullføres."
 
+msgid "LibreSign requires the native network backend."
+msgstr "LibreSign krever den native nettverksbackend-en."
+
 msgid "LibreSign request timed out."
 msgstr "LibreSign-forespørselen fikk tidsavbrudd."
 
@@ -431,3 +434,33 @@ msgstr "Eldste først"
 
 msgid "Name (A-Z)"
 msgstr "Navn (A-Å)"
+
+msgid "%1 document(s)."
+msgstr "%1 dokument(er)."
+
+msgid "Documents you're requested to sign, or have already signed, will appear here."
+msgstr "Dokumenter du er bedt om å signere, eller allerede har signert, vises her."
+
+msgid "No documents yet"
+msgstr "Ingen dokumenter ennå"
+
+msgid "No documents yet."
+msgstr "Ingen dokumenter ennå."
+
+msgid "Open file"
+msgstr "Åpne fil"
+
+msgid "Partially signed"
+msgstr "Delvis signert"
+
+msgid "Ready to sign"
+msgstr "Klar til signering"
+
+msgid "Select an account to load your documents."
+msgstr "Velg en konto for å laste inn dokumentene dine."
+
+msgid "Sign document"
+msgstr "Signer dokument"
+
+msgid "Validation info"
+msgstr "Valideringsinformasjon"
