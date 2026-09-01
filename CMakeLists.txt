@@ -11,7 +11,7 @@ find_package(Qt5Quick REQUIRED)
 
 set(PROJECT_NAME "nextsign")
 set(FULL_PROJECT_NAME "nextsign.cloudsite")
-set(NEXTSIGN_VERSION "0.1.0")
+set(NEXTSIGN_VERSION "0.2.0")
 set(DATA_DIR /)
 set(DESKTOP_FILE_NAME ${PROJECT_NAME}.desktop)
 
