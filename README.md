@@ -13,17 +13,18 @@ Early release. Bugs and rough edges are expected. What exists so far:
 - Ubuntu Touch Online Accounts authentication (Nextcloud/ownCloud), with the guided
   allow-this-account flow.
 - The shared app shell: hamburger navigation, settings, language selection, and about page.
-- Two views, switchable from the header: documents waiting for your signature, and documents
-  you've already signed.
-- Lets you view a document (either view) before or after signing: downloads it and hands it to
-  whichever app you pick via Ubuntu Touch's content-hub share flow, rather than an in-app PDF
-  viewer.
+- One document list showing every document you're involved in, each with its own status (ready
+  to sign, partially signed, signed) - tap a document to see every signer's status.
+- Lets you view a document before or after signing: downloads it and hands it to whichever app
+  you pick via Ubuntu Touch's content-hub share flow, rather than an in-app PDF viewer.
 - Signs a document with a tap, using LibreSign's `clickToSign` method, after a confirmation
   prompt. This is the app's core feature.
+- Set up a signature by picking an image or drawing it with a finger or stylus, used
+  automatically when a document needs a visible signature.
 - Validates a signed document's signature and shows LibreSign's own verdict for it.
-- Sort either list by date or name.
-- Pull down to refresh either view. Reconnects safely if you switch Nextcloud accounts while a
-  request is still in flight.
+- Sort the list by date or name.
+- Pull down to refresh. Reconnects safely if you switch Nextcloud accounts while a request is
+  still in flight.
 - Available in English, Swedish, Catalan, Danish, Dutch, Finnish, French, German, Italian,
   Norwegian Bokmal, Polish, Russian, Spanish, and Ukrainian.
 
@@ -45,8 +46,8 @@ product.
 
 ## Platforms
 
-- **Ubuntu Touch** - the only target right now.
-- **Android** - planned as a separate, independent app later (different UI toolkit and a
+- **Ubuntu Touch** - this app.
+- **Android** - a separate, independent app under development (different UI toolkit and a
   different account/auth mechanism than Ubuntu Touch), not a port of this codebase.
 
 ## Technology
