@@ -536,3 +536,6 @@ msgstr "Signez avec votre doigt ou un stylet, puis appuyez sur Enregistrer. Fair
 
 msgid "The drawing area changed size, so it was cleared - please sign again."
 msgstr "La zone de dessin a changé de taille et a donc été effacée - veuillez signer à nouveau."
+
+msgid "Message from the requester"
+msgstr "Message du demandeur"

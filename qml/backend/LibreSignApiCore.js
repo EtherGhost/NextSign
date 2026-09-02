@@ -91,7 +91,12 @@ function parseFileList(responseText) {
                 // as "documentElementId" (plus a matching "profileNodeId" - see
                 // parseSignatureElements) in the sign request, LibreSign records the
                 // signature with no visible mark - see sign/uuid/{uuid} in LibreSignApiClient.qml.
-                "visibleElements": visibleElements
+                "visibleElements": visibleElements,
+                // The requester's optional "Add custom message" note for this signer
+                // specifically, set when the signature request was created (LibreSign
+                // web UI's "Add new signer" dialog) - empty if none was set, or if this
+                // account isn't a signer on this document.
+                "messageForMe": mySigner && mySigner.description ? mySigner.description : ""
             })
         }
         return result

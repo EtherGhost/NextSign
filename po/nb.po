@@ -536,3 +536,6 @@ msgstr "Signer med fingeren eller en penn, trykk deretter på Lagre. Å rotere e
 
 msgid "The drawing area changed size, so it was cleared - please sign again."
 msgstr "Tegneområdet endret størrelse, så det ble tømt - signer på nytt."
+
+msgid "Message from the requester"
+msgstr "Melding fra forespørreren"

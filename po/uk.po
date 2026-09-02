@@ -536,3 +536,6 @@ msgstr "Підпишіть пальцем або стилусом, потім н
 
 msgid "The drawing area changed size, so it was cleared - please sign again."
 msgstr "Область малювання змінила розмір, тому її очищено - підпишіть ще раз."
+
+msgid "Message from the requester"
+msgstr "Повідомлення від відправника"

@@ -536,3 +536,6 @@ msgstr "Signa amb el dit o un llapis òptic i després toca Desa. Si gires el di
 
 msgid "The drawing area changed size, so it was cleared - please sign again."
 msgstr "L'àrea de dibuix ha canviat de mida, per això s'ha esborrat - torna a signar."
+
+msgid "Message from the requester"
+msgstr "Missatge del sol·licitant"

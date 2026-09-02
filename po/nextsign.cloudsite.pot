@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nextsign.cloudsite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-01 20:20+0000\n"
+"POT-Creation-Date: 2026-09-02 15:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -202,9 +202,9 @@ msgid "Refresh"
 msgstr ""
 
 #: qml/pages/HomePage.qml:117 qml/pages/HomePage.qml:266
-#: qml/pages/HomePage.qml:333 qml/pages/HomePage.qml:362
-#: qml/pages/HomePage.qml:377 qml/pages/HomePage.qml:392
-#: qml/pages/HomePage.qml:407
+#: qml/pages/HomePage.qml:359 qml/pages/HomePage.qml:388
+#: qml/pages/HomePage.qml:403 qml/pages/HomePage.qml:418
+#: qml/pages/HomePage.qml:433
 msgid "Close"
 msgstr ""
 
@@ -233,7 +233,7 @@ msgid "Partially signed"
 msgstr ""
 
 #: qml/pages/HomePage.qml:184 qml/pages/HomePage.qml:241
-#: qml/pages/HomePage.qml:291 qml/pages/HomePage.qml:357
+#: qml/pages/HomePage.qml:291 qml/pages/HomePage.qml:383
 msgid "Signed"
 msgstr ""
 
@@ -245,114 +245,118 @@ msgstr ""
 msgid "Could not open document"
 msgstr ""
 
-#: qml/pages/HomePage.qml:277 qml/pages/HomePage.qml:346
-#: qml/pages/HomePage.qml:359 qml/pages/HomePage.qml:496
+#: qml/pages/HomePage.qml:277 qml/pages/HomePage.qml:372
+#: qml/pages/HomePage.qml:385 qml/pages/HomePage.qml:524
 msgid "Untitled document"
 msgstr ""
 
-#: qml/pages/HomePage.qml:301
+#: qml/pages/HomePage.qml:312
+msgid "Message from the requester"
+msgstr ""
+
+#: qml/pages/HomePage.qml:327
 msgid "Sign document"
 msgstr ""
 
-#: qml/pages/HomePage.qml:301 qml/pages/HomePage.qml:533
+#: qml/pages/HomePage.qml:327 qml/pages/HomePage.qml:561
 msgid "Signing..."
 msgstr ""
 
-#: qml/pages/HomePage.qml:312
+#: qml/pages/HomePage.qml:338
 msgid "Validating..."
 msgstr ""
 
-#: qml/pages/HomePage.qml:312
+#: qml/pages/HomePage.qml:338
 msgid "Validation info"
 msgstr ""
 
-#: qml/pages/HomePage.qml:323
+#: qml/pages/HomePage.qml:349
 msgid "Open file"
 msgstr ""
 
-#: qml/pages/HomePage.qml:323 qml/pages/HomePage.qml:526
+#: qml/pages/HomePage.qml:349 qml/pages/HomePage.qml:554
 msgid "Opening..."
 msgstr ""
 
-#: qml/pages/HomePage.qml:344
+#: qml/pages/HomePage.qml:370
 msgid "Sign this document?"
 msgstr ""
 
-#: qml/pages/HomePage.qml:345
+#: qml/pages/HomePage.qml:371
 msgid ""
 "This will sign \"%1\" using LibreSign's click-to-sign method. This cannot be "
 "undone."
 msgstr ""
 
-#: qml/pages/HomePage.qml:347 qml/pages/HomePage.qml:533
+#: qml/pages/HomePage.qml:373 qml/pages/HomePage.qml:561
 msgid "Sign"
 msgstr ""
 
-#: qml/pages/HomePage.qml:358
+#: qml/pages/HomePage.qml:384
 msgid "\"%1\" has been signed."
 msgstr ""
 
-#: qml/pages/HomePage.qml:373
+#: qml/pages/HomePage.qml:399
 msgid "Could not sign document"
 msgstr ""
 
-#: qml/pages/HomePage.qml:388
+#: qml/pages/HomePage.qml:414
 msgid "Signature validation"
 msgstr ""
 
-#: qml/pages/HomePage.qml:403
+#: qml/pages/HomePage.qml:429
 msgid "Could not validate document"
 msgstr ""
 
-#: qml/pages/HomePage.qml:418
+#: qml/pages/HomePage.qml:444
 msgid "No documents yet"
 msgstr ""
 
-#: qml/pages/HomePage.qml:419
+#: qml/pages/HomePage.qml:445
 msgid ""
 "Documents you're requested to sign, or have already signed, will appear here."
 msgstr ""
 
-#: qml/pages/HomePage.qml:458
+#: qml/pages/HomePage.qml:484
 msgid "Refreshing..."
 msgstr ""
 
-#: qml/pages/HomePage.qml:459
+#: qml/pages/HomePage.qml:485
 msgid "Pull to refresh"
 msgstr ""
 
-#: qml/pages/HomePage.qml:459
+#: qml/pages/HomePage.qml:485
 msgid "Release to refresh"
 msgstr ""
 
-#: qml/pages/HomePage.qml:519
+#: qml/pages/HomePage.qml:531
 msgid "Requested by %1"
 msgstr ""
 
-#: qml/pages/HomePage.qml:526
+#: qml/pages/HomePage.qml:554
 msgid "View"
 msgstr ""
 
-#: qml/pages/HomePage.qml:553
+#: qml/pages/HomePage.qml:581
 #: vendor/NextCommon/qml/NextCommon/LanguagePage.qml:14
 msgid "Language"
 msgstr ""
 
-#: qml/pages/HomePage.qml:554
+#: qml/pages/HomePage.qml:582
 #: vendor/NextCommon/qml/NextCommon/AccountPage.qml:160
 msgid "Account"
 msgstr ""
 
-#: qml/pages/HomePage.qml:555 qml/pages/SignatureSetupPage.qml:12
+#: qml/pages/HomePage.qml:583 qml/pages/SignatureSetupPage.qml:12
 msgid "Signature"
 msgstr ""
 
-#: qml/pages/HomePage.qml:556 qml/pages/SettingsPage.qml:9
+#: qml/pages/HomePage.qml:584 qml/pages/SettingsPage.qml:9
 #: vendor/NextCommon/qml/NextCommon/SettingsShell.qml:8
 msgid "Settings"
 msgstr ""
 
-#: qml/pages/HomePage.qml:557 vendor/NextCommon/qml/NextCommon/AboutPage.qml:18
+#: qml/pages/HomePage.qml:585 vendor/NextCommon/qml/NextCommon/AboutPage.qml:18
 msgid "About"
 msgstr ""
 

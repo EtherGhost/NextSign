@@ -536,3 +536,6 @@ msgstr "Onderteken met je vinger of een stylus en tik dan op Opslaan. Als je het
 
 msgid "The drawing area changed size, so it was cleared - please sign again."
 msgstr "Het tekengebied is van grootte veranderd en is daarom gewist - onderteken opnieuw."
+
+msgid "Message from the requester"
+msgstr "Bericht van de aanvrager"

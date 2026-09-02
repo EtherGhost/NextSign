@@ -295,6 +295,32 @@ Page {
                 }
             }
 
+            Rectangle {
+                Layout.fillWidth: true
+                visible: page.detailDocument ? page.detailDocument.messageForMe.length > 0 : false
+                color: theme.palette.normal.background
+                border.width: 1
+                border.color: theme.palette.normal.base
+                radius: units.gu(0.5)
+                implicitHeight: messageColumn.implicitHeight + units.gu(1.6)
+                ColumnLayout {
+                    id: messageColumn
+                    anchors { fill: parent; margins: units.gu(0.8) }
+                    spacing: units.gu(0.2)
+                    Label {
+                        Layout.fillWidth: true
+                        text: i18n.tr("Message from the requester")
+                        textSize: Label.XSmall
+                        opacity: 0.72
+                    }
+                    Label {
+                        Layout.fillWidth: true
+                        text: page.detailDocument ? page.detailDocument.messageForMe : ""
+                        wrapMode: Text.WordWrap
+                    }
+                }
+            }
+
             AppButton {
                 Layout.fillWidth: true
                 visible: page.detailDocument ? page.detailDocument.canSignNow : false
@@ -470,7 +496,12 @@ Page {
             Repeater {
                 model: page.sortedDocuments
                 delegate: ListItem {
-                    height: units.gu(7)
+                    // Status badge lives in its own row at the bottom, always
+                    // left-aligned at the same position - putting it inline next to
+                    // the name landed it at a different horizontal spot on every card
+                    // depending on how long the name was. There will never be many
+                    // documents in this list at once, so the taller card is fine.
+                    height: modelData.requestedBy.length > 0 ? units.gu(9.5) : units.gu(8)
                     onClicked: {
                         page.detailDocument = modelData
                         PopupUtils.open(detailDialog)
@@ -488,30 +519,11 @@ Page {
                         ColumnLayout {
                             Layout.fillWidth: true
                             spacing: units.gu(0.2)
-                            RowLayout {
+                            Label {
                                 Layout.fillWidth: true
-                                spacing: units.gu(1)
-                                Label {
-                                    Layout.fillWidth: true
-                                    text: modelData.name || i18n.tr("Untitled document")
-                                    font.bold: true
-                                    elide: Text.ElideRight
-                                }
-                                Rectangle {
-                                    radius: height / 2
-                                    color: "transparent"
-                                    border.width: 1
-                                    border.color: page.statusColor(modelData.fileStatus)
-                                    implicitWidth: statusBadgeLabel.implicitWidth + units.gu(1.2)
-                                    implicitHeight: statusBadgeLabel.implicitHeight + units.gu(0.4)
-                                    Label {
-                                        id: statusBadgeLabel
-                                        anchors.centerIn: parent
-                                        text: page.statusLabel(modelData.fileStatus)
-                                        textSize: Label.XSmall
-                                        color: page.statusColor(modelData.fileStatus)
-                                    }
-                                }
+                                text: modelData.name || i18n.tr("Untitled document")
+                                font.bold: true
+                                elide: Text.ElideRight
                             }
                             Label {
                                 Layout.fillWidth: true
@@ -520,6 +532,22 @@ Page {
                                 textSize: Label.Small
                                 opacity: 0.72
                                 elide: Text.ElideRight
+                            }
+                            Rectangle {
+                                Layout.topMargin: units.gu(0.3)
+                                radius: height / 2
+                                color: "transparent"
+                                border.width: 1
+                                border.color: page.statusColor(modelData.fileStatus)
+                                implicitWidth: statusBadgeLabel.implicitWidth + units.gu(1.2)
+                                implicitHeight: statusBadgeLabel.implicitHeight + units.gu(0.4)
+                                Label {
+                                    id: statusBadgeLabel
+                                    anchors.centerIn: parent
+                                    text: page.statusLabel(modelData.fileStatus)
+                                    textSize: Label.XSmall
+                                    color: page.statusColor(modelData.fileStatus)
+                                }
                             }
                         }
                         AppButton {

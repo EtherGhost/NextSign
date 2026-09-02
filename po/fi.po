@@ -536,3 +536,6 @@ msgstr "Allekirjoita sormella tai kynällä ja napauta sitten Tallenna. Laitteen
 
 msgid "The drawing area changed size, so it was cleared - please sign again."
 msgstr "Piirtoalueen koko muuttui, joten se tyhjennettiin - allekirjoita uudelleen."
+
+msgid "Message from the requester"
+msgstr "Viesti pyytäjältä"

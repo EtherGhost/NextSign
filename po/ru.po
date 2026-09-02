@@ -536,3 +536,6 @@ msgstr "Подпишите пальцем или стилусом, затем н
 
 msgid "The drawing area changed size, so it was cleared - please sign again."
 msgstr "Область рисования изменила размер, поэтому она была очищена - подпишите ещё раз."
+
+msgid "Message from the requester"
+msgstr "Сообщение от отправителя"

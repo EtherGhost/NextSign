@@ -536,3 +536,6 @@ msgstr "Firma con el dedo o un lápiz óptico y luego toca Guardar. Girar el dis
 
 msgid "The drawing area changed size, so it was cleared - please sign again."
 msgstr "El área de dibujo cambió de tamaño, así que se borró; firma de nuevo."
+
+msgid "Message from the requester"
+msgstr "Mensaje del solicitante"

@@ -536,3 +536,6 @@ msgstr "Signera med fingret eller en penna, tryck sedan på Spara. Om du roterar
 
 msgid "The drawing area changed size, so it was cleared - please sign again."
 msgstr "Ritytan ändrade storlek, så den rensades - signera igen."
+
+msgid "Message from the requester"
+msgstr "Meddelande från beställaren"

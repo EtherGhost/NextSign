@@ -536,3 +536,6 @@ msgstr "Unterschreibe mit dem Finger oder einem Stift und tippe dann auf Speiche
 
 msgid "The drawing area changed size, so it was cleared - please sign again."
 msgstr "Die Zeichenfläche hat die Größe geändert und wurde daher geleert - bitte erneut unterschreiben."
+
+msgid "Message from the requester"
+msgstr "Nachricht vom Anfragenden"

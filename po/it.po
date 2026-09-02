@@ -536,3 +536,6 @@ msgstr "Firma con il dito o uno stilo, poi tocca Salva. Ruotando il dispositivo 
 
 msgid "The drawing area changed size, so it was cleared - please sign again."
 msgstr "L'area di disegno ha cambiato dimensione ed è stata cancellata - firma di nuovo."
+
+msgid "Message from the requester"
+msgstr "Messaggio del richiedente"

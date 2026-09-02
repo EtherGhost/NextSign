@@ -72,6 +72,7 @@ class ParseFileListTests(unittest.TestCase):
                                     "displayName": "Tobias Johansson",
                                     "sign_request_uuid": "7854ce90-0ea6-4525-b0a9-687bc7ab463b",
                                     "signed": None,
+                                    "description": "Please sign before Friday",
                                     "visibleElements": [
                                         {
                                             "elementId": 42,
@@ -103,6 +104,7 @@ class ParseFileListTests(unittest.TestCase):
         self.assertEqual(entry["signedAt"], "")
         self.assertEqual(entry["fileStatus"], 1)
         self.assertTrue(entry["canSignNow"])
+        self.assertEqual(entry["messageForMe"], "Please sign before Friday")
         # The placeholder position(s) already defined for this signer - forwarded as
         # "documentElementId" when signing so LibreSign renders a visible mark.
         self.assertEqual(entry["visibleElements"], [{"elementId": 42, "type": "signature"}])
@@ -138,6 +140,7 @@ class ParseFileListTests(unittest.TestCase):
         result = run_js(f'parseFileList({json.dumps(response)})')
 
         self.assertEqual(result[0]["visibleElements"], [])
+        self.assertEqual(result[0]["messageForMe"], "")
 
     def test_can_sign_now_reflects_whether_i_have_signed_my_part(self):
         # Confirmed live: a multi-signer document's file-level status advances to 2

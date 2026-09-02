@@ -536,3 +536,6 @@ msgstr "Podpisz palcem lub rysikiem, a następnie dotknij Zapisz. Obrócenie urz
 
 msgid "The drawing area changed size, so it was cleared - please sign again."
 msgstr "Obszar rysowania zmienił rozmiar, więc został wyczyszczony - podpisz ponownie."
+
+msgid "Message from the requester"
+msgstr "Wiadomość od wnioskodawcy"

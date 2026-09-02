@@ -536,3 +536,6 @@ msgstr "Underskriv med fingeren eller en pen, tryk derefter på Gem. Hvis du rot
 
 msgid "The drawing area changed size, so it was cleared - please sign again."
 msgstr "Tegneområdet ændrede størrelse, så det blev ryddet - underskriv igen."
+
+msgid "Message from the requester"
+msgstr "Besked fra anmoderen"
