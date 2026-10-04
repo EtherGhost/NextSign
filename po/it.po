@@ -456,6 +456,9 @@ msgstr "Firmato parzialmente"
 msgid "Ready to sign"
 msgstr "Pronto per la firma"
 
+msgid "Waiting on others"
+msgstr "In attesa degli altri"
+
 msgid "Select an account to load your documents."
 msgstr "Seleziona un account per caricare i tuoi documenti."
 

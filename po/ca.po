@@ -456,6 +456,9 @@ msgstr "Signat parcialment"
 msgid "Ready to sign"
 msgstr "Llest per signar"
 
+msgid "Waiting on others"
+msgstr "Esperant els altres"
+
 msgid "Select an account to load your documents."
 msgstr "Selecciona un compte per carregar els teus documents."
 

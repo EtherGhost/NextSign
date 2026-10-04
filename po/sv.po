@@ -456,6 +456,9 @@ msgstr "Delvis signerat"
 msgid "Ready to sign"
 msgstr "Redo att signera"
 
+msgid "Waiting on others"
+msgstr "Väntar på övriga"
+
 msgid "Select an account to load your documents."
 msgstr "Välj ett konto för att läsa in dina dokument."
 

@@ -173,12 +173,17 @@ Page {
     }
 
     // Mirrors LibreSign's own web UI status labels/colors for a file's overall progress.
-    function statusLabel(fileStatus) {
+    // canSignNow distinguishes "nobody has signed yet and it's your turn" from "nobody
+    // has signed yet but you're not actually a signer on this document" - both have
+    // fileStatus===1, but only the first one should say "Ready to sign". Matches the
+    // Android app's own statusLabel() wording exactly, after the same bug was found and
+    // fixed there first.
+    function statusLabel(fileStatus, canSignNow) {
         if (fileStatus === 1) {
-            return i18n.tr("Ready to sign")
+            return canSignNow ? i18n.tr("Ready to sign") : i18n.tr("Waiting on others")
         }
         if (fileStatus === 2) {
-            return i18n.tr("Partially signed")
+            return canSignNow ? i18n.tr("Partially signed") : i18n.tr("Waiting on others")
         }
         if (fileStatus === 3) {
             return i18n.tr("Signed")
@@ -186,8 +191,16 @@ Page {
         return ""
     }
 
-    function statusColor(fileStatus) {
-        return fileStatus === 3 ? "#5a8f3c" : "#b37a2a"
+    // Blue: a signature is still owed by this signer. Green: nothing left for THIS
+    // signer to do, but they were genuinely part of it (fully signed, or their own part
+    // of a partially-signed doc). Grey: this signer isn't part of the document at all -
+    // distinct from green so it never reads as "you signed this" when you never had a
+    // part to play. Matches the Android app's own statusColor() exactly, including the
+    // hex values, for consistency across both apps.
+    function statusColor(fileStatus, canSignNow) {
+        if (fileStatus === 1 && !canSignNow) return "#757575"
+        if (fileStatus === 3 || (fileStatus === 2 && !canSignNow)) return "#5a8f3c"
+        return "#1f6feb"
     }
 
     Connections {
@@ -275,7 +288,7 @@ Page {
         Dialog {
             id: dialog
             title: page.detailDocument ? (page.detailDocument.name || i18n.tr("Untitled document")) : ""
-            text: page.detailDocument ? page.statusLabel(page.detailDocument.fileStatus) : ""
+            text: page.detailDocument ? page.statusLabel(page.detailDocument.fileStatus, page.detailDocument.canSignNow) : ""
 
             Repeater {
                 model: page.detailDocument ? page.detailDocument.signers : []
@@ -289,7 +302,7 @@ Page {
                     }
                     Label {
                         text: modelData.signed.length > 0 ? i18n.tr("Signed") : i18n.tr("Ready to sign")
-                        color: modelData.signed.length > 0 ? "#5a8f3c" : "#b37a2a"
+                        color: modelData.signed.length > 0 ? "#5a8f3c" : "#757575"
                         textSize: Label.Small
                     }
                 }
@@ -495,17 +508,30 @@ Page {
 
             Repeater {
                 model: page.sortedDocuments
-                delegate: ListItem {
+                delegate: Item {
+                    id: cardItem
                     // Status badge lives in its own row at the bottom, always
                     // left-aligned at the same position - putting it inline next to
                     // the name landed it at a different horizontal spot on every card
-                    // depending on how long the name was. There will never be many
-                    // documents in this list at once, so the taller card is fine.
-                    height: modelData.requestedBy.length > 0 ? units.gu(9.5) : units.gu(8)
-                    onClicked: {
-                        page.detailDocument = modelData
-                        PopupUtils.open(detailDialog)
-                    }
+                    // depending on how long the name was.
+                    //
+                    // Plain Item, not ListItem - ListItem turned out to fight us on two
+                    // fronts, confirmed by logging real numbers rather than guessing:
+                    // (1) its own built-in bottom divider drew a second line under our
+                    // own card border, and (2) it silently overrode our height binding
+                    // with its own internal default (logged cardRow.implicitHeight=158
+                    // while cardItem.height stayed at 50 regardless), which is what was
+                    // actually clipping the badge - not a cache or timing issue. A plain
+                    // Item has neither problem: no default styling, and height set here
+                    // is just a normal property, honored as declared.
+                    //
+                    // Height is derived from the content itself (cardRow.implicitHeight)
+                    // plus the same units.gu(1) gap on every side, top/bottom included -
+                    // not a hand-picked guess, so it never drifts out of sync with
+                    // whatever the content actually needs (e.g. the optional "Requested
+                    // by" line).
+                    width: parent.width
+                    height: cardRow.implicitHeight + units.gu(2)
                     Rectangle {
                         anchors { fill: parent; margins: units.gu(0.35) }
                         radius: units.gu(0.7)
@@ -513,10 +539,19 @@ Page {
                         border.width: 1
                         border.color: theme.palette.normal.base
                     }
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            page.detailDocument = modelData
+                            PopupUtils.open(detailDialog)
+                        }
+                    }
                     RowLayout {
-                        anchors { left: parent.left; right: parent.right; verticalCenter: parent.verticalCenter; margins: units.gu(1) }
+                        id: cardRow
+                        anchors { left: parent.left; right: parent.right; top: parent.top; margins: units.gu(1) }
                         spacing: units.gu(1)
                         ColumnLayout {
+                            id: cardColumn
                             Layout.fillWidth: true
                             spacing: units.gu(0.2)
                             Label {
@@ -534,19 +569,20 @@ Page {
                                 elide: Text.ElideRight
                             }
                             Rectangle {
+                                id: badgeRect
                                 Layout.topMargin: units.gu(0.3)
                                 radius: height / 2
                                 color: "transparent"
                                 border.width: 1
-                                border.color: page.statusColor(modelData.fileStatus)
+                                border.color: page.statusColor(modelData.fileStatus, modelData.canSignNow)
                                 implicitWidth: statusBadgeLabel.implicitWidth + units.gu(1.2)
                                 implicitHeight: statusBadgeLabel.implicitHeight + units.gu(0.4)
                                 Label {
                                     id: statusBadgeLabel
                                     anchors.centerIn: parent
-                                    text: page.statusLabel(modelData.fileStatus)
+                                    text: page.statusLabel(modelData.fileStatus, modelData.canSignNow)
                                     textSize: Label.XSmall
-                                    color: page.statusColor(modelData.fileStatus)
+                                    color: page.statusColor(modelData.fileStatus, modelData.canSignNow)
                                 }
                             }
                         }

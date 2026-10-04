@@ -456,6 +456,9 @@ msgstr "Частково підписано"
 msgid "Ready to sign"
 msgstr "Готовий до підпису"
 
+msgid "Waiting on others"
+msgstr "Очікує інших"
+
 msgid "Select an account to load your documents."
 msgstr "Виберіть обліковий запис, щоб завантажити ваші документи."
 

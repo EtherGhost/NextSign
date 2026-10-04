@@ -456,6 +456,9 @@ msgstr "Gedeeltelijk ondertekend"
 msgid "Ready to sign"
 msgstr "Klaar om te ondertekenen"
 
+msgid "Waiting on others"
+msgstr "Wacht op anderen"
+
 msgid "Select an account to load your documents."
 msgstr "Selecteer een account om je documenten te laden."
 

@@ -456,6 +456,9 @@ msgstr "Osittain allekirjoitettu"
 msgid "Ready to sign"
 msgstr "Valmis allekirjoitettavaksi"
 
+msgid "Waiting on others"
+msgstr "Odottaa muita"
+
 msgid "Select an account to load your documents."
 msgstr "Valitse tili ladataksesi asiakirjasi."
 
