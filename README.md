@@ -8,7 +8,7 @@ method (no password or code needed). There is deliberately no password-based sig
 
 ## Status
 
-Early release. Bugs and rough edges are expected. What exists so far:
+Published on [OpenStore](https://open-store.io/app/nextsign.cloudsite/).
 
 - Ubuntu Touch Online Accounts authentication (Nextcloud/ownCloud), with the guided
   allow-this-account flow.
@@ -47,8 +47,9 @@ product.
 ## Platforms
 
 - **Ubuntu Touch** - this app.
-- **Android** - a separate, independent app under development (different UI toolkit and a
-  different account/auth mechanism than Ubuntu Touch), not a port of this codebase.
+- **Android** - a separate, independent app (different UI toolkit and a different account/auth
+  mechanism than Ubuntu Touch, not a port of this codebase), published on
+  [Google Play](https://play.google.com/store/apps/details?id=se.cloudsite.nextsign).
 
 ## Technology
 
