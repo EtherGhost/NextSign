@@ -545,3 +545,91 @@ msgstr "Область малювання змінила розмір, тому 
 
 msgid "Message from the requester"
 msgstr "Повідомлення від відправника"
+
+msgid "Could not delete sign request"
+msgstr "Не вдалося видалити запит на підпис"
+
+msgid "Could not preview this PDF: %1"
+msgstr "Не вдалося попередньо переглянути цей PDF: %1"
+
+msgid "Could not read the shared document."
+msgstr "Не вдалося прочитати надісланий документ."
+
+msgid "Could not receive document"
+msgstr "Не вдалося отримати документ"
+
+msgid "Could not send document"
+msgstr "Не вдалося надіслати документ"
+
+msgid "Delete"
+msgstr "Видалити"
+
+msgid "Delete sign request?"
+msgstr "Видалити запит на підпис?"
+
+msgid "Field placed"
+msgstr "Поле розміщено"
+
+msgid "No shared document was received."
+msgstr "Надісланий документ не отримано."
+
+msgid "Nothing needs your attention right now"
+msgstr "Зараз нічого не потребує вашої уваги"
+
+msgid "Open the file manager or another app, find the PDF you want to prepare, share it, then choose NextSign."
+msgstr "Відкрийте файловий менеджер або інший застосунок, знайдіть PDF-файл, який хочете підготувати, поділіться ним і виберіть NextSign."
+
+msgid "Prepare a document"
+msgstr "Підготувати документ"
+
+msgid "Prepare document"
+msgstr "Підготувати документ"
+
+msgid "Received \"%1\""
+msgstr "Отримано \"%1\""
+
+msgid "Search for a signer"
+msgstr "Знайти підписанта"
+
+msgid "Send for signing"
+msgstr "Надіслати на підпис"
+
+msgid "Sending..."
+msgstr "Надсилання…"
+
+msgid "Sent"
+msgstr "Надіслано"
+
+msgid "Show only what needs your attention"
+msgstr "Показувати лише те, що потребує вашої уваги"
+
+msgid "Showing only what needs your attention"
+msgstr "Показано лише те, що потребує вашої уваги"
+
+msgid "Sign in again before deleting this sign request."
+msgstr "Увійдіть знову, перш ніж видаляти цей запит на підпис."
+
+msgid "Sign in again before preparing this document."
+msgstr "Увійдіть знову, перш ніж підготувати цей документ."
+
+msgid "Sign in again before searching for signers."
+msgstr "Увійдіть знову, перш ніж шукати підписантів."
+
+msgid "Signers"
+msgstr "Підписанти"
+
+msgid "Size: %1%"
+msgstr "Розмір: %1%"
+
+msgid "Tap the document above to place or move the signature field for %1"
+msgstr "Торкніться документа вище, щоб розмістити або перемістити поле підпису для %1"
+
+msgid "This device cannot preview PDFs - the PDF viewer component isn't installed."
+msgstr "Цей пристрій не може попередньо переглядати PDF - компонент попереднього перегляду PDF не встановлено."
+
+msgid "This removes the signing request for \"%1\" - the file itself won't be deleted. This can't be undone."
+msgstr "Це видаляє запит на підпис для \"%1\" - сам файл не буде видалено. Це не можна скасувати."
+
+msgid "\"%1\" has been sent for signing."
+msgstr "\"%1\" надіслано на підпис."
+

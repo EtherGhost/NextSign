@@ -70,6 +70,13 @@ function parseFileList(responseText) {
                 }
             }
             result.push({
+                // file/file_id/{fileId} - the id the delete-sign-request endpoint
+                // needs, distinct from uuid (used everywhere else). -1 if the server
+                // didn't send one (shouldn't happen, but delete simply isn't offered
+                // for such a document) - matches the Android app's own guard, added
+                // after a review there found deleting without this check could send
+                // DELETE file/file_id/-1.
+                "fileId": typeof item.id === "number" ? item.id : -1,
                 "uuid": item.uuid || "",
                 // sign/uuid/{uuid} does NOT take the file's own uuid, despite what
                 // LibreSign's own API docs say ("UUID of LibreSign file") - confirmed
@@ -78,6 +85,10 @@ function parseFileList(responseText) {
                 "signUuid": mySigner && mySigner.sign_request_uuid ? mySigner.sign_request_uuid : "",
                 "name": item.name || "",
                 "requestedBy": item.requested_by && item.requested_by.displayName ? item.requested_by.displayName : "",
+                // Bare Nextcloud login of whoever requested this signature - compare
+                // against the signed-in account's own userName (never displayName) to
+                // decide whether this account may delete the sign request.
+                "requestedByUserId": item.requested_by && item.requested_by.userId ? item.requested_by.userId : "",
                 "createdAt": item.created_at || "",
                 "signedAt": mySigner && mySigner.signed ? mySigner.signed : "",
                 "filePath": firstFile && firstFile.file ? firstFile.file : "",
@@ -163,6 +174,74 @@ function parseSignatureElements(responseText) {
             })
         }
         return result
+    } catch (e) {
+        return null
+    }
+}
+
+// Deliberately no "method" filter - a generic search across whichever identify
+// methods the server admin has enabled (same decision as the Android app, see
+// the feasibility doc: a method-restricted search would be meaningless from the
+// preparer's side, since LibreSign's admin-side "Signature methods" setting
+// isn't visible or chosen at request time anyway). ocs.data is a direct JSON
+// array - verified live against the real server, not assumed from the API docs.
+function parseIdentifyAccountSearch(responseText) {
+    try {
+        var payload = JSON.parse(responseText)
+        var data = payload && payload.ocs ? payload.ocs.data : null
+        if (!Array.isArray(data)) {
+            return null
+        }
+        var result = []
+        for (var i = 0; i < data.length; ++i) {
+            var item = data[i]
+            if (!item || !item.identify) {
+                continue
+            }
+            result.push({
+                "identify": item.identify,
+                "displayName": item.displayName || item.identify,
+                "subname": item.subname || "",
+                "isNoUser": item.isNoUser === true,
+                "method": item.method || ""
+            })
+        }
+        return result
+    } catch (e) {
+        return null
+    }
+}
+
+// Verified live against the real server with two signers: the returned signers[]
+// array order does NOT match submission order - each one must be matched back to
+// the signer we submitted by its own identifyMethods[0].value, never by position.
+function parseRequestSignatureResponse(responseText) {
+    try {
+        var payload = JSON.parse(responseText)
+        var data = payload && payload.ocs ? payload.ocs.data : null
+        if (!data || typeof data.id !== "number" || !data.uuid) {
+            return null
+        }
+        var signers = []
+        if (Array.isArray(data.signers)) {
+            for (var i = 0; i < data.signers.length; ++i) {
+                var signer = data.signers[i]
+                var firstMethod = signer && Array.isArray(signer.identifyMethods) && signer.identifyMethods.length > 0
+                    ? signer.identifyMethods[0]
+                    : null
+                if (signer && typeof signer.signRequestId === "number" && firstMethod && firstMethod.value) {
+                    signers.push({
+                        "signRequestId": signer.signRequestId,
+                        "identifyValue": firstMethod.value
+                    })
+                }
+            }
+        }
+        return {
+            "fileId": data.id,
+            "fileUuid": data.uuid,
+            "signers": signers
+        }
     } catch (e) {
         return null
     }

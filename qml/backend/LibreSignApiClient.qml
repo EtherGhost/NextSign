@@ -15,6 +15,18 @@ Item {
     signal signatureElementsFailed(string message, int generation)
     signal signatureElementCreated(var elements, int generation)
     signal signatureElementCreateFailed(string message, int generation)
+    signal signersFound(var candidates, int generation)
+    signal signersSearchFailed(string message, int generation)
+    signal documentPrepared(var result, int generation)
+    signal documentPrepareFailed(string message, int generation)
+    // signRequestId/fileId echoed back (not just "it finished") so two of these
+    // calls in flight at once - e.g. a rollback delete racing an unrelated
+    // user-triggered delete - can be told apart, matching the sign:/validate:
+    // requestId-suffix convention already used above.
+    signal fileElementCreated(int signRequestId, int generation)
+    signal fileElementCreateFailed(int signRequestId, string message, int generation)
+    signal documentDeleted(int fileId, int generation)
+    signal documentDeleteFailed(int fileId, string message, int generation)
 
     // Requests go through the native libreSignNetwork backend (an isolated
     // QNetworkAccessManager per request, with the account's username baked
@@ -177,6 +189,100 @@ Item {
         libreSignNetwork.sendRequest(generation, "validate:" + uuid, "GET", url, userName, secret, "", "")
     }
 
+    function searchSigners(serverUrl, userName, secret, query) {
+        var generation = requestGeneration
+        var base = LibreSignApiCore.normalizeServerUrl(serverUrl)
+        if (base.length === 0 || userName.length === 0 || secret.length === 0) {
+            signersSearchFailed(i18n.tr("Account credentials are incomplete."), generation)
+            return
+        }
+        if (typeof libreSignNetwork === "undefined") {
+            signersSearchFailed(i18n.tr("LibreSign requires the native network backend."), generation)
+            return
+        }
+
+        var url = base + "/ocs/v2.php/apps/libresign/api/v1/identify-account/search?format=json&search=" + encodeURIComponent(query)
+        libreSignNetwork.sendRequest(generation, "searchSigners", "GET", url, userName, secret, "", "")
+    }
+
+    // signers: [{ identify, displayName, method }] - selected via searchSigners().
+    // fileName/base64: the shared PDF itself - uploaded in this same call, since a
+    // PDF received via content-hub import has no Nextcloud node id to reuse.
+    function requestSignature(serverUrl, userName, secret, fileName, base64, signers) {
+        var generation = requestGeneration
+        var base = LibreSignApiCore.normalizeServerUrl(serverUrl)
+        if (base.length === 0 || userName.length === 0 || secret.length === 0) {
+            documentPrepareFailed(i18n.tr("Account credentials are incomplete."), generation)
+            return
+        }
+        if (typeof libreSignNetwork === "undefined") {
+            documentPrepareFailed(i18n.tr("LibreSign requires the native network backend."), generation)
+            return
+        }
+
+        var requestSigners = []
+        for (var i = 0; i < signers.length; ++i) {
+            var signer = signers[i]
+            requestSigners.push({
+                "identifyMethods": [
+                    { "method": signer.method, "value": signer.identify, "requirement": "required" }
+                ],
+                "displayName": signer.displayName
+            })
+        }
+        var body = JSON.stringify({
+            "file": { "base64": base64, "name": fileName },
+            "name": fileName,
+            "signers": requestSigners
+        })
+        var url = base + "/ocs/v2.php/apps/libresign/api/v1/request-signature?format=json"
+        libreSignNetwork.sendRequest(generation, "requestSignature", "POST", url, userName, secret, body, "application/json")
+    }
+
+    // coordinates: {page, left, top, width, height} - top/left/width/height
+    // (screen-like, top-down), all Int - the server rejects a Float value outright
+    // even for a whole number (e.g. "150.0"), confirmed live porting the Android app.
+    function createFileElement(serverUrl, userName, secret, fileUuid, signRequestId, fileId, coordinates) {
+        var generation = requestGeneration
+        var base = LibreSignApiCore.normalizeServerUrl(serverUrl)
+        if (base.length === 0 || userName.length === 0 || secret.length === 0) {
+            fileElementCreateFailed(i18n.tr("Account credentials are incomplete."), generation)
+            return
+        }
+        if (typeof libreSignNetwork === "undefined") {
+            fileElementCreateFailed(i18n.tr("LibreSign requires the native network backend."), generation)
+            return
+        }
+
+        var body = JSON.stringify({
+            "signRequestId": signRequestId,
+            "fileId": fileId,
+            "type": "signature",
+            "coordinates": coordinates
+        })
+        var url = base + "/ocs/v2.php/apps/libresign/api/v1/file-element/" + encodeURIComponent(fileUuid) + "?format=json"
+        libreSignNetwork.sendRequest(generation, "createFileElement:" + signRequestId, "POST", url, userName, secret, body, "application/json")
+    }
+
+    // Removes the sign request/preparation only - the underlying Nextcloud file
+    // this app itself uploaded (via requestSignature's base64) isn't otherwise
+    // touched by this call beyond that, confirmed live porting the Android app.
+    function deleteFile(serverUrl, userName, secret, fileId) {
+        var generation = requestGeneration
+        var base = LibreSignApiCore.normalizeServerUrl(serverUrl)
+        if (base.length === 0 || userName.length === 0 || secret.length === 0) {
+            documentDeleteFailed(i18n.tr("Account credentials are incomplete."), generation)
+            return
+        }
+        if (typeof libreSignNetwork === "undefined") {
+            documentDeleteFailed(i18n.tr("LibreSign requires the native network backend."), generation)
+            return
+        }
+
+        var url = base + "/ocs/v2.php/apps/libresign/api/v1/file/file_id/" + encodeURIComponent(fileId) + "?format=json"
+        libreSignNetwork.sendRequest(generation, "deleteFile:" + fileId, "DELETE", url, userName, secret, "", "")
+    }
+
     function handleFinished(requestId, status, responseText, generation) {
         console.log("NextSign LibreSignApi " + requestId + " httpStatus=" + status)
         if (requestId === "loadFiles") {
@@ -248,6 +354,42 @@ Item {
             }
             console.log("NextSign LibreSignApi createSignatureElement parsed count=" + createdElements.length)
             signatureElementCreated(createdElements, generation)
+        } else if (requestId === "searchSigners") {
+            if (status < 200 || status >= 300) {
+                signersSearchFailed(LibreSignApiCore.extractErrorMessage(responseText) || i18n.tr("LibreSign request failed with HTTP %1.").arg(status), generation)
+                return
+            }
+            var candidates = LibreSignApiCore.parseIdentifyAccountSearch(responseText)
+            if (candidates === null) {
+                signersSearchFailed(i18n.tr("LibreSign returned an unexpected response."), generation)
+                return
+            }
+            signersFound(candidates, generation)
+        } else if (requestId === "requestSignature") {
+            if (status < 200 || status >= 300) {
+                documentPrepareFailed(LibreSignApiCore.extractErrorMessage(responseText) || i18n.tr("LibreSign request failed with HTTP %1.").arg(status), generation)
+                return
+            }
+            var prepared = LibreSignApiCore.parseRequestSignatureResponse(responseText)
+            if (prepared === null) {
+                documentPrepareFailed(i18n.tr("LibreSign returned an unexpected response."), generation)
+                return
+            }
+            documentPrepared(prepared, generation)
+        } else if (requestId.indexOf("createFileElement:") === 0) {
+            var elementSignRequestId = parseInt(requestId.substring("createFileElement:".length), 10)
+            if (status < 200 || status >= 300) {
+                fileElementCreateFailed(elementSignRequestId, LibreSignApiCore.extractErrorMessage(responseText) || i18n.tr("LibreSign request failed with HTTP %1.").arg(status), generation)
+                return
+            }
+            fileElementCreated(elementSignRequestId, generation)
+        } else if (requestId.indexOf("deleteFile:") === 0) {
+            var deletedFileId = parseInt(requestId.substring("deleteFile:".length), 10)
+            if (status < 200 || status >= 300) {
+                documentDeleteFailed(deletedFileId, LibreSignApiCore.extractErrorMessage(responseText) || i18n.tr("LibreSign request failed with HTTP %1.").arg(status), generation)
+                return
+            }
+            documentDeleted(deletedFileId, generation)
         }
     }
 
@@ -263,6 +405,14 @@ Item {
             signatureElementsFailed(message, generation)
         } else if (requestId.indexOf("createSignatureElement:") === 0) {
             signatureElementCreateFailed(message, generation)
+        } else if (requestId === "searchSigners") {
+            signersSearchFailed(message, generation)
+        } else if (requestId === "requestSignature") {
+            documentPrepareFailed(message, generation)
+        } else if (requestId.indexOf("createFileElement:") === 0) {
+            fileElementCreateFailed(parseInt(requestId.substring("createFileElement:".length), 10), message, generation)
+        } else if (requestId.indexOf("deleteFile:") === 0) {
+            documentDeleteFailed(parseInt(requestId.substring("deleteFile:".length), 10), message, generation)
         }
     }
 }

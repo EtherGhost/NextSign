@@ -1,10 +1,10 @@
 # NextSign
 
 NextSign is a native Ubuntu Touch client for LibreSign, the electronic signature app for
-Nextcloud. It does not prepare documents or place signature fields - that happens elsewhere (the
-LibreSign web UI, or whoever sent you the request). NextSign's job is to show you what is waiting
-for your signature and let you sign it with a tap, primarily through LibreSign's `clickToSign`
-method (no password or code needed). There is deliberately no password-based signing fallback.
+Nextcloud. NextSign's job is to show you what is waiting for your signature and let you sign it
+with a tap, primarily through LibreSign's `clickToSign` method (no password or code needed) -
+there is deliberately no password-based signing fallback. You can also prepare a document for
+signing by sharing a PDF to NextSign from another app.
 
 ## Status
 
@@ -22,6 +22,12 @@ Published on [OpenStore](https://open-store.io/app/nextsign.cloudsite/).
 - Set up a signature by picking an image or drawing it with a finger or stylus, used
   automatically when a document needs a visible signature.
 - Validates a signed document's signature and shows LibreSign's own verdict for it.
+- Prepares a document for signing: share a PDF in from another app (e.g. the Files app), preview
+  it, search for and select signers, place/move/resize one signature field per signer, then send
+  it. Needs `qtdeclarative5-poppler1.0` for the preview (already on most Ubuntu Touch images as a
+  dependency of the stock Files/docviewer app), not bundled with NextSign itself.
+- Deletes a sign request you created, before anyone has signed.
+- Filters the document list to show only what needs your attention.
 - Sort the list by date or name.
 - Pull down to refresh. Reconnects safely if you switch Nextcloud accounts while a request is
   still in flight.

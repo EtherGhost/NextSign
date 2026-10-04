@@ -545,3 +545,91 @@ msgstr "Область рисования изменила размер, поэ�
 
 msgid "Message from the requester"
 msgstr "Сообщение от отправителя"
+
+msgid "Could not delete sign request"
+msgstr "Не удалось удалить запрос на подпись"
+
+msgid "Could not preview this PDF: %1"
+msgstr "Не удалось предварительно просмотреть этот PDF: %1"
+
+msgid "Could not read the shared document."
+msgstr "Не удалось прочитать переданный документ."
+
+msgid "Could not receive document"
+msgstr "Не удалось получить документ"
+
+msgid "Could not send document"
+msgstr "Не удалось отправить документ"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Delete sign request?"
+msgstr "Удалить запрос на подпись?"
+
+msgid "Field placed"
+msgstr "Поле размещено"
+
+msgid "No shared document was received."
+msgstr "Переданный документ не получен."
+
+msgid "Nothing needs your attention right now"
+msgstr "Сейчас ничего не требует вашего внимания"
+
+msgid "Open the file manager or another app, find the PDF you want to prepare, share it, then choose NextSign."
+msgstr "Откройте файловый менеджер или другое приложение, найдите PDF-файл, который хотите подготовить, поделитесь им и выберите NextSign."
+
+msgid "Prepare a document"
+msgstr "Подготовить документ"
+
+msgid "Prepare document"
+msgstr "Подготовить документ"
+
+msgid "Received \"%1\""
+msgstr "Получено \"%1\""
+
+msgid "Search for a signer"
+msgstr "Найти подписанта"
+
+msgid "Send for signing"
+msgstr "Отправить на подпись"
+
+msgid "Sending..."
+msgstr "Отправка…"
+
+msgid "Sent"
+msgstr "Отправлено"
+
+msgid "Show only what needs your attention"
+msgstr "Показывать только то, что требует вашего внимания"
+
+msgid "Showing only what needs your attention"
+msgstr "Показано только то, что требует вашего внимания"
+
+msgid "Sign in again before deleting this sign request."
+msgstr "Войдите снова, прежде чем удалять этот запрос на подпись."
+
+msgid "Sign in again before preparing this document."
+msgstr "Войдите снова, прежде чем подготовить этот документ."
+
+msgid "Sign in again before searching for signers."
+msgstr "Войдите снова, прежде чем искать подписантов."
+
+msgid "Signers"
+msgstr "Подписанты"
+
+msgid "Size: %1%"
+msgstr "Размер: %1%"
+
+msgid "Tap the document above to place or move the signature field for %1"
+msgstr "Нажмите на документ выше, чтобы разместить или переместить поле подписи для %1"
+
+msgid "This device cannot preview PDFs - the PDF viewer component isn't installed."
+msgstr "Это устройство не может показывать предпросмотр PDF - компонент просмотра PDF не установлен."
+
+msgid "This removes the signing request for \"%1\" - the file itself won't be deleted. This can't be undone."
+msgstr "Это удалит запрос на подпись для \"%1\" - сам файл не будет удалён. Это действие нельзя отменить."
+
+msgid "\"%1\" has been sent for signing."
+msgstr "\"%1\" отправлен на подпись."
+

@@ -38,6 +38,20 @@ Item {
     signal validationFailed(string message)
     signal signatureSetupSucceeded()
     signal signatureSetupFailed(string message)
+    signal signersFound(var candidates)
+    signal signersSearchFailed(string message)
+    signal documentPrepared()
+    signal documentPrepareFailed(string message)
+    signal documentDeleted()
+    signal documentDeleteFailed(string message)
+
+    property bool searchingSigners: false
+    property bool preparingDocument: false
+    property var __prepareSigners: []
+    property var __prepareFieldsByIdentify: ({})
+    property var __prepareFieldQueue: []
+    property int __prepareFileId: -1
+    property string __prepareFileUuid: ""
 
     // Prefer the starred (default) element of a type over an earlier one.
     function buildSignatureElementsByType(elements) {
@@ -182,6 +196,100 @@ Item {
             controller.savingSignatureElement = false
             controller.signatureSetupFailed(message)
         }
+        onSignersFound: function(candidates, generation) {
+            if (!controller.isCurrentGeneration(generation)) {
+                return
+            }
+            controller.searchingSigners = false
+            controller.signersFound(candidates)
+        }
+        onSignersSearchFailed: function(message, generation) {
+            if (!controller.isCurrentGeneration(generation)) {
+                return
+            }
+            controller.searchingSigners = false
+            controller.signersSearchFailed(message)
+        }
+        onDocumentPrepared: function(result, generation) {
+            if (!controller.isCurrentGeneration(generation)) {
+                return
+            }
+            controller.__prepareFileId = result.fileId
+            controller.__prepareFileUuid = result.fileUuid
+
+            var queue = []
+            var missingMatch = false
+            for (var i = 0; i < controller.__prepareSigners.length; ++i) {
+                var signer = controller.__prepareSigners[i]
+                var field = controller.__prepareFieldsByIdentify[signer.identify]
+                if (!field) {
+                    continue
+                }
+                var matchedSignRequestId = -1
+                for (var j = 0; j < result.signers.length; ++j) {
+                    if (result.signers[j].identifyValue === signer.identify) {
+                        matchedSignRequestId = result.signers[j].signRequestId
+                        break
+                    }
+                }
+                if (matchedSignRequestId === -1) {
+                    missingMatch = true
+                    break
+                }
+                queue.push({ "signRequestId": matchedSignRequestId, "field": field })
+            }
+
+            if (missingMatch) {
+                // Rolls back the sign request this call itself just created, rather
+                // than leaving an orphaned, field-less document behind - fileStatus
+                // is guaranteed 1 here (nobody could have signed yet).
+                controller.__rollbackPreparedDocument(i18n.tr("LibreSign returned an unexpected response."))
+                return
+            }
+            controller.__prepareFieldQueue = queue
+            controller.__processNextPrepareField()
+        }
+        onDocumentPrepareFailed: function(message, generation) {
+            if (!controller.isCurrentGeneration(generation)) {
+                return
+            }
+            controller.preparingDocument = false
+            controller.documentPrepareFailed(message)
+        }
+        onFileElementCreated: function(signRequestId, generation) {
+            if (!controller.isCurrentGeneration(generation)) {
+                return
+            }
+            controller.__prepareFieldQueue.shift()
+            controller.__processNextPrepareField()
+        }
+        onFileElementCreateFailed: function(signRequestId, message, generation) {
+            if (!controller.isCurrentGeneration(generation)) {
+                return
+            }
+            controller.__rollbackPreparedDocument(message)
+        }
+        onDocumentDeleted: function(fileId, generation) {
+            if (!controller.isCurrentGeneration(generation)) {
+                return
+            }
+            if (fileId === controller.__prepareFileId && controller.preparingDocument) {
+                // This was a rollback, not a user-triggered delete - documentPrepareFailed
+                // already fired from __rollbackPreparedDocument, nothing more to signal.
+                return
+            }
+            controller.documentDeleted()
+            controller.refresh()
+        }
+        onDocumentDeleteFailed: function(fileId, message, generation) {
+            if (!controller.isCurrentGeneration(generation)) {
+                return
+            }
+            if (fileId === controller.__prepareFileId && controller.preparingDocument) {
+                return
+            }
+            controller.documentDeleteFailed(message)
+        }
     }
 
     Connections {
@@ -325,6 +433,72 @@ Item {
         } else {
             api.createSignatureElement(controller.currentServerUrl, controller.currentUserName, controller.currentSecret, elementType, base64DataUri)
         }
+    }
+
+    function searchSigners(query) {
+        if (controller.currentServerUrl.length === 0 || controller.currentUserName.length === 0 || controller.currentSecret.length === 0) {
+            controller.signersSearchFailed(i18n.tr("Sign in again before searching for signers."))
+            return
+        }
+        controller.searchingSigners = true
+        api.requestGeneration = controller.accountRequestGeneration
+        api.searchSigners(controller.currentServerUrl, controller.currentUserName, controller.currentSecret, query)
+    }
+
+    // signers: [{identify, displayName, method}]; fieldsByIdentify: {identify: {left,
+    // top, width, height}} (PDF points, top-down) - one entry per signer with a
+    // placed field. Uploads the file as base64 in the same request-signature call
+    // (a content-hub-imported PDF has no Nextcloud node id to reuse), then attaches
+    // one file-element per field, rolling the whole sign request back via delete if
+    // any signer can't be matched or a field fails to attach.
+    function prepareDocument(fileName, base64, signers, fieldsByIdentify) {
+        if (controller.currentServerUrl.length === 0 || controller.currentUserName.length === 0 || controller.currentSecret.length === 0) {
+            controller.documentPrepareFailed(i18n.tr("Sign in again before preparing this document."))
+            return
+        }
+        controller.preparingDocument = true
+        controller.__prepareSigners = signers
+        controller.__prepareFieldsByIdentify = fieldsByIdentify
+        api.requestGeneration = controller.accountRequestGeneration
+        api.requestSignature(controller.currentServerUrl, controller.currentUserName, controller.currentSecret, fileName, base64, signers)
+    }
+
+    function __processNextPrepareField() {
+        if (controller.__prepareFieldQueue.length === 0) {
+            controller.preparingDocument = false
+            controller.documentPrepared()
+            controller.refresh()
+            return
+        }
+        var next = controller.__prepareFieldQueue[0]
+        var field = next.field
+        api.requestGeneration = controller.accountRequestGeneration
+        api.createFileElement(controller.currentServerUrl, controller.currentUserName, controller.currentSecret,
+            controller.__prepareFileUuid, next.signRequestId, controller.__prepareFileId,
+            {
+                "page": 1,
+                "left": Math.round(field.left),
+                "top": Math.round(field.top),
+                "width": Math.round(field.width),
+                "height": Math.round(field.height)
+            })
+    }
+
+    function __rollbackPreparedDocument(message) {
+        controller.__prepareFieldQueue = []
+        controller.preparingDocument = false
+        api.requestGeneration = controller.accountRequestGeneration
+        api.deleteFile(controller.currentServerUrl, controller.currentUserName, controller.currentSecret, controller.__prepareFileId)
+        controller.documentPrepareFailed(message)
+    }
+
+    function deleteDocument(fileId) {
+        if (controller.currentServerUrl.length === 0 || controller.currentUserName.length === 0 || controller.currentSecret.length === 0) {
+            controller.documentDeleteFailed(i18n.tr("Sign in again before deleting this sign request."))
+            return
+        }
+        api.requestGeneration = controller.accountRequestGeneration
+        api.deleteFile(controller.currentServerUrl, controller.currentUserName, controller.currentSecret, fileId)
     }
 
     function refresh() {

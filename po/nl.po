@@ -545,3 +545,91 @@ msgstr "Het tekengebied is van grootte veranderd en is daarom gewist - onderteke
 
 msgid "Message from the requester"
 msgstr "Bericht van de aanvrager"
+
+msgid "Could not delete sign request"
+msgstr "Kon het ondertekeningsverzoek niet verwijderen"
+
+msgid "Could not preview this PDF: %1"
+msgstr "Kon dit PDF-bestand niet voorvertonen: %1"
+
+msgid "Could not read the shared document."
+msgstr "Kon het gedeelde document niet lezen."
+
+msgid "Could not receive document"
+msgstr "Kon document niet ontvangen"
+
+msgid "Could not send document"
+msgstr "Kon het document niet verzenden"
+
+msgid "Delete"
+msgstr "Verwijderen"
+
+msgid "Delete sign request?"
+msgstr "Ondertekeningsverzoek verwijderen?"
+
+msgid "Field placed"
+msgstr "Veld geplaatst"
+
+msgid "No shared document was received."
+msgstr "Er is geen gedeeld document ontvangen."
+
+msgid "Nothing needs your attention right now"
+msgstr "Niets heeft op dit moment je aandacht nodig"
+
+msgid "Open the file manager or another app, find the PDF you want to prepare, share it, then choose NextSign."
+msgstr "Open de bestandsbeheerder of een andere app, zoek de PDF die je wilt voorbereiden, deel deze en kies dan NextSign."
+
+msgid "Prepare a document"
+msgstr "Document voorbereiden"
+
+msgid "Prepare document"
+msgstr "Document voorbereiden"
+
+msgid "Received \"%1\""
+msgstr "\"%1\" ontvangen"
+
+msgid "Search for a signer"
+msgstr "Zoek een ondertekenaar"
+
+msgid "Send for signing"
+msgstr "Verzenden voor ondertekening"
+
+msgid "Sending..."
+msgstr "Verzenden…"
+
+msgid "Sent"
+msgstr "Verzonden"
+
+msgid "Show only what needs your attention"
+msgstr "Toon alleen wat je aandacht nodig heeft"
+
+msgid "Showing only what needs your attention"
+msgstr "Toont alleen wat je aandacht nodig heeft"
+
+msgid "Sign in again before deleting this sign request."
+msgstr "Log opnieuw in voordat je dit ondertekeningsverzoek verwijdert."
+
+msgid "Sign in again before preparing this document."
+msgstr "Log opnieuw in voordat je dit document voorbereidt."
+
+msgid "Sign in again before searching for signers."
+msgstr "Log opnieuw in voordat je naar ondertekenaars zoekt."
+
+msgid "Signers"
+msgstr "Ondertekenaars"
+
+msgid "Size: %1%"
+msgstr "Grootte: %1%"
+
+msgid "Tap the document above to place or move the signature field for %1"
+msgstr "Tik op het document hierboven om het handtekeningveld van %1 te plaatsen of te verplaatsen"
+
+msgid "This device cannot preview PDFs - the PDF viewer component isn't installed."
+msgstr "Dit toestel kan geen PDF's voorvertonen - het PDF-voorvertoningsonderdeel is niet geïnstalleerd."
+
+msgid "This removes the signing request for \"%1\" - the file itself won't be deleted. This can't be undone."
+msgstr "Dit verwijdert het ondertekeningsverzoek voor \"%1\" - het bestand zelf wordt niet verwijderd. Dit kan niet ongedaan worden gemaakt."
+
+msgid "\"%1\" has been sent for signing."
+msgstr "\"%1\" is verzonden voor ondertekening."
+

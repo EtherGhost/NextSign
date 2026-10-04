@@ -545,3 +545,91 @@ msgstr "Ritytan ändrade storlek, så den rensades - signera igen."
 
 msgid "Message from the requester"
 msgstr "Meddelande från beställaren"
+
+msgid "Could not delete sign request"
+msgstr "Kunde inte ta bort signeringsbegäran"
+
+msgid "Could not preview this PDF: %1"
+msgstr "Kunde inte förhandsgranska den här PDF-filen: %1"
+
+msgid "Could not read the shared document."
+msgstr "Kunde inte läsa det delade dokumentet."
+
+msgid "Could not receive document"
+msgstr "Kunde inte ta emot dokument"
+
+msgid "Could not send document"
+msgstr "Kunde inte skicka dokumentet"
+
+msgid "Delete"
+msgstr "Ta bort"
+
+msgid "Delete sign request?"
+msgstr "Ta bort signeringsbegäran?"
+
+msgid "Field placed"
+msgstr "Fält placerat"
+
+msgid "No shared document was received."
+msgstr "Inget delat dokument togs emot."
+
+msgid "Nothing needs your attention right now"
+msgstr "Inget behöver din uppmärksamhet just nu"
+
+msgid "Open the file manager or another app, find the PDF you want to prepare, share it, then choose NextSign."
+msgstr "Öppna filhanteraren eller en annan app, hitta PDF:en du vill förbereda, dela den och välj sedan NextSign."
+
+msgid "Prepare a document"
+msgstr "Förbered dokument"
+
+msgid "Prepare document"
+msgstr "Förbered dokument"
+
+msgid "Received \"%1\""
+msgstr "Mottog \"%1\""
+
+msgid "Search for a signer"
+msgstr "Sök efter en signerare"
+
+msgid "Send for signing"
+msgstr "Skicka för signering"
+
+msgid "Sending..."
+msgstr "Skickar…"
+
+msgid "Sent"
+msgstr "Skickat"
+
+msgid "Show only what needs your attention"
+msgstr "Visa bara det som behöver din uppmärksamhet"
+
+msgid "Showing only what needs your attention"
+msgstr "Visar bara det som behöver din uppmärksamhet"
+
+msgid "Sign in again before deleting this sign request."
+msgstr "Logga in igen innan du tar bort den här signeringsbegäran."
+
+msgid "Sign in again before preparing this document."
+msgstr "Logga in igen innan du förbereder det här dokumentet."
+
+msgid "Sign in again before searching for signers."
+msgstr "Logga in igen innan du söker efter signerare."
+
+msgid "Signers"
+msgstr "Signerare"
+
+msgid "Size: %1%"
+msgstr "Storlek: %1%"
+
+msgid "Tap the document above to place or move the signature field for %1"
+msgstr "Tryck på dokumentet ovan för att placera eller flytta signaturfältet för %1"
+
+msgid "This device cannot preview PDFs - the PDF viewer component isn't installed."
+msgstr "Den här enheten kan inte förhandsgranska PDF-filer - PDF-visningskomponenten är inte installerad."
+
+msgid "This removes the signing request for \"%1\" - the file itself won't be deleted. This can't be undone."
+msgstr "Det här tar bort signeringsbegäran för \"%1\" - själva filen tas inte bort. Det går inte att ångra."
+
+msgid "\"%1\" has been sent for signing."
+msgstr "\"%1\" har skickats för signering."
+

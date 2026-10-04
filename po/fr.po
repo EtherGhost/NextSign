@@ -545,3 +545,91 @@ msgstr "La zone de dessin a changé de taille et a donc été effacée - veuille
 
 msgid "Message from the requester"
 msgstr "Message du demandeur"
+
+msgid "Could not delete sign request"
+msgstr "Impossible de supprimer la demande de signature"
+
+msgid "Could not preview this PDF: %1"
+msgstr "Impossible d'afficher un aperçu de ce PDF : %1"
+
+msgid "Could not read the shared document."
+msgstr "Impossible de lire le document partagé."
+
+msgid "Could not receive document"
+msgstr "Impossible de recevoir le document"
+
+msgid "Could not send document"
+msgstr "Impossible d'envoyer le document"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Delete sign request?"
+msgstr "Supprimer la demande de signature ?"
+
+msgid "Field placed"
+msgstr "Champ placé"
+
+msgid "No shared document was received."
+msgstr "Aucun document partagé n'a été reçu."
+
+msgid "Nothing needs your attention right now"
+msgstr "Rien ne nécessite votre attention pour le moment"
+
+msgid "Open the file manager or another app, find the PDF you want to prepare, share it, then choose NextSign."
+msgstr "Ouvrez le gestionnaire de fichiers ou une autre application, trouvez le PDF à préparer, partagez-le, puis choisissez NextSign."
+
+msgid "Prepare a document"
+msgstr "Préparer un document"
+
+msgid "Prepare document"
+msgstr "Préparer un document"
+
+msgid "Received \"%1\""
+msgstr "\"%1\" reçu"
+
+msgid "Search for a signer"
+msgstr "Rechercher un signataire"
+
+msgid "Send for signing"
+msgstr "Envoyer pour signature"
+
+msgid "Sending..."
+msgstr "Envoi…"
+
+msgid "Sent"
+msgstr "Envoyé"
+
+msgid "Show only what needs your attention"
+msgstr "Afficher uniquement ce qui nécessite votre attention"
+
+msgid "Showing only what needs your attention"
+msgstr "Affiche uniquement ce qui nécessite votre attention"
+
+msgid "Sign in again before deleting this sign request."
+msgstr "Reconnectez-vous avant de supprimer cette demande de signature."
+
+msgid "Sign in again before preparing this document."
+msgstr "Reconnectez-vous avant de préparer ce document."
+
+msgid "Sign in again before searching for signers."
+msgstr "Reconnectez-vous avant de rechercher des signataires."
+
+msgid "Signers"
+msgstr "Signataires"
+
+msgid "Size: %1%"
+msgstr "Taille : %1%"
+
+msgid "Tap the document above to place or move the signature field for %1"
+msgstr "Appuyez sur le document ci-dessus pour placer ou déplacer le champ de signature de %1"
+
+msgid "This device cannot preview PDFs - the PDF viewer component isn't installed."
+msgstr "Cet appareil ne peut pas afficher d'aperçu PDF - le composant d'aperçu PDF n'est pas installé."
+
+msgid "This removes the signing request for \"%1\" - the file itself won't be deleted. This can't be undone."
+msgstr "Cela supprime la demande de signature pour \"%1\" - le fichier lui-même ne sera pas supprimé. Cette action est irréversible."
+
+msgid "\"%1\" has been sent for signing."
+msgstr "\"%1\" a été envoyé pour signature."
+

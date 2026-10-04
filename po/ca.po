@@ -545,3 +545,91 @@ msgstr "L'àrea de dibuix ha canviat de mida, per això s'ha esborrat - torna a 
 
 msgid "Message from the requester"
 msgstr "Missatge del sol·licitant"
+
+msgid "Could not delete sign request"
+msgstr "No s'ha pogut eliminar la sol·licitud de signatura"
+
+msgid "Could not preview this PDF: %1"
+msgstr "No s'ha pogut previsualitzar aquest PDF: %1"
+
+msgid "Could not read the shared document."
+msgstr "No s'ha pogut llegir el document compartit."
+
+msgid "Could not receive document"
+msgstr "No s'ha pogut rebre el document"
+
+msgid "Could not send document"
+msgstr "No s'ha pogut enviar el document"
+
+msgid "Delete"
+msgstr "Suprimeix"
+
+msgid "Delete sign request?"
+msgstr "Suprimir la sol·licitud de signatura?"
+
+msgid "Field placed"
+msgstr "Camp col·locat"
+
+msgid "No shared document was received."
+msgstr "No s'ha rebut cap document compartit."
+
+msgid "Nothing needs your attention right now"
+msgstr "Ara mateix no hi ha res que requereixi la teva atenció"
+
+msgid "Open the file manager or another app, find the PDF you want to prepare, share it, then choose NextSign."
+msgstr "Obre el gestor de fitxers o una altra aplicació, troba el PDF que vols preparar, comparteix-lo i tria NextSign."
+
+msgid "Prepare a document"
+msgstr "Prepara un document"
+
+msgid "Prepare document"
+msgstr "Prepara document"
+
+msgid "Received \"%1\""
+msgstr "Rebut \"%1\""
+
+msgid "Search for a signer"
+msgstr "Cerca un signant"
+
+msgid "Send for signing"
+msgstr "Envia per signar"
+
+msgid "Sending..."
+msgstr "Enviant…"
+
+msgid "Sent"
+msgstr "Enviat"
+
+msgid "Show only what needs your attention"
+msgstr "Mostra només el que requereix la teva atenció"
+
+msgid "Showing only what needs your attention"
+msgstr "Mostrant només el que requereix la teva atenció"
+
+msgid "Sign in again before deleting this sign request."
+msgstr "Torna a iniciar sessió abans d'eliminar aquesta sol·licitud de signatura."
+
+msgid "Sign in again before preparing this document."
+msgstr "Torna a iniciar sessió abans de preparar aquest document."
+
+msgid "Sign in again before searching for signers."
+msgstr "Torna a iniciar sessió abans de cercar signants."
+
+msgid "Signers"
+msgstr "Signants"
+
+msgid "Size: %1%"
+msgstr "Mida: %1%"
+
+msgid "Tap the document above to place or move the signature field for %1"
+msgstr "Toca el document de sobre per col·locar o moure el camp de signatura de %1"
+
+msgid "This device cannot preview PDFs - the PDF viewer component isn't installed."
+msgstr "Aquest dispositiu no pot previsualitzar PDF - el component de previsualització de PDF no està instal·lat."
+
+msgid "This removes the signing request for \"%1\" - the file itself won't be deleted. This can't be undone."
+msgstr "Això elimina la sol·licitud de signatura de \"%1\" - el fitxer en si no s'eliminarà. Això no es pot desfer."
+
+msgid "\"%1\" has been sent for signing."
+msgstr "\"%1\" s'ha enviat per signar."
+

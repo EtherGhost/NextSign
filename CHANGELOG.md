@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.4.0 - 2026-10-05
+
+- Prepare a document for signing: share a PDF in from another app (e.g. the
+  Files app), preview it, search for and select signers, tap/drag/resize one
+  signature field per signer, then send it - ported from the Android app.
+- Delete a sign request you created, before anyone has signed - removes the
+  signing request/bookkeeping only, not the underlying file.
+- A "needs attention" filter on the document list, hiding fully-signed and
+  waiting-on-others documents.
+- A "Prepare a document" entry in the drawer explaining the share-in flow,
+  since nothing previously said it existed.
+
 ## 0.3.0 - 2026-10-04
 
 - Shows a signer's custom message, if the requester left one.

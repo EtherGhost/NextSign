@@ -545,3 +545,91 @@ msgstr "Tegneområdet ændrede størrelse, så det blev ryddet - underskriv igen
 
 msgid "Message from the requester"
 msgstr "Besked fra anmoderen"
+
+msgid "Could not delete sign request"
+msgstr "Kunne ikke slette underskriftsanmodningen"
+
+msgid "Could not preview this PDF: %1"
+msgstr "Kunne ikke forhåndsvise denne PDF: %1"
+
+msgid "Could not read the shared document."
+msgstr "Kunne ikke læse det delte dokument."
+
+msgid "Could not receive document"
+msgstr "Kunne ikke modtage dokument"
+
+msgid "Could not send document"
+msgstr "Kunne ikke sende dokumentet"
+
+msgid "Delete"
+msgstr "Slet"
+
+msgid "Delete sign request?"
+msgstr "Slette underskriftsanmodningen?"
+
+msgid "Field placed"
+msgstr "Felt placeret"
+
+msgid "No shared document was received."
+msgstr "Intet delt dokument blev modtaget."
+
+msgid "Nothing needs your attention right now"
+msgstr "Intet kræver din opmærksomhed lige nu"
+
+msgid "Open the file manager or another app, find the PDF you want to prepare, share it, then choose NextSign."
+msgstr "Åbn filhåndteringen eller en anden app, find den PDF, du vil forberede, del den, og vælg derefter NextSign."
+
+msgid "Prepare a document"
+msgstr "Forbered dokument"
+
+msgid "Prepare document"
+msgstr "Forbered dokument"
+
+msgid "Received \"%1\""
+msgstr "Modtog \"%1\""
+
+msgid "Search for a signer"
+msgstr "Søg efter en underskriver"
+
+msgid "Send for signing"
+msgstr "Send til underskrift"
+
+msgid "Sending..."
+msgstr "Sender…"
+
+msgid "Sent"
+msgstr "Sendt"
+
+msgid "Show only what needs your attention"
+msgstr "Vis kun det, der kræver din opmærksomhed"
+
+msgid "Showing only what needs your attention"
+msgstr "Viser kun det, der kræver din opmærksomhed"
+
+msgid "Sign in again before deleting this sign request."
+msgstr "Log ind igen, før du sletter denne underskriftsanmodning."
+
+msgid "Sign in again before preparing this document."
+msgstr "Log ind igen, før du forbereder dette dokument."
+
+msgid "Sign in again before searching for signers."
+msgstr "Log ind igen, før du søger efter underskrivere."
+
+msgid "Signers"
+msgstr "Underskrivere"
+
+msgid "Size: %1%"
+msgstr "Størrelse: %1%"
+
+msgid "Tap the document above to place or move the signature field for %1"
+msgstr "Tryk på dokumentet ovenfor for at placere eller flytte signaturfeltet til %1"
+
+msgid "This device cannot preview PDFs - the PDF viewer component isn't installed."
+msgstr "Denne enhed kan ikke forhåndsvise PDF'er - PDF-visningskomponenten er ikke installeret."
+
+msgid "This removes the signing request for \"%1\" - the file itself won't be deleted. This can't be undone."
+msgstr "Dette fjerner underskriftsanmodningen for \"%1\" - selve filen slettes ikke. Dette kan ikke fortrydes."
+
+msgid "\"%1\" has been sent for signing."
+msgstr "\"%1\" er sendt til underskrift."
+

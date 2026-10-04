@@ -71,7 +71,7 @@ Page {
                 searchText: ""
                 searchPlaceholder: ""
                 filterIconKind: "sort"
-                filterActive: page.sortMode !== "date-desc"
+                filterActive: page.sortMode !== "date-desc" || page.showOnlyNeedsAttention
                 statusKind: page.statusIconKind()
                 statusColor: dataController.syncStateColor
                 statusAnimating: dataController.loading
@@ -145,21 +145,130 @@ Page {
                 variant: page.sortMode === "name-asc" ? "primary" : "normal"
                 onClicked: { page.sortMode = "name-asc"; PopupUtils.close(dialog) }
             }
+            AppButton {
+                Layout.fillWidth: true
+                Layout.topMargin: units.gu(1)
+                text: page.showOnlyNeedsAttention ? i18n.tr("Showing only what needs your attention") : i18n.tr("Show only what needs your attention")
+                variant: page.showOnlyNeedsAttention ? "primary" : "normal"
+                onClicked: page.showOnlyNeedsAttention = !page.showOnlyNeedsAttention
+            }
         }
     }
 
     SignController {
         id: dataController
         onDocumentsChanged: page.updateSortedDocuments()
+        onDocumentDeleted: page.updateSortedDocuments()
+        onDocumentDeleteFailed: function(message) {
+            page.deleteErrorMessage = message
+            PopupUtils.open(deleteErrorDialog)
+        }
+    }
+
+    DocumentShareImportHandlerUbuntu {
+        id: shareImportHandler
+        onDocumentImported: function(fileUrl, fileName) {
+            pageStack.push(Qt.resolvedUrl("PrepareDocumentPage.qml"), {
+                "documentUrl": fileUrl,
+                "documentName": fileName,
+                "dataController": dataController
+            })
+        }
+        onImportFailed: function(message) {
+            page.shareImportErrorMessage = message
+            PopupUtils.open(shareImportErrorDialog)
+        }
+    }
+
+    property string shareImportErrorMessage: ""
+    property string deleteErrorMessage: ""
+    property var pendingDeleteDocument: null
+
+    Component {
+        id: shareImportErrorDialog
+        Dialog {
+            id: dialog
+            title: i18n.tr("Could not receive document")
+            text: page.shareImportErrorMessage
+            Button {
+                text: i18n.tr("Close")
+                onClicked: PopupUtils.close(dialog)
+            }
+        }
+    }
+
+    Component {
+        id: deleteErrorDialog
+        Dialog {
+            id: dialog
+            title: i18n.tr("Could not delete sign request")
+            text: page.deleteErrorMessage
+            Button {
+                text: i18n.tr("Close")
+                onClicked: PopupUtils.close(dialog)
+            }
+        }
+    }
+
+    Component {
+        id: deleteConfirmDialog
+        Dialog {
+            id: dialog
+            title: i18n.tr("Delete sign request?")
+            text: i18n.tr("This removes the signing request for \"%1\" - the file itself won't be deleted. This can't be undone.")
+                .arg(page.pendingDeleteDocument ? (page.pendingDeleteDocument.name || i18n.tr("Untitled document")) : "")
+
+            Button {
+                text: i18n.tr("Delete")
+                color: theme.palette.normal.negative
+                onClicked: {
+                    var target = page.pendingDeleteDocument
+                    page.pendingDeleteDocument = null
+                    PopupUtils.close(dialog)
+                    if (target) {
+                        dataController.deleteDocument(target.fileId)
+                    }
+                }
+            }
+            Button {
+                text: i18n.tr("Cancel")
+                onClicked: {
+                    page.pendingDeleteDocument = null
+                    PopupUtils.close(dialog)
+                }
+            }
+        }
+    }
+
+    // Only while nobody has signed yet (status 1) - once any signature exists
+    // (partially or fully signed), that's real data; cancelling instead of
+    // deleting isn't offered for those. Matches the Android app's own gating,
+    // narrowed down after the user twice called a broader version "weird".
+    function canDeleteDocument(doc) {
+        return doc.fileId !== -1
+            && doc.requestedByUserId.length > 0
+            && doc.requestedByUserId === dataController.currentUserName
+            && doc.fileStatus === 1
     }
 
     property string sortMode: "date-desc"
+    property bool showOnlyNeedsAttention: false
     property var sortedDocuments: []
 
+    // Distinct from "no documents at all" - the filter hid everything, not an
+    // actually-empty list. Matches the Android app's own equivalent distinction.
+    readonly property bool filterHidAllDocuments: showOnlyNeedsAttention
+        && dataController.documents.length > 0
+        && sortedDocuments.length === 0
+
     onSortModeChanged: updateSortedDocuments()
+    onShowOnlyNeedsAttentionChanged: updateSortedDocuments()
 
     function updateSortedDocuments() {
         var list = dataController.documents.slice()
+        if (page.showOnlyNeedsAttention) {
+            list = list.filter(function(doc) { return doc.canSignNow })
+        }
         if (page.sortMode === "name-asc") {
             list.sort(function(a, b) { return String(a.name).localeCompare(String(b.name)) })
         } else {
@@ -458,13 +567,22 @@ Page {
         message: i18n.tr("Documents you're requested to sign, or have already signed, will appear here.")
     }
 
+    EmptyState {
+        anchors.centerIn: parent
+        width: parent.width - units.gu(4)
+        visible: !dataController.loading && page.filterHidAllDocuments
+        symbol: "✍"
+        title: i18n.tr("Nothing needs your attention right now")
+        message: ""
+    }
+
     Flickable {
         id: listFlickable
         anchors { fill: parent; topMargin: page.header.height }
         contentWidth: width
         contentHeight: contentColumn.height + units.gu(3)
         clip: true
-        visible: dataController.documents.length > 0
+        visible: page.sortedDocuments.length > 0
         boundsBehavior: Flickable.DragOverBounds
 
         property real pullRefreshThreshold: units.gu(7)
@@ -599,6 +717,20 @@ Page {
                             enabled: dataController.signingUuid.length === 0 && !dataController.downloadingPreview
                             onClicked: page.attemptSign(modelData)
                         }
+                        Icon {
+                            visible: page.canDeleteDocument(modelData)
+                            name: "delete"
+                            Layout.preferredWidth: units.gu(2.5)
+                            Layout.preferredHeight: units.gu(2.5)
+                            color: theme.palette.normal.backgroundText
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    page.pendingDeleteDocument = modelData
+                                    PopupUtils.open(deleteConfirmDialog)
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -617,6 +749,7 @@ Page {
             {"label": i18n.tr("Language"), "page": "LanguageSelectionPage.qml"},
             {"label": i18n.tr("Account"), "page": "AccountSelectionPage.qml"},
             {"label": i18n.tr("Signature"), "page": "SignatureSetupPage.qml"},
+            {"label": i18n.tr("Prepare a document"), "page": "PrepareDocumentGuidePage.qml"},
             {"label": i18n.tr("Settings"), "page": "SettingsPage.qml"},
             {"label": i18n.tr("About"), "page": "AboutPage.qml"}
         ]

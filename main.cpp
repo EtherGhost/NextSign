@@ -1,4 +1,5 @@
 #include "DocumentDownloader.h"
+#include "DocumentFileEncoder.h"
 #include "LibreSignNetwork.h"
 #include "SignatureImageEncoder.h"
 
@@ -166,9 +167,11 @@ int main(int argc, char *argv[])
     DocumentDownloader documentDownloader;
     LibreSignNetwork libreSignNetwork;
     SignatureImageEncoder signatureImageEncoder;
+    DocumentFileEncoder documentFileEncoder;
     view.rootContext()->setContextProperty(QStringLiteral("documentDownloader"), &documentDownloader);
     view.rootContext()->setContextProperty(QStringLiteral("libreSignNetwork"), &libreSignNetwork);
     view.rootContext()->setContextProperty(QStringLiteral("signatureImageEncoder"), &signatureImageEncoder);
+    view.rootContext()->setContextProperty(QStringLiteral("documentFileEncoder"), &documentFileEncoder);
     view.rootContext()->setContextProperty(QStringLiteral("nextsignAppVersion"), QStringLiteral(NEXTSIGN_VERSION));
     view.rootContext()->setContextProperty(QStringLiteral("desktopLarge"), desktopLarge);
     view.rootContext()->setContextProperty(QStringLiteral("desktopDarkMode"), desktopDarkMode);

@@ -11,7 +11,7 @@ find_package(Qt5Quick REQUIRED)
 
 set(PROJECT_NAME "nextsign")
 set(FULL_PROJECT_NAME "nextsign.cloudsite")
-set(NEXTSIGN_VERSION "0.3.0")
+set(NEXTSIGN_VERSION "0.4.0")
 set(DATA_DIR /)
 set(DESKTOP_FILE_NAME ${PROJECT_NAME}.desktop)
 
@@ -32,6 +32,8 @@ add_executable(${PROJECT_NAME}
     LibreSignNetwork.h
     SignatureImageEncoder.cpp
     SignatureImageEncoder.h
+    DocumentFileEncoder.cpp
+    DocumentFileEncoder.h
     ${QT_RESOURCES}
 )
 set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
@@ -78,6 +80,8 @@ file(GLOB_RECURSE PROJECT_SRC_FILES
     LibreSignNetwork.h
     SignatureImageEncoder.cpp
     SignatureImageEncoder.h
+    DocumentFileEncoder.cpp
+    DocumentFileEncoder.h
 )
 
 add_custom_target(${PROJECT_NAME}_FILES ALL SOURCES ${PROJECT_SRC_FILES})

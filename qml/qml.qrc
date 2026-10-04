@@ -10,10 +10,14 @@
         <file>pages/SettingsPage.qml</file>
         <file>pages/LanguageSelectionPage.qml</file>
         <file>pages/AboutPage.qml</file>
+        <file>pages/PrepareDocumentPage.qml</file>
+        <file>pages/PrepareDocumentGuidePage.qml</file>
+        <file>components/PopplerPdfPreview.qml</file>
         <file>backend/AppController.qml</file>
         <file>backend/SignController.qml</file>
         <file>backend/LibreSignApiClient.qml</file>
         <file>backend/LibreSignApiCore.js</file>
+        <file>backend/DocumentShareImportHandlerUbuntu.qml</file>
         <file alias="NextCommon/VERSION">../vendor/NextCommon/qml/NextCommon/VERSION</file>
         <file alias="NextCommon/AboutPage.qml">../vendor/NextCommon/qml/NextCommon/AboutPage.qml</file>
         <file alias="NextCommon/AccountPage.qml">../vendor/NextCommon/qml/NextCommon/AccountPage.qml</file>
