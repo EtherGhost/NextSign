@@ -353,6 +353,9 @@ msgstr "Kirjaudu sisään uudelleen ennen tämän asiakirjan allekirjoittamista.
 msgid "Signing failed with HTTP %1."
 msgstr "Allekirjoitus epäonnistui, HTTP %1."
 
+msgid "Your account may require a sign-in method (like an email code or certificate) that NextSign doesn't support yet. Try signing this document from the Nextcloud web interface instead."
+msgstr "Tilisi saattaa vaatia kirjautumistavan (kuten sähköpostikoodin tai varmenteen), jota NextSign ei vielä tue. Yritä allekirjoittaa tämä asiakirja Nextcloudin verkkokäyttöliittymän kautta."
+
 msgid "Signing failed because the network request could not be completed."
 msgstr "Allekirjoitus epäonnistui, koska verkkopyyntöä ei voitu suorittaa loppuun."
 

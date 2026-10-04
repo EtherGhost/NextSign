@@ -199,7 +199,15 @@ Item {
         } else if (requestId.indexOf("sign:") === 0) {
             var signUuid = requestId.substring("sign:".length)
             if (status < 200 || status >= 300) {
-                var signMessage = LibreSignApiCore.extractErrorMessage(responseText) || i18n.tr("Signing failed with HTTP %1.").arg(status)
+                // Confirmed live (not guessed): when a LibreSign admin requires a
+                // signature method other than clickToSign for Account signers (Email
+                // token, Certificate with password), signing fails with exactly this
+                // status - both alternatives tested, identical result either way. A
+                // specific, honest (not overconfident) message beats the raw server
+                // error text for this one common case.
+                var signMessage = status === 422
+                    ? i18n.tr("Your account may require a sign-in method (like an email code or certificate) that NextSign doesn't support yet. Try signing this document from the Nextcloud web interface instead.")
+                    : (LibreSignApiCore.extractErrorMessage(responseText) || i18n.tr("Signing failed with HTTP %1.").arg(status))
                 signFailed(signUuid, signMessage, generation)
                 return
             }

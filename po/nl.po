@@ -353,6 +353,9 @@ msgstr "Log opnieuw in voordat u dit document ondertekent."
 msgid "Signing failed with HTTP %1."
 msgstr "Ondertekenen is mislukt met HTTP %1."
 
+msgid "Your account may require a sign-in method (like an email code or certificate) that NextSign doesn't support yet. Try signing this document from the Nextcloud web interface instead."
+msgstr "Je account vereist mogelijk een aanmeldmethode (zoals een e-mailcode of certificaat) die NextSign nog niet ondersteunt. Probeer het document in plaats daarvan te ondertekenen via de webinterface van Nextcloud."
+
 msgid "Signing failed because the network request could not be completed."
 msgstr "Ondertekenen is mislukt omdat het netwerkverzoek niet kon worden voltooid."
 

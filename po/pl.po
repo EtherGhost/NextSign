@@ -353,6 +353,9 @@ msgstr "Zaloguj się ponownie przed podpisaniem tego dokumentu."
 msgid "Signing failed with HTTP %1."
 msgstr "Podpisywanie nie powiodło się z kodem HTTP %1."
 
+msgid "Your account may require a sign-in method (like an email code or certificate) that NextSign doesn't support yet. Try signing this document from the Nextcloud web interface instead."
+msgstr "Twoje konto może wymagać metody logowania (np. kodu e-mail lub certyfikatu), której NextSign jeszcze nie obsługuje. Spróbuj podpisać ten dokument za pomocą interfejsu internetowego Nextcloud."
+
 msgid "Signing failed because the network request could not be completed."
 msgstr "Podpisywanie nie powiodło się, ponieważ nie można było zakończyć żądania sieciowego."
 

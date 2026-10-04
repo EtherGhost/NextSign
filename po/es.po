@@ -353,6 +353,9 @@ msgstr "Vuelva a iniciar sesión antes de firmar este documento."
 msgid "Signing failed with HTTP %1."
 msgstr "La firma falló con HTTP %1."
 
+msgid "Your account may require a sign-in method (like an email code or certificate) that NextSign doesn't support yet. Try signing this document from the Nextcloud web interface instead."
+msgstr "Es posible que tu cuenta requiera un método de inicio de sesión (como un código por correo electrónico o un certificado) que NextSign aún no admite. Prueba a firmar el documento desde la interfaz web de Nextcloud."
+
 msgid "Signing failed because the network request could not be completed."
 msgstr "La firma falló porque no se pudo completar la solicitud de red."
 

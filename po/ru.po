@@ -353,6 +353,9 @@ msgstr "Войдите снова, прежде чем подписывать э
 msgid "Signing failed with HTTP %1."
 msgstr "Подписание не выполнено, HTTP %1."
 
+msgid "Your account may require a sign-in method (like an email code or certificate) that NextSign doesn't support yet. Try signing this document from the Nextcloud web interface instead."
+msgstr "Для вашей учётной записи может потребоваться способ входа (например, код по электронной почте или сертификат), который NextSign пока не поддерживает. Попробуйте подписать документ через веб-интерфейс Nextcloud."
+
 msgid "Signing failed because the network request could not be completed."
 msgstr "Подписание не выполнено, так как не удалось завершить сетевой запрос."
 
