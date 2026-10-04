@@ -17,7 +17,7 @@ class ProjectMetadataTests(unittest.TestCase):
         cmake = read_text("CMakeLists.txt")
 
         self.assertEqual(manifest["name"], "nextsign.cloudsite")
-        self.assertIn('set(NEXTSIGN_VERSION "0.2.0")', cmake)
+        self.assertIn('set(NEXTSIGN_VERSION "0.3.0")', cmake)
         self.assertIn("vendor/NextCommon/qml/NextCommon/*.qml", cmake)
         self.assertIn("vendor/UTControls/qml/UTControls/*.qml", cmake)
         self.assertEqual(manifest["version"], "@NEXTSIGN_VERSION@")

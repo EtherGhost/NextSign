@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.0 - 2026-10-04
+
+- Shows a signer's custom message, if the requester left one.
+- Moved each document's status badge to its own row, so it lines up the same
+  way regardless of the document's name length.
+
 ## 0.2.0 - 2026-09-01
 
 - Set up a signature image, by picking one or drawing it with a finger or
