@@ -633,3 +633,37 @@ msgstr "Dette fjerner underskriftsanmodningen for \"%1\" - selve filen slettes i
 msgid "\"%1\" has been sent for signing."
 msgstr "\"%1\" er sendt til underskrift."
 
+
+msgid "Page %1 of %2"
+msgstr "Side %1 af %2"
+
+
+msgid "Which account should prepare this document?"
+msgstr "Hvilken konto skal forberede dette dokument?"
+
+msgid "Could not authorize this account. Try again."
+msgstr "Kunne ikke godkende denne konto. Prøv igen."
+
+msgid "Try again"
+msgstr "Prøv igen"
+
+msgid "Account: %1"
+msgstr "Konto: %1"
+
+
+msgid "Remove field placement?"
+msgstr "Fjern feltplacering?"
+
+msgid "This removes the signature field placed for %1 - they'll stay in the signer list, ready to place again."
+msgstr "Dette fjerner signaturfeltet, der er placeret for %1 - personen bliver stående på underskriverlisten, klar til at blive placeret igen."
+
+
+msgid "Tap the document above to add a signature field for %1 - drag an existing field to move it, or long-press to remove it"
+msgstr "Tryk på dokumentet ovenfor for at tilføje et signaturfelt til %1 - træk et eksisterende felt for at flytte det, eller tryk og hold for at fjerne det"
+
+msgid "This removes this signature field for %1 - any other fields placed for them are kept."
+msgstr "Dette fjerner kun dette signaturfelt for %1 - eventuelle andre felter for personen bevares."
+
+msgid "%1 fields placed"
+msgstr "%1 felter placeret"
+

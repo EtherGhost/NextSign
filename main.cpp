@@ -1,6 +1,7 @@
 #include "DocumentDownloader.h"
 #include "DocumentFileEncoder.h"
 #include "LibreSignNetwork.h"
+#include "PdfPageRenderer.h"
 #include "SignatureImageEncoder.h"
 
 #include <QGuiApplication>
@@ -168,10 +169,12 @@ int main(int argc, char *argv[])
     LibreSignNetwork libreSignNetwork;
     SignatureImageEncoder signatureImageEncoder;
     DocumentFileEncoder documentFileEncoder;
+    PdfPageRenderer pdfPageRenderer;
     view.rootContext()->setContextProperty(QStringLiteral("documentDownloader"), &documentDownloader);
     view.rootContext()->setContextProperty(QStringLiteral("libreSignNetwork"), &libreSignNetwork);
     view.rootContext()->setContextProperty(QStringLiteral("signatureImageEncoder"), &signatureImageEncoder);
     view.rootContext()->setContextProperty(QStringLiteral("documentFileEncoder"), &documentFileEncoder);
+    view.rootContext()->setContextProperty(QStringLiteral("pdfPageRenderer"), &pdfPageRenderer);
     view.rootContext()->setContextProperty(QStringLiteral("nextsignAppVersion"), QStringLiteral(NEXTSIGN_VERSION));
     view.rootContext()->setContextProperty(QStringLiteral("desktopLarge"), desktopLarge);
     view.rootContext()->setContextProperty(QStringLiteral("desktopDarkMode"), desktopDarkMode);

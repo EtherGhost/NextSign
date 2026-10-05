@@ -633,3 +633,37 @@ msgstr "Tämä poistaa allekirjoituspyynnön kohteelle \"%1\" - itse tiedostoa e
 msgid "\"%1\" has been sent for signing."
 msgstr "\"%1\" on lähetetty allekirjoitettavaksi."
 
+
+msgid "Page %1 of %2"
+msgstr "Sivu %1/%2"
+
+
+msgid "Which account should prepare this document?"
+msgstr "Mikä tili valmistelee tämän asiakirjan?"
+
+msgid "Could not authorize this account. Try again."
+msgstr "Tätä tiliä ei voitu valtuuttaa. Yritä uudelleen."
+
+msgid "Try again"
+msgstr "Yritä uudelleen"
+
+msgid "Account: %1"
+msgstr "Tili: %1"
+
+
+msgid "Remove field placement?"
+msgstr "Poistetaanko kentän sijoitus?"
+
+msgid "This removes the signature field placed for %1 - they'll stay in the signer list, ready to place again."
+msgstr "Tämä poistaa henkilölle %1 sijoitetun allekirjoituskentän - henkilö pysyy allekirjoittajaluettelossa, valmiina sijoitettavaksi uudelleen."
+
+
+msgid "Tap the document above to add a signature field for %1 - drag an existing field to move it, or long-press to remove it"
+msgstr "Napauta yllä olevaa asiakirjaa lisätäksesi allekirjoituskentän henkilölle %1 - vedä olemassa olevaa kenttää siirtääksesi sitä, tai paina pitkään poistaaksesi sen"
+
+msgid "This removes this signature field for %1 - any other fields placed for them are kept."
+msgstr "Tämä poistaa vain tämän allekirjoituskentän henkilölle %1 - muut hänelle sijoitetut kentät säilyvät."
+
+msgid "%1 fields placed"
+msgstr "%1 kenttää sijoitettu"
+

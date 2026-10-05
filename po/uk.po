@@ -633,3 +633,37 @@ msgstr "Це видаляє запит на підпис для \"%1\" - сам 
 msgid "\"%1\" has been sent for signing."
 msgstr "\"%1\" надіслано на підпис."
 
+
+msgid "Page %1 of %2"
+msgstr "Сторінка %1 з %2"
+
+
+msgid "Which account should prepare this document?"
+msgstr "Який обліковий запис має підготувати цей документ?"
+
+msgid "Could not authorize this account. Try again."
+msgstr "Не вдалося авторизувати цей обліковий запис. Спробуйте ще раз."
+
+msgid "Try again"
+msgstr "Спробувати ще раз"
+
+msgid "Account: %1"
+msgstr "Обліковий запис: %1"
+
+
+msgid "Remove field placement?"
+msgstr "Видалити розміщення поля?"
+
+msgid "This removes the signature field placed for %1 - they'll stay in the signer list, ready to place again."
+msgstr "Це видалить поле підпису, розміщене для %1 - людина залишиться в списку підписантів, готова до повторного розміщення."
+
+
+msgid "Tap the document above to add a signature field for %1 - drag an existing field to move it, or long-press to remove it"
+msgstr "Торкніться документа вище, щоб додати поле підпису для %1 - перетягніть наявне поле, щоб перемістити його, або натисніть і утримуйте, щоб видалити його"
+
+msgid "This removes this signature field for %1 - any other fields placed for them are kept."
+msgstr "Це видалить лише це поле підпису для %1 - будь-які інші поля, розміщені для цієї людини, збережуться."
+
+msgid "%1 fields placed"
+msgstr "%1 полів розміщено"
+

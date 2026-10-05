@@ -8,6 +8,8 @@ find_package(Qt5Gui REQUIRED)
 find_package(Qt5Network REQUIRED)
 find_package(Qt5Qml REQUIRED)
 find_package(Qt5Quick REQUIRED)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(POPPLERQT5 REQUIRED poppler-qt5)
 
 set(PROJECT_NAME "nextsign")
 set(FULL_PROJECT_NAME "nextsign.cloudsite")
@@ -34,11 +36,14 @@ add_executable(${PROJECT_NAME}
     SignatureImageEncoder.h
     DocumentFileEncoder.cpp
     DocumentFileEncoder.h
+    PdfPageRenderer.cpp
+    PdfPageRenderer.h
     ${QT_RESOURCES}
 )
 set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
 target_compile_definitions(${PROJECT_NAME} PRIVATE NEXTSIGN_VERSION="${NEXTSIGN_VERSION}")
-target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Network Qt5::Qml Qt5::Quick)
+target_include_directories(${PROJECT_NAME} PRIVATE ${POPPLERQT5_INCLUDE_DIRS})
+target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Network Qt5::Qml Qt5::Quick ${POPPLERQT5_LIBRARIES})
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX})
 
 configure_file(${DESKTOP_FILE_NAME}.in ${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE_NAME})
@@ -82,6 +87,8 @@ file(GLOB_RECURSE PROJECT_SRC_FILES
     SignatureImageEncoder.h
     DocumentFileEncoder.cpp
     DocumentFileEncoder.h
+    PdfPageRenderer.cpp
+    PdfPageRenderer.h
 )
 
 add_custom_target(${PROJECT_NAME}_FILES ALL SOURCES ${PROJECT_SRC_FILES})

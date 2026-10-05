@@ -1,18 +1,14 @@
 clickable_minimum_required: 8.8.0
 builder: cmake
 kill: nextsign
-# NOT bundled into the click package - dependencies_target only installs into
-# the build/desktop container (confirmed by reading clickable's own source,
-# not assumed), so this exists purely so `clickable build`/`desktop` have the
-# QML module available for local dev/testing. On a real device, the app
-# relies on this package already being present system-wide - it's a
-# dependency of docviewer.ubports (the stock PDF viewer most Ubuntu Touch
-# images ship with), so it's often already there, but that's not guaranteed
-# on every device/image. PrepareDocumentPage.qml loads it defensively
-# (Qt.createQmlObject in a try/catch) and shows an error instead of crashing
-# if it's missing - this is a real, documented risk, not fully closed.
+# Headers/pkg-config only - the shipped click package links against the
+# device's own libpoppler-qt5 runtime .so (present system-wide on every real
+# UT device checked so far), it does not bundle poppler itself. An earlier
+# attempt at this (2026-10-04) wrongly concluded poppler-qt5 wasn't available
+# for cross-compilation at all - that was never actually true, it just hadn't
+# been apt-installed yet when pkg-config was probed.
 dependencies_target:
-  - qtdeclarative5-poppler1.0
+  - libpoppler-qt5-dev
 scripts:
   desktop-large: ~/.local/bin/clickable desktop --arch amd64
   desktop-dark: bash scripts/desktop-dark.sh

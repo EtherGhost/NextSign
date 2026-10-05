@@ -12,7 +12,6 @@
         <file>pages/AboutPage.qml</file>
         <file>pages/PrepareDocumentPage.qml</file>
         <file>pages/PrepareDocumentGuidePage.qml</file>
-        <file>components/PopplerPdfPreview.qml</file>
         <file>backend/AppController.qml</file>
         <file>backend/SignController.qml</file>
         <file>backend/LibreSignApiClient.qml</file>

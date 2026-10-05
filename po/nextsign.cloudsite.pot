@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nextsign.cloudsite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-04 23:41+0000\n"
+"POT-Creation-Date: 2026-10-05 07:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,6 +79,11 @@ msgstr ""
 msgid "No shared document was received."
 msgstr ""
 
+#: qml/backend/DocumentShareImportHandlerUbuntu.qml:84
+#: qml/pages/PrepareDocumentPage.qml:528
+msgid "Could not read the shared document."
+msgstr ""
+
 #: qml/backend/LibreSignApiClient.qml:60 qml/backend/LibreSignApiClient.qml:78
 #: qml/backend/LibreSignApiClient.qml:112
 #: qml/backend/LibreSignApiClient.qml:129
@@ -115,7 +120,7 @@ msgstr ""
 #: qml/backend/LibreSignApiClient.qml:341
 #: qml/backend/LibreSignApiClient.qml:352
 #: qml/backend/LibreSignApiClient.qml:364
-#: qml/backend/LibreSignApiClient.qml:375 qml/backend/SignController.qml:246
+#: qml/backend/LibreSignApiClient.qml:375 qml/backend/SignController.qml:263
 msgid "LibreSign returned an unexpected response."
 msgstr ""
 
@@ -134,88 +139,88 @@ msgstr ""
 msgid "Validation failed with HTTP %1."
 msgstr ""
 
-#: qml/backend/SignController.qml:8 qml/backend/SignController.qml:506
+#: qml/backend/SignController.qml:8 qml/backend/SignController.qml:554
 msgid "Select an account to load your documents."
 msgstr ""
 
-#: qml/backend/SignController.qml:9 qml/backend/SignController.qml:507
+#: qml/backend/SignController.qml:9 qml/backend/SignController.qml:555
 msgid "No account"
 msgstr ""
 
-#: qml/backend/SignController.qml:100
+#: qml/backend/SignController.qml:112
 msgid "Signed in. Loading documents..."
 msgstr ""
 
-#: qml/backend/SignController.qml:101
+#: qml/backend/SignController.qml:113
 msgid "Syncing"
 msgstr ""
 
-#: qml/backend/SignController.qml:115
+#: qml/backend/SignController.qml:127
 msgid "Authentication failed"
 msgstr ""
 
-#: qml/backend/SignController.qml:129
+#: qml/backend/SignController.qml:141
 msgid "%1 document(s)."
 msgstr ""
 
-#: qml/backend/SignController.qml:130
+#: qml/backend/SignController.qml:142
 msgid "No documents yet."
 msgstr ""
 
-#: qml/backend/SignController.qml:131
+#: qml/backend/SignController.qml:143
 msgid "Up to date"
 msgstr ""
 
-#: qml/backend/SignController.qml:140
+#: qml/backend/SignController.qml:152
 msgid "Sync failed"
 msgstr ""
 
-#: qml/backend/SignController.qml:353 qml/backend/SignController.qml:405
+#: qml/backend/SignController.qml:370 qml/backend/SignController.qml:422
 msgid "This document's location is unknown."
 msgstr ""
 
-#: qml/backend/SignController.qml:357
+#: qml/backend/SignController.qml:374
 msgid "Sign in again before viewing this document."
 msgstr ""
 
-#: qml/backend/SignController.qml:361
+#: qml/backend/SignController.qml:378
 msgid "Document preview requires the native network backend."
 msgstr ""
 
-#: qml/backend/SignController.qml:383
+#: qml/backend/SignController.qml:400
 msgid "Could not determine your signature request for this document."
 msgstr ""
 
-#: qml/backend/SignController.qml:387
+#: qml/backend/SignController.qml:404
 msgid "Sign in again before signing this document."
 msgstr ""
 
-#: qml/backend/SignController.qml:409
+#: qml/backend/SignController.qml:426
 msgid "Sign in again before validating this document."
 msgstr ""
 
-#: qml/backend/SignController.qml:421
+#: qml/backend/SignController.qml:438
 msgid "Sign in again before setting up your signature."
 msgstr ""
 
-#: qml/backend/SignController.qml:440
+#: qml/backend/SignController.qml:465
 msgid "Sign in again before searching for signers."
 msgstr ""
 
-#: qml/backend/SignController.qml:456
+#: qml/backend/SignController.qml:490
 msgid "Sign in again before preparing this document."
 msgstr ""
 
-#: qml/backend/SignController.qml:497
+#: qml/backend/SignController.qml:545
 msgid "Sign in again before deleting this sign request."
 msgstr ""
 
-#: qml/backend/SignController.qml:516
+#: qml/backend/SignController.qml:564
 #: vendor/NextCommon/qml/NextCommon/AccountPage.qml:418
 msgid "Verifying account..."
 msgstr ""
 
-#: qml/backend/SignController.qml:517
+#: qml/backend/SignController.qml:565
 msgid "Verifying"
 msgstr ""
 
@@ -243,8 +248,8 @@ msgstr ""
 #: qml/pages/HomePage.qml:207 qml/pages/HomePage.qml:388
 #: qml/pages/HomePage.qml:481 qml/pages/HomePage.qml:510
 #: qml/pages/HomePage.qml:525 qml/pages/HomePage.qml:540
-#: qml/pages/HomePage.qml:555 qml/pages/PrepareDocumentPage.qml:109
-#: qml/pages/PrepareDocumentPage.qml:125
+#: qml/pages/HomePage.qml:555 qml/pages/PrepareDocumentPage.qml:291
+#: qml/pages/PrepareDocumentPage.qml:307
 msgid "Close"
 msgstr ""
 
@@ -292,16 +297,17 @@ msgstr ""
 
 #: qml/pages/HomePage.qml:219 qml/pages/HomePage.qml:399
 #: qml/pages/HomePage.qml:494 qml/pages/HomePage.qml:507
-#: qml/pages/HomePage.qml:677 qml/pages/PrepareDocumentPage.qml:107
-#: qml/pages/PrepareDocumentPage.qml:229 qml/pages/PrepareDocumentPage.qml:247
+#: qml/pages/HomePage.qml:677 qml/pages/PrepareDocumentPage.qml:289
+#: qml/pages/PrepareDocumentPage.qml:531 qml/pages/PrepareDocumentPage.qml:622
 msgid "Untitled document"
 msgstr ""
 
-#: qml/pages/HomePage.qml:222
+#: qml/pages/HomePage.qml:222 qml/pages/PrepareDocumentPage.qml:343
 msgid "Delete"
 msgstr ""
 
-#: qml/pages/HomePage.qml:234 qml/pages/SignatureDrawPage.qml:118
+#: qml/pages/HomePage.qml:234 qml/pages/PrepareDocumentPage.qml:372
+#: qml/pages/SignatureDrawPage.qml:118
 #: vendor/UTControls/qml/UTControls/CalendarDatePicker.qml:15
 #: vendor/UTControls/qml/UTControls/ConfirmDialog.qml:11
 #: vendor/UTControls/qml/UTControls/TimePicker.qml:16
@@ -488,65 +494,92 @@ msgid ""
 "share it, then choose NextSign."
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:17
+#: qml/pages/PrepareDocumentPage.qml:21
 msgid "Prepare document"
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:106
+#: qml/pages/PrepareDocumentPage.qml:288
 msgid "Sent"
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:107
+#: qml/pages/PrepareDocumentPage.qml:289
 msgid "\"%1\" has been sent for signing."
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:122
+#: qml/pages/PrepareDocumentPage.qml:304
 msgid "Could not send document"
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:226
-msgid "Could not read the shared document."
+#: qml/pages/PrepareDocumentPage.qml:325
+msgid "Remove field placement?"
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:247
+#: qml/pages/PrepareDocumentPage.qml:337
+msgid ""
+"This removes this signature field for %1 - any other fields placed for them "
+"are kept."
+msgstr ""
+
+#: qml/pages/PrepareDocumentPage.qml:557
+msgid "Which account should prepare this document?"
+msgstr ""
+
+#: qml/pages/PrepareDocumentPage.qml:593
+msgid "Could not authorize this account. Try again."
+msgstr ""
+
+#: qml/pages/PrepareDocumentPage.qml:596
+msgid "Try again"
+msgstr ""
+
+#: qml/pages/PrepareDocumentPage.qml:622
 msgid "Received \"%1\""
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:261
-msgid ""
-"This device cannot preview PDFs - the PDF viewer component isn't installed."
+#: qml/pages/PrepareDocumentPage.qml:631
+msgid "Account: %1"
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:269
+#: qml/pages/PrepareDocumentPage.qml:652
+msgid "Page %1 of %2"
+msgstr ""
+
+#: qml/pages/PrepareDocumentPage.qml:679
 msgid "Could not preview this PDF: %1"
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:365
-msgid "Tap the document above to place or move the signature field for %1"
+#: qml/pages/PrepareDocumentPage.qml:799
+msgid ""
+"Tap the document above to add a signature field for %1 - drag an existing "
+"field to move it, or long-press to remove it"
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:382
+#: qml/pages/PrepareDocumentPage.qml:815
 #, javascript-format
 msgid "Size: %1%"
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:397
+#: qml/pages/PrepareDocumentPage.qml:830
 msgid "Signers"
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:430
+#: qml/pages/PrepareDocumentPage.qml:864
 msgid "Field placed"
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:452
+#: qml/pages/PrepareDocumentPage.qml:865
+msgid "%1 fields placed"
+msgstr ""
+
+#: qml/pages/PrepareDocumentPage.qml:888
 msgid "Search for a signer"
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:501
+#: qml/pages/PrepareDocumentPage.qml:957
 msgid "Send for signing"
 msgstr ""
 
-#: qml/pages/PrepareDocumentPage.qml:501
+#: qml/pages/PrepareDocumentPage.qml:957
 msgid "Sending..."
 msgstr ""
 

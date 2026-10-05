@@ -21,11 +21,20 @@ public:
     Q_INVOKABLE qint64 fileSize(const QString &fileUrl) const;
 
     // Plain filesystem path (no "file://" scheme) for the given local file url -
-    // the Poppler QML plugin's own "path" property takes a literal OS path, not a
-    // URL; passing it a "file://..." string makes it try to open a file literally
-    // named "file:/...", which always fails - confirmed live via the exact
-    // "Couldn't open file 'file:///...'" error message.
+    // PdfPageRenderer and Poppler both take a literal OS path, not a URL; passing
+    // a "file://..." string makes them try to open a file literally named
+    // "file:/...", which always fails - confirmed live via the exact "Couldn't
+    // open file 'file:///...'" error message.
     Q_INVOKABLE QString localPath(const QString &fileUrl) const;
+
+    // Copies fileUrl's content into NextSign's own cache, returning the copy's
+    // "file://" url (or an empty string on failure). Used for a document just
+    // received via content-hub, before the import handler marks that transfer
+    // Collected - content-hub can clean up its own staging file as soon as
+    // finalize() is called, which can race a later read straight from the
+    // original item.url (confirmed live: "No such file or directory" when
+    // PrepareDocumentPage tried to render a page a moment after import).
+    Q_INVOKABLE QString copyToCache(const QString &fileUrl, const QString &fileName) const;
 };
 
 #endif

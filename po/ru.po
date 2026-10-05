@@ -633,3 +633,37 @@ msgstr "Это удалит запрос на подпись для \"%1\" - с�
 msgid "\"%1\" has been sent for signing."
 msgstr "\"%1\" отправлен на подпись."
 
+
+msgid "Page %1 of %2"
+msgstr "Страница %1 из %2"
+
+
+msgid "Which account should prepare this document?"
+msgstr "Какая учётная запись должна подготовить этот документ?"
+
+msgid "Could not authorize this account. Try again."
+msgstr "Не удалось авторизовать эту учётную запись. Попробуйте снова."
+
+msgid "Try again"
+msgstr "Попробовать снова"
+
+msgid "Account: %1"
+msgstr "Учётная запись: %1"
+
+
+msgid "Remove field placement?"
+msgstr "Удалить размещение поля?"
+
+msgid "This removes the signature field placed for %1 - they'll stay in the signer list, ready to place again."
+msgstr "Это удалит поле подписи, размещённое для %1 - человек останется в списке подписантов, готовый к повторному размещению."
+
+
+msgid "Tap the document above to add a signature field for %1 - drag an existing field to move it, or long-press to remove it"
+msgstr "Нажмите на документ выше, чтобы добавить поле подписи для %1 - перетащите существующее поле, чтобы переместить его, или нажмите и удерживайте, чтобы удалить его"
+
+msgid "This removes this signature field for %1 - any other fields placed for them are kept."
+msgstr "Это удалит только это поле подписи для %1 - любые другие поля, размещённые для этого человека, сохранятся."
+
+msgid "%1 fields placed"
+msgstr "%1 полей размещено"
+

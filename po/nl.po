@@ -633,3 +633,37 @@ msgstr "Dit verwijdert het ondertekeningsverzoek voor \"%1\" - het bestand zelf 
 msgid "\"%1\" has been sent for signing."
 msgstr "\"%1\" is verzonden voor ondertekening."
 
+
+msgid "Page %1 of %2"
+msgstr "Pagina %1 van %2"
+
+
+msgid "Which account should prepare this document?"
+msgstr "Welk account moet dit document voorbereiden?"
+
+msgid "Could not authorize this account. Try again."
+msgstr "Kon dit account niet autoriseren. Probeer het opnieuw."
+
+msgid "Try again"
+msgstr "Probeer opnieuw"
+
+msgid "Account: %1"
+msgstr "Account: %1"
+
+
+msgid "Remove field placement?"
+msgstr "Veldplaatsing verwijderen?"
+
+msgid "This removes the signature field placed for %1 - they'll stay in the signer list, ready to place again."
+msgstr "Dit verwijdert het handtekeningveld dat is geplaatst voor %1 - deze persoon blijft in de ondertekenaarslijst staan, klaar om opnieuw geplaatst te worden."
+
+
+msgid "Tap the document above to add a signature field for %1 - drag an existing field to move it, or long-press to remove it"
+msgstr "Tik op het document hierboven om een handtekeningveld toe te voegen voor %1 - sleep een bestaand veld om het te verplaatsen, of houd ingedrukt om het te verwijderen"
+
+msgid "This removes this signature field for %1 - any other fields placed for them are kept."
+msgstr "Dit verwijdert alleen dit handtekeningveld voor %1 - eventuele andere velden voor deze persoon blijven behouden."
+
+msgid "%1 fields placed"
+msgstr "%1 velden geplaatst"
+

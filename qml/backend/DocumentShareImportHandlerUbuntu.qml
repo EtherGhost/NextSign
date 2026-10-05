@@ -72,11 +72,20 @@ Item {
         }
 
         var item = transfer.items[0]
-        var fileUrl = item.url
         var fileName = item.name || ""
+        // Copy out of content-hub's own staging area BEFORE marking the transfer
+        // Collected - finalize() lets content-hub clean up that staging file
+        // right away, which can race PrepareDocumentPage's own render a moment
+        // later (after the page push/layout) and intermittently fail with
+        // "No such file or directory" - confirmed live.
+        var copiedUrl = documentFileEncoder.copyToCache(item.url, fileName)
         markTransferCollected(transfer)
+        if (copiedUrl.length === 0) {
+            importFailed(i18n.tr("Could not read the shared document."))
+            return
+        }
         console.log("NextSign ContentHub import received fileName=" + fileName)
-        documentImported(fileUrl, fileName)
+        documentImported(copiedUrl, fileName)
     }
 
     function markTransferCollected(transfer) {

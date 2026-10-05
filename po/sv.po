@@ -633,3 +633,37 @@ msgstr "Det här tar bort signeringsbegäran för \"%1\" - själva filen tas int
 msgid "\"%1\" has been sent for signing."
 msgstr "\"%1\" har skickats för signering."
 
+
+msgid "Page %1 of %2"
+msgstr "Sida %1 av %2"
+
+
+msgid "Which account should prepare this document?"
+msgstr "Vilket konto ska förbereda det här dokumentet?"
+
+msgid "Could not authorize this account. Try again."
+msgstr "Kunde inte auktorisera det här kontot. Försök igen."
+
+msgid "Try again"
+msgstr "Försök igen"
+
+msgid "Account: %1"
+msgstr "Konto: %1"
+
+
+msgid "Remove field placement?"
+msgstr "Ta bort fältplacering?"
+
+msgid "This removes the signature field placed for %1 - they'll stay in the signer list, ready to place again."
+msgstr "Det här tar bort signaturfältet som placerats för %1 - personen finns kvar i signerarlistan, redo att placeras igen."
+
+
+msgid "Tap the document above to add a signature field for %1 - drag an existing field to move it, or long-press to remove it"
+msgstr "Tryck på dokumentet ovan för att lägga till ett signaturfält för %1 - dra ett befintligt fält för att flytta det, eller håll nedtryckt för att ta bort det"
+
+msgid "This removes this signature field for %1 - any other fields placed for them are kept."
+msgstr "Det här tar bort just det här signaturfältet för %1 - eventuella andra fält för personen finns kvar."
+
+msgid "%1 fields placed"
+msgstr "%1 fält placerade"
+

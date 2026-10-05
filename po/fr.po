@@ -633,3 +633,37 @@ msgstr "Cela supprime la demande de signature pour \"%1\" - le fichier lui-même
 msgid "\"%1\" has been sent for signing."
 msgstr "\"%1\" a été envoyé pour signature."
 
+
+msgid "Page %1 of %2"
+msgstr "Page %1 sur %2"
+
+
+msgid "Which account should prepare this document?"
+msgstr "Quel compte doit préparer ce document ?"
+
+msgid "Could not authorize this account. Try again."
+msgstr "Impossible d'autoriser ce compte. Réessayez."
+
+msgid "Try again"
+msgstr "Réessayer"
+
+msgid "Account: %1"
+msgstr "Compte : %1"
+
+
+msgid "Remove field placement?"
+msgstr "Supprimer le placement du champ ?"
+
+msgid "This removes the signature field placed for %1 - they'll stay in the signer list, ready to place again."
+msgstr "Cela supprime le champ de signature placé pour %1 - cette personne reste dans la liste des signataires, prête à être replacée."
+
+
+msgid "Tap the document above to add a signature field for %1 - drag an existing field to move it, or long-press to remove it"
+msgstr "Appuyez sur le document ci-dessus pour ajouter un champ de signature pour %1 - faites glisser un champ existant pour le déplacer, ou appuyez longuement pour le supprimer"
+
+msgid "This removes this signature field for %1 - any other fields placed for them are kept."
+msgstr "Cela supprime uniquement ce champ de signature pour %1 - les autres champs placés pour cette personne sont conservés."
+
+msgid "%1 fields placed"
+msgstr "%1 champs placés"
+

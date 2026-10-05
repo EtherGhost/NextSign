@@ -633,3 +633,37 @@ msgstr "Això elimina la sol·licitud de signatura de \"%1\" - el fitxer en si n
 msgid "\"%1\" has been sent for signing."
 msgstr "\"%1\" s'ha enviat per signar."
 
+
+msgid "Page %1 of %2"
+msgstr "Pàgina %1 de %2"
+
+
+msgid "Which account should prepare this document?"
+msgstr "Quin compte hauria de preparar aquest document?"
+
+msgid "Could not authorize this account. Try again."
+msgstr "No s'ha pogut autoritzar aquest compte. Torna-ho a provar."
+
+msgid "Try again"
+msgstr "Torna-ho a provar"
+
+msgid "Account: %1"
+msgstr "Compte: %1"
+
+
+msgid "Remove field placement?"
+msgstr "Suprimir la col·locació del camp?"
+
+msgid "This removes the signature field placed for %1 - they'll stay in the signer list, ready to place again."
+msgstr "Això elimina el camp de signatura col·locat per a %1 - la persona es mantindrà a la llista de signants, llesta per col·locar-se de nou."
+
+
+msgid "Tap the document above to add a signature field for %1 - drag an existing field to move it, or long-press to remove it"
+msgstr "Toca el document de sobre per afegir un camp de signatura per a %1 - arrossega un camp existent per moure'l, o mantén premut per eliminar-lo"
+
+msgid "This removes this signature field for %1 - any other fields placed for them are kept."
+msgstr "Això elimina només aquest camp de signatura per a %1 - qualsevol altre camp col·locat per a aquesta persona es conserva."
+
+msgid "%1 fields placed"
+msgstr "%1 camps col·locats"
+

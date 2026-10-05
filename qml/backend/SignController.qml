@@ -48,10 +48,22 @@ Item {
     property bool searchingSigners: false
     property bool preparingDocument: false
     property var __prepareSigners: []
-    property var __prepareFieldsByIdentify: ({})
+    // Array now, not one-per-identify - a signer can have more than one field
+    // (e.g. initials on several pages plus a signature on the last one).
+    property var __prepareFields: []
     property var __prepareFieldQueue: []
     property int __prepareFileId: -1
     property string __prepareFileUuid: ""
+    // The credentials this one prepare-document submission is actually running
+    // under - usually the same as current*, but can be a different account the
+    // user explicitly chose for this document (see PrepareDocumentPage's account
+    // picker, shown when more than one account is known). Captured once at the
+    // start of prepareDocument() so a later current* change (switching accounts
+    // elsewhere in the app) can't shift the rest of this submission's requests
+    // onto the wrong account mid-flight.
+    property string __prepareServerUrl: ""
+    property string __prepareUserName: ""
+    property string __prepareSecret: ""
 
     // Prefer the starred (default) element of a type over an earlier one.
     function buildSignatureElementsByType(elements) {
@@ -221,8 +233,8 @@ Item {
             var missingMatch = false
             for (var i = 0; i < controller.__prepareSigners.length; ++i) {
                 var signer = controller.__prepareSigners[i]
-                var field = controller.__prepareFieldsByIdentify[signer.identify]
-                if (!field) {
+                var signerFields = controller.__prepareFields.filter(function(f) { return f.identify === signer.identify })
+                if (signerFields.length === 0) {
                     continue
                 }
                 var matchedSignRequestId = -1
@@ -236,7 +248,12 @@ Item {
                     missingMatch = true
                     break
                 }
-                queue.push({ "signRequestId": matchedSignRequestId, "field": field })
+                // One queue entry per field, not per signer - a signer can
+                // have several (initials on multiple pages, a signature on
+                // the last one), each becomes its own file-element call.
+                for (var k = 0; k < signerFields.length; ++k) {
+                    queue.push({ "signRequestId": matchedSignRequestId, "field": signerFields[k] })
+                }
             }
 
             if (missingMatch) {
@@ -435,48 +452,79 @@ Item {
         }
     }
 
-    function searchSigners(query) {
-        if (controller.currentServerUrl.length === 0 || controller.currentUserName.length === 0 || controller.currentSecret.length === 0) {
+    // overrideServerUrl/userName/secret let a caller search under a different
+    // account than the app's main session - used by PrepareDocumentPage when
+    // the user explicitly chose a different account for this one document (see
+    // its account picker). Omitted (or empty), this falls back to the main
+    // session exactly as before.
+    function searchSigners(query, overrideServerUrl, overrideUserName, overrideSecret) {
+        var serverUrl = overrideServerUrl || controller.currentServerUrl
+        var userName = overrideUserName || controller.currentUserName
+        var secret = overrideSecret || controller.currentSecret
+        if (serverUrl.length === 0 || userName.length === 0 || secret.length === 0) {
             controller.signersSearchFailed(i18n.tr("Sign in again before searching for signers."))
             return
         }
         controller.searchingSigners = true
         api.requestGeneration = controller.accountRequestGeneration
-        api.searchSigners(controller.currentServerUrl, controller.currentUserName, controller.currentSecret, query)
+        api.searchSigners(serverUrl, userName, secret, query)
     }
 
-    // signers: [{identify, displayName, method}]; fieldsByIdentify: {identify: {left,
-    // top, width, height}} (PDF points, top-down) - one entry per signer with a
-    // placed field. Uploads the file as base64 in the same request-signature call
+    // signers: [{identify, displayName, method}]; fields: [{id, identify, left,
+    // top, width, height, page}, ...] (PDF points top-down, page 0-indexed) - a
+    // signer can appear in more than one entry (e.g. initials on several pages
+    // plus a signature on the last one). Uploads the file as base64 in the same
+    // request-signature call
     // (a content-hub-imported PDF has no Nextcloud node id to reuse), then attaches
     // one file-element per field, rolling the whole sign request back via delete if
     // any signer can't be matched or a field fails to attach.
-    function prepareDocument(fileName, base64, signers, fieldsByIdentify) {
-        if (controller.currentServerUrl.length === 0 || controller.currentUserName.length === 0 || controller.currentSecret.length === 0) {
+    //
+    // overrideServerUrl/userName/secret: see searchSigners - captured into
+    // __prepare* so the rest of this submission (field attachment, rollback)
+    // stays on the same account even if current* changes meanwhile.
+    function prepareDocument(fileName, base64, signers, fields, overrideServerUrl, overrideUserName, overrideSecret) {
+        var serverUrl = overrideServerUrl || controller.currentServerUrl
+        var userName = overrideUserName || controller.currentUserName
+        var secret = overrideSecret || controller.currentSecret
+        if (serverUrl.length === 0 || userName.length === 0 || secret.length === 0) {
             controller.documentPrepareFailed(i18n.tr("Sign in again before preparing this document."))
             return
         }
         controller.preparingDocument = true
         controller.__prepareSigners = signers
-        controller.__prepareFieldsByIdentify = fieldsByIdentify
+        controller.__prepareFields = fields
+        controller.__prepareServerUrl = serverUrl
+        controller.__prepareUserName = userName
+        controller.__prepareSecret = secret
         api.requestGeneration = controller.accountRequestGeneration
-        api.requestSignature(controller.currentServerUrl, controller.currentUserName, controller.currentSecret, fileName, base64, signers)
+        api.requestSignature(serverUrl, userName, secret, fileName, base64, signers)
     }
 
     function __processNextPrepareField() {
         if (controller.__prepareFieldQueue.length === 0) {
             controller.preparingDocument = false
             controller.documentPrepared()
-            controller.refresh()
+            // Only refresh if this was prepared under the app's current main
+            // account - refresh() always reloads *that* account's list, so
+            // doing it after preparing under a different one (see the account
+            // picker in PrepareDocumentPage) would just be a wasted request,
+            // the just-prepared document would never show up in it anyway.
+            if (controller.__prepareServerUrl === controller.currentServerUrl
+                    && controller.__prepareUserName === controller.currentUserName) {
+                controller.refresh()
+            }
             return
         }
         var next = controller.__prepareFieldQueue[0]
         var field = next.field
         api.requestGeneration = controller.accountRequestGeneration
-        api.createFileElement(controller.currentServerUrl, controller.currentUserName, controller.currentSecret,
+        api.createFileElement(controller.__prepareServerUrl, controller.__prepareUserName, controller.__prepareSecret,
             controller.__prepareFileUuid, next.signRequestId, controller.__prepareFileId,
             {
-                "page": 1,
+                // field.page is 0-indexed (matches PdfPageRenderer) - LibreSign's
+                // own "page" is 1-indexed, confirmed by the earlier page-1-only
+                // spike that used a literal 1 here.
+                "page": field.page + 1,
                 "left": Math.round(field.left),
                 "top": Math.round(field.top),
                 "width": Math.round(field.width),
@@ -488,7 +536,7 @@ Item {
         controller.__prepareFieldQueue = []
         controller.preparingDocument = false
         api.requestGeneration = controller.accountRequestGeneration
-        api.deleteFile(controller.currentServerUrl, controller.currentUserName, controller.currentSecret, controller.__prepareFileId)
+        api.deleteFile(controller.__prepareServerUrl, controller.__prepareUserName, controller.__prepareSecret, controller.__prepareFileId)
         controller.documentPrepareFailed(message)
     }
 
