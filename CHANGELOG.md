@@ -3,8 +3,11 @@
 ## 0.4.0 - 2026-10-05
 
 - Prepare a document for signing: share a PDF in from another app (e.g. the
-  Files app), preview it, search for and select signers, tap/drag/resize one
-  signature field per signer, then send it - ported from the Android app.
+  Files app), preview it, search for and select signers, then place as many
+  signature fields as needed per signer across any page - ported from the
+  Android app.
+- Choose which account should prepare a document, if more than one
+  Nextcloud/ownCloud account is set up.
 - Delete a sign request you created, before anyone has signed - removes the
   signing request/bookkeeping only, not the underlying file.
 - A "needs attention" filter on the document list, hiding fully-signed and
