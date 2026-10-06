@@ -23,9 +23,10 @@ Published on [OpenStore](https://open-store.io/app/nextsign.cloudsite/).
   automatically when a document needs a visible signature.
 - Validates a signed document's signature and shows LibreSign's own verdict for it.
 - Prepares a document for signing: share a PDF in from another app (e.g. the Files app), preview
-  it, search for and select signers, place/move/resize one signature field per signer, then send
-  it. Needs `qtdeclarative5-poppler1.0` for the preview (already on most Ubuntu Touch images as a
-  dependency of the stock Files/docviewer app), not bundled with NextSign itself.
+  it, search for and select signers, then place as many signature fields as needed per signer
+  across any page, then send it.
+- Lets you choose which account should prepare a document, if more than one Nextcloud/ownCloud
+  account is set up.
 - Deletes a sign request you created, before anyone has signed.
 - Filters the document list to show only what needs your attention.
 - Sort the list by date or name.
